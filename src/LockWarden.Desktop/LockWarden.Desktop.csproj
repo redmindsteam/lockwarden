@@ -11,4 +11,8 @@
     <ProjectReference Include="..\LockWarden.Service\LockWarden.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Components\" />
+  </ItemGroup>
+
 </Project>
