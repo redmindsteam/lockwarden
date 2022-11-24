@@ -9,6 +9,14 @@
       Title="Page1">
 
     <Grid>
-        
+        <StackPanel>
+            <Border Height="100" Width="100" Background="Red">
+                <Border.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth="3" Opacity="1" Softness="2" />
+                </Border.BitmapEffect>
+            </Border>
+            <Border Height="100" Width="100" Background="blue">
+            </Border>
+        </StackPanel>
     </Grid>
 </Page>

@@ -5,8 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LockWarden.Desktop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        >
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0"
+              Background="Transparent"
+              >
+            <Border 
+                    BorderBrush="#A2917B"
+                    BorderThickness="1 1 0 1"
+                    CornerRadius="15 0 0 15"
+                    >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#2D837C" Offset="0"/>
+                        <GradientStop Color="#172B3F" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                
+            </Border>
+        </Grid>
+        <Grid Grid.Column="1"
+              Background="Transparent">
+            <Border BorderBrush="#A2917B"
+                    BorderThickness="0 1 1 1"
+                    CornerRadius="0 15 15 0">
+                <StackPanel Margin="10 23 10 10">
+                    <Border Height="550" Width="355"
+                            Background="#42C1B6"
+                            BorderThickness="0"
+                            CornerRadius="15">
+                        <Border.BitmapEffect>
+                            <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth="3" Opacity="1" Softness="2" />
+                        </Border.BitmapEffect>
+                        <StackPanel Background="Transparent" Margin="15">
+                            <!---->
+                            <Label Margin="0 150 0 0" Content="Email" Style="{StaticResource LoginLabelStyle}"/>
+                            <TextBox  Style="{StaticResource LoginTextBoxStyle}" Width="311"/>
+                            <Path Data="M0.8,220.73333 L324.46667,220.6" Fill="#172B3F"
+                                  Height="1" Stroke="Black" Stretch="Fill"
+                                  Width="312" RenderTransformOrigin="0.5,0.5"/>
+                            
+                            <!--Password-->
+                            <Label Margin="0 20 0 0" Content="Password" Style="{StaticResource LoginLabelStyle}"/>
+                            <TextBox  Style="{StaticResource LoginTextBoxStyle}" Width="311"/>
+                            <Path Data="M0.8,220.73333 L324.46667,220.6" Fill="#172B3F"
+                                  Height="1" Stroke="Black" Stretch="Fill"
+                                  Width="312" RenderTransformOrigin="0.5,0.5"/>
 
+
+
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#2D837C" Offset="0"/>
+                        <GradientStop Color="#172B3F" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </Grid>
+        
     </Grid>
 </Window>
