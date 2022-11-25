@@ -8,7 +8,14 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/LoginLabelStyle.xaml"/>
                 <ResourceDictionary Source="styles/LoginTextBoxStyle.xaml"/>
+                
+                
+                
             </ResourceDictionary.MergedDictionaries>
+
+            <!--Image-->
+            <BitmapImage x:Key="loginlogo" UriSource="Images\LoginLogo.png"></BitmapImage>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>
