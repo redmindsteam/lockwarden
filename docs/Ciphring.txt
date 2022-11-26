@@ -1,0 +1,25 @@
++------------------+
+|Shifrlash prosessi|
++------------------+
+User password kiritadi |string pasw = Console.ReadLine();|
+Passwordni songa o'giramiz |int seed = ToSeed(pasw);|
+Seedni Randomga beramiz |var engine = new Random(seed);|
+Shifrlanadigan satrni har bir harfini ASCII codiga random son qo'shamiz |foreach(char ch in s){res+=ch+engine.Next();}
+Satrni qaytaramiz |return res.ToString();|
++--------------------+
+|DeShifrlash prosessi|
++--------------------+
+Huddi shu narsa, faqat ayiramiz |foreach(char ch in s){res-=ch+engine.Next();|
+
+ /                                   \
+<  ---------------------------------  >
+ \                                   /
+
++-------------------+
+|DataBase'ni saqlash|
++-------------------+
+ProgramData ni Path'ini olish |string datapath = Environment.GetFolderPath(Environment.SpecialFolders.CommonApplicationData);|
+Papkani Path'ini olamiz |string dirpath = datapath+"\\Lock Warden";|
+O'sha yerda Lock Warden papkani yaratamiz |Directory.CreateDirectory(dirpath);|
+Papkada databasa fayli bo'lmasa, yaratamiz| if(!(new FileInfo(dirpath+"\\main.db").Exists)){ Repository.Initialize();}
+Keyin data bilan ishlaymiz
