@@ -2,7 +2,7 @@
 
 public class Card : IUsable
 {
-	public DateTime Deleted { get; set; }
+	public DateTime? Deleted { get; set; }
 	public int UserId { get; set; }
 	public int Id { get; set; }
 	public string Bank { get; set; }

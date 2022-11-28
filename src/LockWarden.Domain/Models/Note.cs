@@ -2,7 +2,7 @@
 
 public class Note : IUsable
 {
-	public DateTime Deleted { get; set; }
+	public DateTime? Deleted { get; set; }
 	public int Id { get; set; }
 	public string Header { get; set; }
 	public string Content { get; set; }
