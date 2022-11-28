@@ -1,0 +1,5 @@
+ProgramData ni Path'ini olish |string datapath = Environment.GetFolderPath(Environment.SpecialFolders.CommonApplicationData);
+Papkani Path'ini olamiz |string dirpath = datapath+"\\Lock Warden";
+Papka bor/yo'gligini tekshiramiz | if(!(new DirectoryInfo(dirpath).Exists))...
+Bo'lmasa Yaratamiz | ...Repository.Initialize();
+Bo'lsa xech narsa qilmaymiz

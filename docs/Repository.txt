@@ -1,0 +1,40 @@
+Repository degan Classda hamma boshqa Repositorylar bittadan property sifatida bo'ladi. Hamda Initialize() method;
+class Repository{
+    IUserRepository User = new UserRepository();
+    INoteRepository Note = new NoteRepository();
+    IImageRepository Image = new ImageRepository();
+    ILoginRepository Login = new LoginRepository();
+    ICardRepository Card = new CardRepository();
+    public void Initialize(){
+        /*
+        *some magic for creating "Lock Warden" folder
+        *creating there "main.db" database file
+        *creating all tables
+        *and linking tables( foreign keys)
+        */
+    }
+}
+Yani Initialize() methodida:
+    ProgramData(CommonApplicationData)'da "Lock Warden" papkasi yaratiladi
+    Shu papkada "main.db" databasa file'i yaratiladi
+    Databasada hamma table'lar yaratiladi
+    Data qo'shilmaydi
+<-------------->
+Oddiy(note, image, card, login) Repository'larda qo'shimcha methodlar bo'ladi:
+1.UpdateRecords(user password o'zgartirsa)
+2.GetByUser
+3.DeleteOld
+4.DeleteByUser
+5.AddToUser
+-----------
+1=2+4+5, yani:
+Userni Hamma ma'lumotlarini olamiz(2)
+keyin ularni o'chiramiz(3)
+undan keyin har bitta malumotni eski parol bilan deshirflab
+yangi parol bilna shifrlab yozamiz(LINQ select() methodi yordamida)
+shu listni Qaytadan Qo'shamiz(5)
+--------------
+2.Userni hamma ma'lumotlarini olib beradi(statusga qaramasdan)
+3.Hamma bir haftadan oldin o'chirilgan malumotlarni o'chiradi(iloji boricha sql funksiyada qilinsin)
+4.Userni hamma malumotlarini o'chiradi
+5.Userga bir nechta malumotni bitta query'da qo'shadi 
