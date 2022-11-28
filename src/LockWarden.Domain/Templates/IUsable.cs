@@ -2,6 +2,6 @@
 
 public interface IUsable : IReferenceable
 {
-	public DateTime Deleted { get; set; }
+	public DateTime? Deleted { get; set; }
 	public int UserId { get; set; }
 }

@@ -8,7 +8,7 @@ namespace LockWarden.Domain.Models;
 
 public class Login : IUsable
 {
-	public DateTime Deleted { get; set; }
+	public DateTime? Deleted { get; set; }
 	public int UserId { get; set; }
 	public int Id { get; set; }
 	public string Service { get; set; }
