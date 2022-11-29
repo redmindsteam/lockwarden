@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="LoginLogo.png" />
-    <None Remove="LogoPanel.jpg" />
-    <None Remove="regsImg.jpg" />
+    <None Remove="Images\LoginLogo.png" />
+    <None Remove="Images\LogoPanel.jpg" />
+    <None Remove="Images\regsImg.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,13 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Components\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="LoginLogo.png" />
-    <Resource Include="LogoPanel.jpg" />
-    <Resource Include="regsImg.jpg" />
+    <Resource Include="Images\LoginLogo.png" />
+    <Resource Include="Images\LogoPanel.jpg" />
+    <Resource Include="Images\regsImg.jpg" />
   </ItemGroup>
 
 </Project>

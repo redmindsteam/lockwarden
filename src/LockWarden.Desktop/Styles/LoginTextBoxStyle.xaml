@@ -4,11 +4,23 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Margin" Value="5 0 0 0"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="20" BorderThickness="1" Padding="15">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
     </Style>
 
     <Style TargetType="{x:Type PasswordBox}" x:Key="LoginPasswordBox">
@@ -16,6 +28,7 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Margin" Value="5 0 0 0"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -29,11 +42,12 @@
         <Setter Property="Foreground" Value="white"/>
         <Setter Property="Panel.ZIndex" Value="2"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="4 0 0 0"/>
+        <Setter Property="Margin" Value="5 0 0 0"/>
     </Style>
 
     <Style x:Name="textBox" TargetType="Control" >
         <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Margin" Value="5 0 0 0"/>
         <Setter Property="FontFamily" Value="Arial"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Foreground" Value="Black"/>

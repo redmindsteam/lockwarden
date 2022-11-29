@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LockWarden.Desktop.Windows
+namespace LockWarden.Desktop.Components
 {
     /// <summary>
-    /// Interaction logic for MainPage.xaml
+    /// Interaction logic for LockEllipseUserControl.xaml
     /// </summary>
-    public partial class MainPage : Window
+    public partial class LockEllipseUserControl : UserControl
     {
-        public MainPage()
+        public LockEllipseUserControl()
         {
             InitializeComponent();
         }
