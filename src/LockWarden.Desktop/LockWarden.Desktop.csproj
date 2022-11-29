@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove="LoginLogo.png" />
+    <None Remove="LogoPanel.jpg" />
+    <None Remove="regsImg.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +23,8 @@
 
   <ItemGroup>
     <Resource Include="LoginLogo.png" />
+    <Resource Include="LogoPanel.jpg" />
+    <Resource Include="regsImg.jpg" />
   </ItemGroup>
 
 </Project>

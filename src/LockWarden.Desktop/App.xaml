@@ -6,16 +6,15 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
+
                 <ResourceDictionary Source="Styles/LoginLabelStyle.xaml"/>
                 <ResourceDictionary Source="styles/LoginTextBoxStyle.xaml"/>
-                
-                
-                
             </ResourceDictionary.MergedDictionaries>
-
             <!--Image-->
             <BitmapImage x:Key="loginlogo" UriSource="Images\LoginLogo.png"></BitmapImage>
-            
+            <!-- <BitmapImage x:Key="panellogin" UriSource="Images\LogoPanel.jpg"></BitmapImage> -->
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
