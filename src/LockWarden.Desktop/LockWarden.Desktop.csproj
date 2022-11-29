@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\lockwarden.png" />
     <None Remove="Images\LoginLogo.png" />
     <None Remove="Images\LogoPanel.jpg" />
     <None Remove="Images\regsImg.jpg" />
@@ -18,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\lockwarden.png" />
     <Resource Include="Images\LoginLogo.png" />
     <Resource Include="Images\LogoPanel.jpg" />
     <Resource Include="Images\regsImg.jpg" />

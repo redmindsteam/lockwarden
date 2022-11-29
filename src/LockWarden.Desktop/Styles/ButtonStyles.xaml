@@ -2,15 +2,16 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <Style x:Key="FormPrimaryButton" TargetType="Button">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Width" Value="250"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="0 30 0 0"/>
         <Setter Property="Background" Value="RoyalBlue"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" CornerRadius="25" BorderThickness="1" Padding="15">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="13" BorderThickness="1" Padding="5">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -18,8 +19,8 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver"  Value="True">
-                <Setter Property="Background" Value="AliceBlue"/>
-                <Setter Property="Foreground" Value="Gold"/>
+                <Setter Property="Background" Value="#253C81"/>
+                <Setter Property="Foreground" Value="gray"/>
             </Trigger>
             <Trigger Property="IsMouseCaptured" Value="True">
                 <Setter Property="Background" Value="Navy"/>
@@ -31,15 +32,15 @@
     <Style x:Key="FormSuccessButton" TargetType="Button">
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Width" Value="250"/>
-        <Setter Property="Height" Value="40"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="0 20 0 0"/>
         <Setter Property="Background" Value="#50C878"/>
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="Margin" Value="0 200 0 0"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" CornerRadius="25" BorderThickness="1" BorderBrush="Gold" Padding="15">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="16" BorderThickness="0" Padding="3">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -47,14 +48,72 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver"  Value="True">
-                <Setter Property="Background" Value="AliceBlue"/>
-                <Setter Property="Foreground" Value="Gold"/>
+                <Setter Property="Background" Value="#327C4A"/>
+                <Setter Property="Foreground" Value="Gray"/>
             </Trigger>
             <Trigger Property="IsMouseCaptured" Value="True">
-                <Setter Property="Background" Value="Navy"/>
+                <Setter Property="Background" Value="#215231"/>
                 <Setter Property="Foreground" Value="White"/>
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
+    <Style x:Key="FormCloseButton" TargetType="Button">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Margin" Value="372,3,7,575"/>
+        <Setter Property="Background" Value="Red"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="100" BorderThickness="0" Padding="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver"  Value="True">
+                <Setter Property="Background" Value="#A60000"/>
+            </Trigger>
+            <Trigger Property="IsMouseCaptured" Value="True">
+                <Setter Property="Background" Value="#FF0000"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="FormMinimiseButton" TargetType="Button">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Margin" Value="346,3,33,575"/>
+        <Setter Property="Background" Value="Yellow"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="100" BorderThickness="0" Padding="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver"  Value="True">
+                <Setter Property="Background" Value="#A6A600"/>
+            </Trigger>
+            <Trigger Property="IsMouseCaptured" Value="True">
+                <Setter Property="Background" Value="Yellow"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+
 </ResourceDictionary>
