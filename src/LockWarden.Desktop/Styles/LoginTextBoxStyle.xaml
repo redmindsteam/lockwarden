@@ -2,9 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="{x:Type TextBox}" x:Key="LoginTextBoxStyle">
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#6A6F72"/>
-        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="15"/>
         <Setter Property="Height" Value="40"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -12,8 +13,9 @@
 
     <Style TargetType="{x:Type PasswordBox}" x:Key="LoginPasswordBox">
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#6A6F72"/>
-        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="15"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -22,9 +24,8 @@
 
 
     <Style x:Key="textHint" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontSize" Value="15"/>
         <Setter Property="FontFamily" Value="Arial"/>
-        <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Foreground" Value="white"/>
         <Setter Property="Panel.ZIndex" Value="2"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
