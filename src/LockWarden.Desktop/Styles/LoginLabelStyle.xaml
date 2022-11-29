@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type Label}" x:Key="LoginLabelStyle">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="Cyan"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+    </Style>
+</ResourceDictionary>
