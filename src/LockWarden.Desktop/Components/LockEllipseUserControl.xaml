@@ -1,0 +1,277 @@
+﻿<UserControl x:Class="LockWarden.Desktop.Components.LockEllipseUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LockWarden.Desktop.Components"
+             mc:Ignorable="d" 
+             Height="600" Width="400">
+    <UserControl.Resources>
+        <Storyboard x:Key="ellipse" RepeatBehavior="100">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#FF87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#E587BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#CC87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#B287BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="sc#0.5, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="sc#0.4, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="#4C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#0C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#0087BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#E587BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#CC87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#B287BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#9987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="sc#0.4, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="sc#0.3, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="sc#0.2, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#0087BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#FF87BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse2" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#CC87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#B287BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="sc#0.6000006, 0.24228115, 0.50888133, 0.76815116"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#7F87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="sc#0.3, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="sc#0.2, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="sc#0.1, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#FF87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#E587BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse3" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#B287BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#9987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#7F87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#6687BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="sc#0.2, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="sc#0.1, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="sc#0.05, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#E587BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#CC87BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse4" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#9987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#7F87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#6687BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#4C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="sc#0.1, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="sc#0.05, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="sc#0, 0.242281154, 0.50888133, 0.768151164"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#CC87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#B287BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse5" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#7F87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#6687BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#4C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#3387BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="#0C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="#0087BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="#FF87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#B287BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#9987BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse6" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#6687BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#4C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#3387BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#1987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="#0087BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="#FF87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="#E587BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#9987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#7F87BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse7" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#4C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#3387BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#1987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#0C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="#FF87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="#E587BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="#CC87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#7F87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#6687BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse8" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#3387BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#1987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#0C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#0087BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="#E587BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="#CC87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="#B287BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#6687BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#4C87BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse9" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#19F7F7F7"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#0CF7F7F7"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#00F7F7F7"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#FF87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="#CC87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="#B287BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="#9987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#4C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#3387BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse10" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#0C87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#0087BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#E587BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="#B287BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="#9987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="#7F87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#3387BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#1987BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse11" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#0087BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.1000000" Value="#FF87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.2000000" Value="#E587BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.3000000" Value="#CC87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="#9987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="#7F87BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.6000000" Value="#6687BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.7000000" Value="#1987BDE3"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="#0C87BDE3"/>
+            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="-1.0249969250030748"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse10" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="-28.901"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource ellipse}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Grid>
+        <Image Source="/Images/LoginLogo.png" 
+               Height="200" Width="200" 
+               VerticalAlignment="Center" 
+               HorizontalAlignment="Center"
+               Margin="25 0 0 0"/>
+        <Ellipse x:Name="ellipse2" Height="50" Width="50" Margin="119,168,230,380" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#E587BDE3" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse1" Height="50" Width="50" Margin="189,148,160,400">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF87BDE3" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse11" Height="50" Width="50" Margin="303,216,46,332" RenderTransformOrigin="0.852,-0.132">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#0C87BDE3" Offset="0.007"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse" Height="50" Width="50" Margin="256,168,94,380">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#0087BDE3" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse4" Height="50" Width="50" Margin="54,274,294,274">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#B287BDE3" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse3" Height="50" Width="50" Margin="74,216,275,332">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#CC87BDE3" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse10" Height="50" Width="50" Margin="316,274,32,274" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#1987BDE3" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse7" Height="50" Width="50" Margin="188,413,161,135">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#6687BDE3" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse6" Height="50" Width="50" Margin="119,390,230,158">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#7F87BDE3" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse8" Height="50" Width="50" Margin="256,390,93,158">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#4C87BDE3" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse9" Height="50" Width="50" Margin="305,335,44,213">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#33F7F7F7" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="ellipse5" Height="50" Width="50" Margin="69,335,280,213">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#9987BDE3" Offset="0"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+    </Grid>
+</UserControl>
