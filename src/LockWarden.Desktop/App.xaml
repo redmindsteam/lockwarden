@@ -2,14 +2,20 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LockWarden.Desktop"
-             StartupUri="Windows/LoginWindow.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="Assets/Icons/Icons.xaml"/>
+                <ResourceDictionary Source="Themes/Theme.xaml"/>
+
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Styles/RadioButtonStyle.xaml"/>
 
                 <ResourceDictionary Source="Styles/LoginLabelStyle.xaml"/>
                 <ResourceDictionary Source="styles/LoginTextBoxStyle.xaml"/>
+                
             </ResourceDictionary.MergedDictionaries>
             
             <!--Image-->
