@@ -7,7 +7,7 @@
 
     <!-- System Colors -->
     <!-- Typograhy Colors -->
-    <SolidColorBrush x:Key="PrimaryTextColor" Color="#0E1A32"/>
+    <SolidColorBrush x:Key="PrimaryTextColor" Color="#050E2A"/>
     <SolidColorBrush x:Key="SecundaryTextColor" Color="#102341"/>
     <SolidColorBrush x:Key="TertiaryTextColor" Color="#1C3254"/>
 
@@ -50,4 +50,9 @@
     <SolidColorBrush x:Key="PrimaryBlackColor" Color="#0E1A32"/>
     <SolidColorBrush x:Key="SecundaryBlackColor" Color="#102341"/>
     <SolidColorBrush x:Key="TertiaryBlackColor" Color="#1C3254"/>
+    
+    <!-- Gray  -->
+    <SolidColorBrush x:Key="PrimaryGrayColor" Color="#808080"/>
+    <SolidColorBrush x:Key="SecundaryGrayColor" Color="#B9B9B9"/>
+    <SolidColorBrush x:Key="TertiaryGrayColor" Color="#E1E1E1"/>
 </ResourceDictionary>

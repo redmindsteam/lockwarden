@@ -12,7 +12,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        Icon="/Images/lockwarden.png">
+        Icon="/Assets/Icons/lockwarden.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -20,8 +20,8 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0"
               Background="Transparent">
-            <Border Background="#050E2A"
-                    BorderBrush="Gold"
+            <Border Background="{StaticResource PrimaryTextColor}"
+                    BorderBrush="{StaticResource TertiaryTealColor}"
                     BorderThickness="1 1 0 1"
                     CornerRadius="15 0 0 15"
                     MouseLeftButtonDown="Border_MouseLeftButtonDown"
@@ -32,7 +32,7 @@
 
         <Grid Grid.Column="1" Background="Transparent">
 
-            <Border BorderBrush="Gold"
+            <Border BorderBrush="{StaticResource TertiaryTealColor}"
                 Grid.Column="1"
                 MouseLeftButtonDown="Border_MouseLeftButtonDown_1"
                 Cursor="ScrollAll"
@@ -41,8 +41,7 @@
                 CornerRadius="0 15 15 0">
 
                 <Grid>
-
-                    <Button Style="{StaticResource FormCloseButton}" Content="X" Cursor="Arrow" Click="Button_Click"/>
+                    <Button Style="{StaticResource FormCloseButton}" Content="X"  Cursor="Arrow" Click="Button_Click"/>
                     <Button Style="{StaticResource FormMinimiseButton}" Content="_" Cursor="Arrow" Click="Button_Click_1"/>
 
                     <Border x:Name="LoginBorder"
@@ -51,14 +50,14 @@
                             CornerRadius="15"
                             BorderThickness="1">
                         <Border.Background>
-                            <ImageBrush ImageSource="/Images/LogoPanel.jpg" Opacity="0.4" Stretch="Fill"/>
+                            <ImageBrush ImageSource="/Assets/Images/LogoPanel.jpg" Opacity="0.4" Stretch="Fill"/>
                         </Border.Background>
 
                         <StackPanel x:Name="LoginStackPanel" Margin="10">
 
                             <Label Content="Email" Style="{StaticResource LoginLabelStyle}" Margin="0,135,0,0"/>
                             <Border x:Name="emailBorder" BorderThickness="1"
-                                    BorderBrush="Gold" Background="DarkGray" Opacity="0.7"
+                                    BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                     Height="30" Width="300" CornerRadius="9" Margin="0">
                                 <Grid>
                                     <TextBlock x:Name="textEmail" MouseDown="textEmail_MouseDown" Text="example@gmail.com" Style="{StaticResource textHint}"/>
@@ -68,7 +67,7 @@
 
                             <Label Content="Password" Style="{StaticResource LoginLabelStyle}" Margin="0 20 0 0"/>
                             <Border x:Name="passwordBorder" BorderThickness="1"
-                                    BorderBrush="Gold" Background="DarkGray" Opacity="0.7"
+                                    BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                     Height="30" Width="300" CornerRadius="9" Margin="0">
                                 <Grid>
                                     <TextBlock x:Name="textPassword" MouseDown="textPassword_MouseDown" Text="Your Password" Style="{StaticResource textHint}"/>
@@ -89,13 +88,13 @@
                             CornerRadius="15"
                             BorderThickness="1" Visibility="Hidden">
                             <Border.Background>
-                                <ImageBrush ImageSource="/Images/regsImg.jpg" Opacity="0.4" Stretch="Fill"/>
+                                <ImageBrush ImageSource="/Assets/Images/regsImg.jpg" Opacity="0.4" Stretch="Fill"/>
                             </Border.Background>
                         <StackPanel x:Name="RegsStackPanle" Margin="10">
 
                             <Label Content="Full Name" Style="{StaticResource LoginLabelStyle}" Margin="0 80 0 0"/>
                             <Border x:Name="RegsFullnameBorder" BorderThickness="1"
-                                    BorderBrush="Gold" Background="DarkGray" Opacity="0.7"
+                                    BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                     Height="30" Width="300" CornerRadius="9" Margin="0">
                                 <Grid>
                                     <TextBlock x:Name="textFullname" MouseDown="textFullname_MouseDown" Text="John Doe" Style="{StaticResource textHint}"/>
@@ -105,7 +104,7 @@
 
                             <Label Content="Email" Style="{StaticResource LoginLabelStyle}" Margin="0 20 0 0"/>
                             <Border x:Name="RegsEmailBorder" BorderThickness="1"
-                                    BorderBrush="Gold" Background="DarkGray" Opacity="0.7"
+                                    BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                     Height="30" Width="300" CornerRadius="9" Margin="0">
                                 <Grid>
                                     <TextBlock x:Name="textEmailRegs" MouseDown="textEmailRegs_MouseDown_1" Text="example@gmail.com" Style="{StaticResource textHint}"/>
@@ -115,7 +114,7 @@
 
                             <Label Content="Password" Style="{StaticResource LoginLabelStyle}" Margin="0 20 0 0"/>
                             <Border  x:Name="RegsPasswordBorder" BorderThickness="1"
-                                     BorderBrush="Gold" Background="DarkGray" Opacity="0.7"
+                                     BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                      Height="30" Width="300" CornerRadius="9" Margin="0">
                                 <Grid>
                                     <TextBlock x:Name="textPasswordRegs" MouseDown="textPasswordRegs_MouseDown" Text="Your password" Style="{StaticResource textHint}"/>
@@ -125,7 +124,7 @@
 
                             <Label Content="Verify" Style="{StaticResource LoginLabelStyle}" Margin="0 20 0 0"/>
                             <Border  x:Name="RegsVerifyBorder" BorderThickness="1"
-                                     BorderBrush="Gold" Background="DarkGray" Opacity="0.7"
+                                     BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                      Height="30" Width="300" CornerRadius="9" Margin="0">
                                 <Grid>
                                     <TextBlock x:Name="textVerify" MouseDown="textVerify_MouseDown" Text="Verify Your Password" Style="{StaticResource textHint}"/>

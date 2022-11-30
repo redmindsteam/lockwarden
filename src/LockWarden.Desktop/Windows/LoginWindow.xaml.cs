@@ -17,6 +17,8 @@ namespace LockWarden.Desktop.Windows
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
+    /// 
+
     public partial class LoginWindow : Window
     {
         public LoginWindow()
@@ -82,10 +84,6 @@ namespace LockWarden.Desktop.Windows
             txtFullname.Focus();
         }
 
-        //private void txtFullname_PasswordChanged(object sender, RoutedEventArgs e)
-        //{
-
-        //}
 
         private void txtFullname_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -93,15 +91,6 @@ namespace LockWarden.Desktop.Windows
             else textFullname.Visibility = Visibility.Visible;
         }
 
-        //private void textEmailRegs_MouseDown(object sender, MouseButtonEventArgs e)
-        //{
-
-        //}
-
-        //private void txtEmailregs_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-
-        //}
 
         private void textEmailRegs_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
@@ -136,15 +125,20 @@ namespace LockWarden.Desktop.Windows
             else textVerify.Visibility = Visibility.Visible;
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
+        //private void Button_Click_4(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             RegsBorder.Visibility = Visibility.Collapsed;
             LoginBorder.Visibility = Visibility.Visible;  
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

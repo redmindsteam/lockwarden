@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\lockwarden.png" />
-    <None Remove="Images\LoginLogo.png" />
-    <None Remove="Images\LogoPanel.jpg" />
-    <None Remove="Images\regsImg.jpg" />
+    <None Remove="Assets\Images\lockwarden.png" />
+    <None Remove="Assets\Images\LoginLogo.png" />
+    <None Remove="Assets\Images\LogoPanel.jpg" />
+    <None Remove="Assets\Images\regsImg.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,10 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\lockwarden.png" />
-    <Resource Include="Images\LoginLogo.png" />
-    <Resource Include="Images\LogoPanel.jpg" />
-    <Resource Include="Images\regsImg.jpg" />
+    <Resource Include="Assets\Icons\lockwarden.png" />
+    <Resource Include="Assets\Images\LoginLogo.png" />
+    <Resource Include="Assets\Images\LogoPanel.jpg" />
+    <Resource Include="Assets\Images\regsImg.jpg" />
   </ItemGroup>
 
 </Project>
