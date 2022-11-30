@@ -6,7 +6,14 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!--Themes-->
+                <ResourceDictionary Source="Themes/Theme.xaml"/>
+
+                <ResourceDictionary Source="/Assets/Icons/Icons.xaml"/>
+                
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Styles/RadioButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/DropDownStyle.xaml"/>
 
                 <ResourceDictionary Source="Styles/LoginLabelStyle.xaml"/>
                 <ResourceDictionary Source="styles/LoginTextBoxStyle.xaml"/>

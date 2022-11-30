@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LockWarden.Desktop"
+<<<<<<< Updated upstream
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800"
         WindowStyle="None"
@@ -406,4 +407,45 @@
         </Grid>
 
     </Grid>
+=======
+        mc:Ignorable="d" Name="home"
+        Title="MainWindow" Height="650" Width="1000"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Background="Transparent" AllowsTransparency="True"
+        ResizeMode="NoResize" WindowState="Normal">
+    <Border CornerRadius="8" Background="{DynamicResource PrimaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Start: GridColumn Left -->
+            <Border CornerRadius="10 0 0 10"
+                    Padding="10"
+                    Background="{DynamicResource SecundaryBackgroundColor}">
+                <Grid x:Name="gridMenu">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Start: Account -->
+                    <Border>
+                        <StackPanel Grid.Row="0">
+                            <RadioButton x:Name="rdAccount" Content="Full name" Style="{DynamicResource AccountRadioButtonStyle}" Tag="{DynamicResource account}" Margin="0 0 0 0"/>
+                        </StackPanel>
+                    </Border>
+                    <!-- End: Account -->
+
+                    <StackPanel Grid.Row="1">
+                        <RadioButton x:Name="rdCreate" Content="Create record" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource create}" Margin="0 30 0 0"/>
+                        <RadioButton x:Name="rdAll" Content="All records" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource all}" Margin="0 30 0 0"/>
+                        <RadioButton x:Name="rdTrash" Content="Trash records" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource trash}" Margin="0 30 0 0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+>>>>>>> Stashed changes
 </Window>

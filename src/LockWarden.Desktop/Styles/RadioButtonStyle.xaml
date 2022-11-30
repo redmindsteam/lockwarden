@@ -1,0 +1,155 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Start: VerticalMenuStyle -->
+    <Style x:Key="MenuRadioButtonStyle" TargetType="{x:Type RadioButton}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource TertiaryWhiteColor}"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Height" Value="48"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="menuButton"
+                                Background="{TemplateBinding Background}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Selected  -->
+                            <Border x:Name="btnSelected"
+                                        Grid.ColumnSpan="2"
+                                        CornerRadius="8"
+                                        Width="230" HorizontalAlignment="Right">
+                            </Border>
+
+                            <!-- Indicator -->
+                            <Rectangle Name="Indicator"
+                                           HorizontalAlignment="Left"
+                                           Width="6" Height="25"
+                                           VerticalAlignment="Center"
+                                           RadiusX="3" RadiusY="3">
+                                <Rectangle.BitmapEffect>
+                                    <DropShadowBitmapEffect
+                                            ShadowDepth="3"
+                                            Direction="0"
+                                            Color="#5B8DEF"
+                                            Softness="0.6"/>
+                                </Rectangle.BitmapEffect>
+                            </Rectangle>
+
+                            <!-- Icon -->
+                            <Path x:Name="Icon" Data="{Binding Tag,
+                                      RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"
+                                      Height="24" Width="24"
+                                      Stretch="None" Fill="{DynamicResource TertiaryWhiteColor}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 5 0"/>
+
+                            <!-- Text -->
+                            <TextBlock x:Name="txtName" HorizontalAlignment="Left"
+                                           VerticalAlignment="Center" Margin="12 0 0 0"
+                                           Grid.Column="1" Text="{TemplateBinding Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           FontWeight="{TemplateBinding FontWeight}"
+                                           FontSize="{TemplateBinding FontSize}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="txtName" Property="Foreground" Value="{DynamicResource SecundaryWhiteColor}"/>
+                            <Setter TargetName="Icon" Property="Fill" Value="{DynamicResource SecundaryWhiteColor}"/>
+                            <Setter TargetName="btnSelected" Property="Background" Value="{DynamicResource SecundaryBlueColor}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Icon" Property="Fill" Value="{DynamicResource SecundaryWhiteColor}"/>
+                            <Setter TargetName="Indicator" Property="Fill" Value="{DynamicResource SecundaryBlueColor}"/>
+                            <Setter TargetName="btnSelected" Property="Background" Value="{DynamicResource PrimaryBlueColor}"/>
+                            <Setter TargetName="txtName" Property="Foreground" Value="{DynamicResource TertiaryBackgroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AccountRadioButtonStyle" TargetType="{x:Type RadioButton}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource TertiaryWhiteColor}"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Height" Value="48"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="menuButton"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="2"
+                                BorderThickness="1"
+                                BorderBrush="Black">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Selected  -->
+                            <Border x:Name="btnSelected"
+                                        Grid.ColumnSpan="2"
+                                        CornerRadius="2"
+                                        Width="230" HorizontalAlignment="Right">
+                            </Border>
+
+                            <!-- Indicator -->
+                            <Rectangle Name="Indicator"
+                                           HorizontalAlignment="Left"
+                                           Width="6" Height="25"
+                                           VerticalAlignment="Center"
+                                           RadiusX="3" RadiusY="3">
+                                <Rectangle.BitmapEffect>
+                                    <DropShadowBitmapEffect
+                                            ShadowDepth="3"
+                                            Direction="0"
+                                            Color="#5B8DEF"
+                                            Softness="0.6"/>
+                                </Rectangle.BitmapEffect>
+                            </Rectangle>
+
+                            <!-- Icon -->
+                            <Path x:Name="Icon" Data="{Binding Tag,
+                                      RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}" 
+                                      Stretch="None" Fill="{DynamicResource TertiaryWhiteColor}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 5 0"/>
+
+                            <!-- Text -->
+                            <TextBlock x:Name="txtName" HorizontalAlignment="Left"
+                                           VerticalAlignment="Center" Margin="12 0 0 0"
+                                           Grid.Column="1" Text="{TemplateBinding Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           FontWeight="{TemplateBinding FontWeight}"
+                                           FontSize="{TemplateBinding FontSize}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="txtName" Property="Foreground" Value="{DynamicResource SecundaryWhiteColor}"/>
+                            <Setter TargetName="Icon" Property="Fill" Value="{DynamicResource SecundaryWhiteColor}"/>
+                            <Setter TargetName="btnSelected" Property="Background" Value="{DynamicResource SecundaryBlueColor}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Icon" Property="Fill" Value="{DynamicResource SecundaryWhiteColor}"/>
+                            <Setter TargetName="Indicator" Property="Fill" Value="{DynamicResource SecundaryBlueColor}"/>
+                            <Setter TargetName="btnSelected" Property="Background" Value="{DynamicResource PrimaryBlueColor}"/>
+                            <Setter TargetName="txtName" Property="Foreground" Value="{DynamicResource TertiaryBackgroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- End: VerticalMenuStyle -->
+
+</ResourceDictionary>

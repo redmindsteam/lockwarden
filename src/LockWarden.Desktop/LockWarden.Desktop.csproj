@@ -8,9 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< Updated upstream
     <None Remove="LoginLogo.png" />
     <None Remove="LogoPanel.jpg" />
     <None Remove="regsImg.jpg" />
+=======
+    <None Remove="Assets\photo_2022-10-27_16-12-25.jpg" />
+    <None Remove="Images\LoginLogo.png" />
+    <None Remove="Images\LogoPanel.jpg" />
+    <None Remove="Images\regsImg.jpg" />
+>>>>>>> Stashed changes
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Assets\Icons\Icons.xaml" />
+    <Page Remove="Styles\RadioButtonStyle.xaml" />
+    <Page Remove="Themes\Theme.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< Updated upstream
     <Folder Include="Components\" />
   </ItemGroup>
 
@@ -25,6 +43,19 @@
     <Resource Include="LoginLogo.png" />
     <Resource Include="LogoPanel.jpg" />
     <Resource Include="regsImg.jpg" />
+=======
+    <Resource Include="Assets\Icons\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Assets\photo_2022-10-27_16-12-25.jpg" />
+    <Resource Include="Images\LoginLogo.png" />
+    <Resource Include="Images\LogoPanel.jpg" />
+    <Resource Include="Images\regsImg.jpg" />
+    <Resource Include="Styles\RadioButtonStyle.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Resource>
+    <Resource Include="Themes\Theme.xaml" />
+>>>>>>> Stashed changes
   </ItemGroup>
 
 </Project>
