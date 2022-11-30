@@ -25,4 +25,8 @@
     <Resource Include="Images\regsImg.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Themes\" />
+  </ItemGroup>
+
 </Project>
