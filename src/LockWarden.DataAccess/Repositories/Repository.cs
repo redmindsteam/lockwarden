@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LockWarden.DataAccess.Repositories
 {
-    public static class FullRepository
+    public  class Repository
     {
-        public static UserRepository UserRepository { get; set; }
+        public  UserRepository User{ get; set; }
 
     }
 }
