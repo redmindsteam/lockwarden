@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace LockWarden.DataAccess.Constants
 {
-    public static class DBConstants
+    public static class DB_Constants
     {
-        static public string DB_Path = "host=localhost;port=3389;Database=lock-warden-db;User id=sqlite;";
+        
+        static public string DB_Path = "Data Source=C:\\ProgramData\\Lock Warden\\lock-warden.db";
     }
 }
