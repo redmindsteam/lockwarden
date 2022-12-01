@@ -22,18 +22,115 @@
                     Background="{DynamicResource SecundaryBackgroundColor}">
                 <Grid x:Name="gridMenu">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="450"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="140"/>
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Margin="0 10 0 0">
-                        <RadioButton x:Name="rdAccount" Content="Full name" Style="{DynamicResource AccountRadioButtonStyle}" Tag="{DynamicResource account}" Margin="0 0 0 0"/>
-                        <RadioButton x:Name="rdCreate" Content="Create record" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource create}" Margin="0 50 0 0"/>
-                        <RadioButton x:Name="rdAll" Content="All records" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource all}" Margin="0 30 0 0"/>
-                        <RadioButton x:Name="rdTrash" Content="Trash records" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource trash}" Margin="0 30 0 0"/>
+                        <Menu Height="450"
+                              Background="Transparent">
+                            <Menu.ItemsPanel>
+
+                                <ItemsPanelTemplate>
+
+                                    <VirtualizingStackPanel Orientation="Vertical" />
+
+                                </ItemsPanelTemplate>
+
+                            </Menu.ItemsPanel>
+                            <MenuItem Header="full name"
+                                      Style="{DynamicResource Menu_Template}">
+                                <MenuItem.Icon>
+
+                                    <Image Source="Assets/Icons/icon_account.png"
+                                           Stretch="None" />
+
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Create record"
+                                      Style="{DynamicResource Menu_SubMenu_Template}"
+                                      Margin="0 30 0 0">
+                                <MenuItem.Icon>
+
+                                    <Image Source="Assets/Icons/icon_create.png"
+                                           Stretch="None" />
+
+                                </MenuItem.Icon>
+
+                                <MenuItem Header="Login"
+                                          Template="{StaticResource Item_Template}">
+
+                                </MenuItem>
+
+                                <MenuItem Header="Card"
+                                          Template="{StaticResource Item_Template}">
+
+                                </MenuItem>
+
+                                <MenuItem Header="Note"
+                                          Template="{StaticResource Item_Template}">
+
+                                </MenuItem>
+
+                                <MenuItem Header="Image"
+                                          Template="{StaticResource Item_Template}">
+
+                                </MenuItem>
+                            </MenuItem>
+                            <MenuItem Header="All records"
+                                      Style="{DynamicResource Menu_Template}">
+                                <MenuItem.Icon>
+
+                                    <Image Source="Assets/Icons/icon_all.png"
+                                           Stretch="None" />
+
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Trash records"
+                                      Style="{DynamicResource Menu_Template}"   >
+                                <MenuItem.Icon>
+
+                                    <Image Source="Assets/Icons/icon_trash.png"
+                                           Stretch="None" />
+
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </Menu>
                     </StackPanel>
                 </Grid>
             </Border>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <!-- Start: Button Close | Restore | Minimize -->
+                <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
+                    <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
+                    <Button x:Name="btnRestore" Margin="5 0" Click="btnRestore_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonsStyle}">
+                                <Setter Property="Content" Value="{DynamicResource maximize}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}"                                Value="Maximized">
+                                        <Setter Property="Content" Value="{DynamicResource restore}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
+                </StackPanel>
+                <!-- End: Button Close | Restore | Minimize -->
+
+                <!-- Start: Frame Container -->
+                <Border Grid.Row="1" CornerRadius="0 0 5 0" Background="Transparent">
+                    <Frame x:Name="frameContent" NavigationUIVisibility="Hidden" Margin="10"/>
+                </Border>
+                <!-- End: Frame Container -->
+
+            </Grid>
         </Grid>
     </Border>
 </Window>
