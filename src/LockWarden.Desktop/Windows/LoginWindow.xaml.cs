@@ -76,7 +76,6 @@ namespace LockWarden.Desktop.Windows
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void textFullname_MouseDown(object sender, MouseButtonEventArgs e)
