@@ -39,61 +39,43 @@
 
                             </Menu.ItemsPanel>
                             <MenuItem Header="full name"
-                                      Style="{DynamicResource Menu_Template}">
-                                <MenuItem.Icon>
-
-                                    <Image Source="Assets/Icons/icon_account.png"
-                                           Stretch="None" />
-
-                                </MenuItem.Icon>
+                                      Style="{DynamicResource Menu_Template}"
+                                      Icon="{DynamicResource account}">
                             </MenuItem>
                             <MenuItem Header="Create record"
-                                      Style="{DynamicResource Menu_SubMenu_Template}"
-                                      Margin="0 30 0 0">
-                                <MenuItem.Icon>
-
-                                    <Image Source="Assets/Icons/icon_create.png"
-                                           Stretch="None" />
-
-                                </MenuItem.Icon>
+                                      Style="{DynamicResource SubMenu}"
+                                      Margin="0 30 0 0"
+                                      Icon="{DynamicResource create}">
 
                                 <MenuItem Header="Login"
-                                          Template="{StaticResource Item_Template}">
-
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource login}">
                                 </MenuItem>
 
                                 <MenuItem Header="Card"
-                                          Template="{StaticResource Item_Template}">
-
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource card}">
                                 </MenuItem>
 
                                 <MenuItem Header="Note"
-                                          Template="{StaticResource Item_Template}">
-
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource note}">
                                 </MenuItem>
 
                                 <MenuItem Header="Image"
-                                          Template="{StaticResource Item_Template}">
-
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource image}">
                                 </MenuItem>
                             </MenuItem>
                             <MenuItem Header="All records"
-                                      Style="{DynamicResource Menu_Template}">
-                                <MenuItem.Icon>
-
-                                    <Image Source="Assets/Icons/icon_all.png"
-                                           Stretch="None" />
-
-                                </MenuItem.Icon>
+                                      Style="{DynamicResource Menu_Template}"
+                                      Margin="0 10 0 0"
+                                      Icon="{DynamicResource all}">
                             </MenuItem>
                             <MenuItem Header="Trash records"
-                                      Style="{DynamicResource Menu_Template}"   >
-                                <MenuItem.Icon>
-
-                                    <Image Source="Assets/Icons/icon_trash.png"
-                                           Stretch="None" />
-
-                                </MenuItem.Icon>
+                                      Style="{DynamicResource Menu_Template}"
+                                      Margin="0 10 0 0"
+                                      Icon="{DynamicResource trash}">
                             </MenuItem>
                         </Menu>
                     </StackPanel>

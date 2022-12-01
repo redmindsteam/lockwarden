@@ -156,7 +156,7 @@
         </EventTrigger>
     </UserControl.Triggers>
     <Grid>
-        <Image Source="/Images/LoginLogo.png" 
+        <Image Source="/Assets/Images/LoginLogo.png" 
                Height="200" Width="200" 
                VerticalAlignment="Center" 
                HorizontalAlignment="Center"
