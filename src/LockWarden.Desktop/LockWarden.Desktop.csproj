@@ -8,18 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-
-    <None Remove="Assets\Icons\icon_account.png" />
-    <None Remove="Assets\Icons\icon_all.png" />
-    <None Remove="Assets\Icons\icon_arrow.png" />
-    <None Remove="Assets\Icons\icon_create.png" />
-    <None Remove="Assets\Icons\icon_trash.png" />
-  
-    <None Remove="Assets\Images\lockwarden.png" />
     <None Remove="Assets\Images\LoginLogo.png" />
     <None Remove="Assets\Images\LogoPanel.jpg" />
     <None Remove="Assets\Images\regsImg.jpg" />
-
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +23,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LockWarden.Service\LockWarden.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Icons\close.png" />
+    <Resource Include="Assets\Icons\icon_arrow.png" />
+    <Resource Include="Assets\Icons\lockwarden.png" />
+    <Resource Include="Assets\Images\LoginLogo.png" />
+    <Resource Include="Assets\Images\LogoPanel.jpg" />
+    <Resource Include="Assets\Images\regsImg.jpg" />
   </ItemGroup>
 
 
