@@ -1,4 +1,5 @@
-﻿using LockWarden.DataAccess.Interfaces;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.DataAccess.Interfaces;
 using LockWarden.DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,11 @@ public class CreateDatabase
         string path = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
         string dirpath = path + "\\Lock Warden";
         string filepath = dirpath + "\\lock-warden.db";
-        if (!(new FileInfo(filepath).Exists))
+        if (!(new FileInfo(DB_Constants.DB_Path_File).Exists))
         {
             Directory.CreateDirectory(dirpath);
             File.WriteAllText(filepath,"");
             tableCreate.CreateTableAsync();
-            Console.WriteLine(dirpath);
         }
     }
 }

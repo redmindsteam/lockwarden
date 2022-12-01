@@ -9,7 +9,7 @@ namespace LockWarden.DataAccess.Repositories
     public class UserRepository : IUserRepository
     {
 
-        private readonly SqliteConnection _sqliteConnection = new(DB_Constants.DB_Path);
+        private readonly SqliteConnection _sqliteConnection = new(DB_Constants.DB_Path_File);
         public async Task<bool> CreateAsync(User entity)
         {
             try
