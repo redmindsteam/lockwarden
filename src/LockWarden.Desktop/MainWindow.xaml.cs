@@ -15,10 +15,10 @@ namespace LockWarden.Desktop
 		{
 		
 			InitializeComponent();
-			CreateDatabase createDatabase = new CreateDatabase();
-			createDatabase.DatabaseCreate();
+            CreateDatabase createDatabase = new CreateDatabase();
+            createDatabase.DatabaseCreate();
 
-		}
+        }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
