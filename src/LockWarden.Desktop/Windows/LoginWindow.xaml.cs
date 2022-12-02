@@ -25,11 +25,11 @@ namespace LockWarden.Desktop.Windows
 
     public partial class LoginWindow : Window
     {
-            DataBaseCreate databaseCreator = new DataBaseCreate();
+        Repository repository = new Repository();
         public   LoginWindow()
         {
             InitializeComponent();
-            databaseCreator.CreateDataBaseAsync();
+            repository.CreateDataBaseAsync();
         }
 
         private void textEmail_MouseDown(object sender, MouseButtonEventArgs e)

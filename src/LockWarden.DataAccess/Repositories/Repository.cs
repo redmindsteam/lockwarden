@@ -15,8 +15,8 @@ public class Repository
 
 	public Repository()
 	{
-		throw new NotImplementedException("Not done. Use just UserRepository");
-		//Users = new UserRepository();
+		Users = new UserRepository();
+		//throw new NotImplementedException("Not done. Use just UserRepository");
 		//Notes = new NoteRepository();
 		//Images = new ImageRepository();
 		//Logins = new LoginRepository();
@@ -34,7 +34,7 @@ public class Repository
 			await CreateDataBaseAsync();
 		}
 	}
-	private async Task<bool> CreateDataBaseAsync()
+	public async Task<bool> CreateDataBaseAsync()
 	{
 		SqliteConnection _sqliteConnection = new(DB_Constants.DB_Path_File);
 		try
