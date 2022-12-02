@@ -153,11 +153,17 @@ namespace LockWarden.Desktop.Windows
             LoginBorder.Visibility = Visibility.Collapsed;
         }
 
-        private async void Button_Click_4(object sender, RoutedEventArgs e)
+        private void register_back(object sender, RoutedEventArgs e)
+        {
+            LoginBorder.Visibility = Visibility.Visible;
+            RegsBorder.Visibility = Visibility.Collapsed;
+        }
+
+        private async void Register_verify_button(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (txtpaswordRegs.Password==txtVerify.Password)
+                if (txtpaswordRegs.Password == txtVerify.Password)
                 {
                     UserViewModel userViewModel = new UserViewModel(txtFullname.Text, txtEmailRegs.Text, textPasswordRegs.Text);
                     UserService userService = new UserService();
@@ -185,15 +191,6 @@ namespace LockWarden.Desktop.Windows
                 txtpaswordRegs.Password = "";
                 txtVerify.Password = "";
             }
-        private void register_back(object sender, RoutedEventArgs e)
-        {
-            LoginBorder.Visibility = Visibility.Visible;
-            RegsBorder.Visibility = Visibility.Collapsed;
-        }
-
-        private void Register_verify_button(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Regsitered");
         }
     }
 }
