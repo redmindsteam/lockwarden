@@ -75,8 +75,8 @@
                                 </Grid>
                             </Border>
 
-                            <Button Content="Login" Style="{StaticResource FormPrimaryButton}" Click="Button_Click_3" />
-                            <Button Content="Register" Style="{StaticResource FormSuccessButton}" Width="304" Click="Button_Click_2" Height="50"/>
+                            <Button Content="Login" Style="{StaticResource FormPrimaryButton}" Click="Login_button" />
+                            <Button Content="Register" Style="{StaticResource FormSuccessButton}" Width="304" Click="Register_button" Height="50"/>
                         </StackPanel>
                     </Border>
                     
@@ -132,8 +132,8 @@
                                 </Grid>
                             </Border>
                             
-                            <Button Content="Register" Style="{StaticResource FormPrimaryButton}" Click="Button_Click_4" Width="302" Height="40" Margin="0 20 0 0" />
-                            <Button Content="←" Style="{StaticResource RegisterBackStyle}" Click="Button_Click_5" />
+                            <Button Content="Register" Style="{StaticResource FormPrimaryButton}" Click="Register_verify_button" Width="302" Height="40" Margin="0 20 0 0" />
+                            <Button Content="←" Style="{StaticResource RegisterBackStyle}" Click="register_back" />
                         </StackPanel>
                         
                     </Border>
