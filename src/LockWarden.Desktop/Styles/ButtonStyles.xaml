@@ -30,17 +30,17 @@
     </Style>
 
     <Style x:Key="FormSuccessButton" TargetType="Button">
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="Width" Value="250"/>
         <Setter Property="Height" Value="30"/>
         <Setter Property="Margin" Value="0 20 0 0"/>
-        <Setter Property="Background" Value="#50C878"/>
+        <Setter Property="Background" Value="{DynamicResource SecundaryBlueColor}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" CornerRadius="16" BorderThickness="0" Padding="3">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="13" BorderThickness="0" Padding="3">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -48,11 +48,11 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver"  Value="True">
-                <Setter Property="Background" Value="#327C4A"/>
+                <Setter Property="Background" Value="#004BBB"/>
                 <Setter Property="Foreground" Value="Gray"/>
             </Trigger>
             <Trigger Property="IsMouseCaptured" Value="True">
-                <Setter Property="Background" Value="#215231"/>
+                <Setter Property="Background" Value="#003688"/>
                 <Setter Property="Foreground" Value="White"/>
             </Trigger>
         </Style.Triggers>
