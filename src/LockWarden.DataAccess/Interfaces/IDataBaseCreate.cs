@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace LockWarden.DataAccess.Interfaces
 {
-    public interface ITableCreate
+    public interface IDataBaseCreate
     {
-        Task<bool> CreateTableAsync();
+        Task<bool> CreateDataBaseAsync();
     }
 }

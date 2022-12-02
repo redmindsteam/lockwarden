@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LockWarden.DataAccess.Repositories;
+using Microsoft.EntityFrameworkCore.Storage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +23,11 @@ namespace LockWarden.Desktop.Windows
 
     public partial class LoginWindow : Window
     {
-        public LoginWindow()
+            DataBaseCreate databaseCreator = new DataBaseCreate();
+        public   LoginWindow()
         {
             InitializeComponent();
+            databaseCreator.CreateDataBaseAsync();
         }
 
         private void textEmail_MouseDown(object sender, MouseButtonEventArgs e)

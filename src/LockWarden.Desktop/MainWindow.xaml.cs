@@ -10,13 +10,12 @@ namespace LockWarden.Desktop
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		ITableCreate tableCreate = new TableCreate();
+	
 		public MainWindow()
 		{
 		
 			InitializeComponent();
-            CreateDatabase createDatabase = new CreateDatabase();
-            createDatabase.DatabaseCreate();
+        
 
         }
 

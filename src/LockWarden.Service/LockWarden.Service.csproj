@@ -22,4 +22,8 @@
 		<ProjectReference Include="..\LockWarden.DataAccess\LockWarden.DataAccess.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Service\" />
+	</ItemGroup>
+
 </Project>
