@@ -41,14 +41,14 @@
                 CornerRadius="0 15 15 0">
 
                 <Grid>
-                    <Button Style="{StaticResource FormCloseButton}" Content="X"  Cursor="Arrow" Click="Button_Click"/>
-                    <Button Style="{StaticResource FormMinimiseButton}" Content="_" Cursor="Arrow" Click="Button_Click_1"/>
+                    <Button Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}"  Cursor="Arrow" Click="Button_Click" Margin="350,-15,0,554"/>
+                    <Button Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource minimize}" Cursor="Arrow" Click="Button_Click_1" Margin="336,2,38,571"/>
 
                     <Border x:Name="LoginBorder"
                             Margin="35,35,35,35"
                             Cursor="Arrow"
                             CornerRadius="15"
-                            BorderThickness="1">
+                            BorderThickness="1" Visibility="Visible">
                         <Border.Background>
                             <ImageBrush ImageSource="/Assets/Images/LogoPanel.jpg" Opacity="0.4" Stretch="Fill"/>
                         </Border.Background>
@@ -76,7 +76,7 @@
                             </Border>
 
                             <Button Content="Login" Style="{StaticResource FormPrimaryButton}" Click="Button_Click_3" />
-                            <Button Content="Register" Style="{StaticResource FormSuccessButton}" Width="180" Click="Button_Click_2"/>
+                            <Button Content="Register" Style="{StaticResource FormSuccessButton}" Width="304" Click="Button_Click_2" Height="50"/>
                         </StackPanel>
                     </Border>
                     
@@ -92,7 +92,7 @@
                             </Border.Background>
                         <StackPanel x:Name="RegsStackPanle" Margin="10">
 
-                            <Label Content="Full Name" Style="{StaticResource LoginLabelStyle}" Margin="0 80 0 0"/>
+                            <Label Content="Full Name" Style="{StaticResource LoginLabelStyle}" Margin="0 60 0 0"/>
                             <Border x:Name="RegsFullnameBorder" BorderThickness="1"
                                     BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                     Height="30" Width="300" CornerRadius="9" Margin="0">
@@ -132,7 +132,7 @@
                                 </Grid>
                             </Border>
                             
-                            <Button Content="Register" Style="{StaticResource FormPrimaryButton}" Click="Button_Click_4" Width="250" Height="40" Margin="0 10 0 0" />
+                            <Button Content="Register" Style="{StaticResource FormPrimaryButton}" Click="Button_Click_4" Width="302" Height="40" Margin="0 20 0 0" />
                             <Button Content="←" Style="{StaticResource RegisterBackStyle}" Click="Button_Click_5" />
                         </StackPanel>
                         

@@ -30,5 +30,40 @@ namespace LockWarden.Desktop
         {
             WindowState = WindowState.Minimized;
         }
+
+        private void FullNamePage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.FullNamePage();
+        }
+
+        private void LoginPage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.LoginPage();
+        }
+
+        private void CardPage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.CardPage();
+        }
+
+        private void NotePage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.NotePage();
+        }
+
+        private void ImagePage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.ImagePage();
+        }
+
+        private void AllRecordsPage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.AllRecordsPage();
+        }
+
+        private void TrashPage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.TrashPage();
+        }
     }
 }
