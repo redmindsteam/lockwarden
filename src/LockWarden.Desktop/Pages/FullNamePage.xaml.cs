@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace LockWarden.Desktop.Pages
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for FullNamePage.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class FullNamePage : Page
     {
-        public Page1()
+        public FullNamePage()
         {
             InitializeComponent();
         }
