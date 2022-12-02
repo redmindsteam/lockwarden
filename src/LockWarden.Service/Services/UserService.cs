@@ -14,15 +14,15 @@ namespace LockWarden.Service.Services
 {
     public class UserService
     {
-        private readonly IUserRepository _repository;
+        private readonly Repository _repository;
         public UserService()
         {
-            _repository = new UserRepository();
+            _repository.User = new UserRepository();
         }
 
         public async Task<(bool IsSuccesful, string Message)> LoginAsync(string login, string password)
         {
-            var user = await _repository.FindByLoginAsync(login);
+            var user = await _repository.User.FindByLoginAsync(login);
             if (user is null) return (IsSuccessful: false, Message: "Noto");
             var hashResult = Crypter.Verify(password, user.PasswordHash, user.Salt);
             if (hashResult)
@@ -38,7 +38,7 @@ namespace LockWarden.Service.Services
         {
             var hashresult = Crypter.Hash(userCreateViewModel.Password);
             User user = new User(userCreateViewModel.Name, userCreateViewModel.Login, hashresult.hash, hashresult.salt);
-            var result = await _repository.CreateAsync(user);
+            var result = await _repository.User.CreateAsync(user);
             if (result) return (IsSuccessful: true, Message: "Muvaffaqiyatli");
             else return (IsSuccesful: false, Message: "Bu login hozirgi vaqtda band");
         }

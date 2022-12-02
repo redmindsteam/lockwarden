@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LockWarden.DataAccess.Interfaces.IRepositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,6 @@ namespace LockWarden.DataAccess.Repositories
 {
     public  class Repository
     {
-        public  UserRepository User{ get; set; }
-
+      
     }
 }
