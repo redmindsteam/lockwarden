@@ -95,7 +95,6 @@ namespace LockWarden.Desktop.Windows
                 mainWindow.Show();
             }
         }
-
         private void textFullname_MouseDown(object sender, MouseButtonEventArgs e)
         {
             txtFullname.Focus();
@@ -142,15 +141,16 @@ namespace LockWarden.Desktop.Windows
             else textVerify.Visibility = Visibility.Visible;
         }
 
-        //private void Button_Click_4(object sender, RoutedEventArgs e)
-        //{
 
-        //}
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
+        private void Login_button(object sender, RoutedEventArgs e)
         {
-            RegsBorder.Visibility = Visibility.Collapsed;
-            LoginBorder.Visibility = Visibility.Visible;  
+            MessageBox.Show("Login");
+        }
+
+        private void Register_button(object sender, RoutedEventArgs e)
+        {
+            RegsBorder.Visibility = Visibility.Visible;
+            LoginBorder.Visibility = Visibility.Collapsed;
         }
 
         private async void Button_Click_4(object sender, RoutedEventArgs e)
@@ -185,6 +185,15 @@ namespace LockWarden.Desktop.Windows
                 txtpaswordRegs.Password = "";
                 txtVerify.Password = "";
             }
+        private void register_back(object sender, RoutedEventArgs e)
+        {
+            LoginBorder.Visibility = Visibility.Visible;
+            RegsBorder.Visibility = Visibility.Collapsed;
+        }
+
+        private void Register_verify_button(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Regsitered");
         }
     }
 }
