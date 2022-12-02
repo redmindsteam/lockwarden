@@ -74,6 +74,7 @@ namespace LockWarden.DataAccess.Repositories
                 if (await readly.ReadAsync())
                 {
                     User user = new User(readly.GetString(1), readly.GetString(2), readly.GetString(3), readly.GetString(4));
+                    user.Id = readly.GetInt32(0);
                     return user;
                 }
                 else

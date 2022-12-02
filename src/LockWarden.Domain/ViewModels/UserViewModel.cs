@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LockWarden.Domain.ViewModels
 {
-    internal class UserViewModel
+    public class UserViewModel
     {
         public string Name { get; set; } = String.Empty;
         public string Login { get; set; } = String.Empty;

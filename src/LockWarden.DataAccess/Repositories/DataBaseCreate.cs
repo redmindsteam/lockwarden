@@ -20,7 +20,7 @@ namespace LockWarden.DataAccess.Repositories
                     string path = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
                     string dirpath = path + "\\Lock Warden";
                     string filepath = dirpath + "\\lock-warden.db";
-                if (!(new FileInfo(DB_Constants.DB_Path_File).Exists))
+                if (!(new DirectoryInfo(dirpath).Exists))
                 {
                     Directory.CreateDirectory(dirpath);
                     File.WriteAllText(filepath, "");
