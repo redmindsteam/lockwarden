@@ -9,5 +9,6 @@ namespace LockWarden.DataAccess.Interfaces.IRepositories
 {
     public interface IImageRepository:IGenericRepository<Image>
     {
+       
     }
 }
