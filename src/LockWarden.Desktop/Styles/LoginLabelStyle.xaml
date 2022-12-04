@@ -6,4 +6,13 @@
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="FontFamily" Value="Arial"/>
     </Style>
+
+
+    <Style TargetType="{x:Type Label}" x:Key="FullNamePageLabel">
+        <Setter Property="Margin"  Value="0 15 0 0"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Cyan"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+    </Style>
 </ResourceDictionary>

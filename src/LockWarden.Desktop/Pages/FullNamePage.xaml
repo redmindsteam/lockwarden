@@ -5,10 +5,47 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LockWarden.Desktop.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="FullNamePage">
+      d:DesignHeight="590" d:DesignWidth="750"
+      Title="FullNamePage"
 
-    <Grid>
-        
-    </Grid>
+      Background="{DynamicResource PrimaryBackgroundColor}"
+      >
+
+    <Border Margin="40"
+            CornerRadius="20"
+            Background="{DynamicResource TertiaryBlackColor}">
+        <Border.Effect>
+            <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1" BlurRadius="30" Color="Black"/>
+        </Border.Effect>
+
+        <StackPanel Margin="120,40,120, 0">
+            <Label Content="Email" Style="{StaticResource FullNamePageLabel}"/>
+            <TextBox x:Name="full_name_email_tb" Text="John Snow" Style="{StaticResource tbstyle}">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Assets/Icons/emailicon.png" Stretch="Uniform" AlignmentX="Right"/>
+                </TextBox.Background>
+            </TextBox>
+            <Label Content="Password" Style="{StaticResource FullNamePageLabel}"/>
+            <PasswordBox Style="{StaticResource tbstylePassword}">
+                <PasswordBox.Background>
+                    <ImageBrush ImageSource="/Assets/Icons/password.png" Stretch="Uniform" AlignmentX="Right"/>
+                </PasswordBox.Background>
+            </PasswordBox>
+            <Label Content="New password" Style="{StaticResource FullNamePageLabel}"/>
+            <PasswordBox Style="{StaticResource tbstylePassword}">
+                <PasswordBox.Background>
+                    <ImageBrush ImageSource="/Assets/Icons/password_re.png" Stretch="Uniform" AlignmentX="Right"/>
+                </PasswordBox.Background>
+            </PasswordBox>
+            <Label Content="Confirm new password" Style="{StaticResource FullNamePageLabel}"/>
+            <PasswordBox Style="{StaticResource tbstylePassword}">
+                <PasswordBox.Background>
+                    <ImageBrush ImageSource="/Assets/Icons/password_verified.png" Stretch="Uniform" AlignmentX="Right"/>
+                </PasswordBox.Background>
+            </PasswordBox>
+
+            <Button Content="Nimadur button" Style="{StaticResource FormPrimaryButton}"/>
+        </StackPanel>
+
+    </Border>
 </Page>

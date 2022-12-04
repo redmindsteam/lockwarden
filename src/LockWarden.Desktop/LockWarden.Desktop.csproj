@@ -8,7 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\emailicon.png" />
     <None Remove="Assets\Icons\lockwarden.png" />
+    <None Remove="Assets\Icons\password.png" />
+    <None Remove="Assets\Icons\password_re.png" />
+    <None Remove="Assets\Icons\password_verified.png" />
+    <None Remove="Assets\Icons\user.png" />
+    <None Remove="Assets\Icons\username.png" />
     <None Remove="Assets\Images\LoginLogo.png" />
     <None Remove="Assets\Images\LogoPanel.jpg" />
     <None Remove="Assets\Images\regsImg.jpg" />
@@ -28,8 +34,14 @@
 
   <ItemGroup>
     <Resource Include="Assets\Icons\close.png" />
+    <Resource Include="Assets\Icons\emailicon.png" />
     <Resource Include="Assets\Icons\icon_arrow.png" />
     <Resource Include="Assets\Icons\lockwarden.png" />
+    <Resource Include="Assets\Icons\password.png" />
+    <Resource Include="Assets\Icons\password_re.png" />
+    <Resource Include="Assets\Icons\password_verified.png" />
+    <Resource Include="Assets\Icons\user.png" />
+    <Resource Include="Assets\Icons\username.png" />
     <Resource Include="Assets\Images\LoginLogo.png" />
     <Resource Include="Assets\Images\LogoPanel.jpg" />
     <Resource Include="Assets\Images\regsImg.jpg" />
