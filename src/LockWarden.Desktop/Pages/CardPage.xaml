@@ -18,27 +18,23 @@
         </Border.Effect>
 
         <StackPanel Margin="52,22,50,18">
-            <StackPanel Orientation="Horizontal" Margin="0 70 0 0">
+            <DockPanel  Margin="0 70 0 0">
                 <Label Content="Bank: " Style="{StaticResource FullNamePageLabel}"/>
-                <TextBox x:Name="bank_card_page_tb"  Style="{StaticResource tbstyle}" Width="400" Margin="33 0 0 0"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                <TextBox x:Name="bank_card_page_tb"  Style="{StaticResource tbstyle}" Margin="20 0 0 0" />
+            </DockPanel>
+            <DockPanel  Margin="0 30 0 0">
                 <Label Content="Number: " Style="{StaticResource FullNamePageLabel}"/>
-                <TextBox x:Name="number_card_page_tb"  Style="{StaticResource tbstyle}" Width="400" VerticalAlignment="Center" Margin="15 0 0 0">
-                </TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                <TextBox x:Name="number_card_page_tb"  Style="{StaticResource tbstyle}"/>
+            </DockPanel>
+            <DockPanel Margin="0 30 0 0">
                 <Label Content="Pin: " Style="{StaticResource FullNamePageLabel}" />
-                <PasswordBox x:Name="pin_card_page_tb" Style="{StaticResource tbstylePassword}" Width="400" Margin="46 0 0 0">
-                </PasswordBox>
-            </StackPanel>
+                <PasswordBox x:Name="pin_card_page_tb" Style="{StaticResource tbstylePassword}" Margin="30 0 0 0"/>
+            </DockPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+            <DockPanel  Margin="0 30 0 0">
                 <Label Content="Name: " Style="{StaticResource FullNamePageLabel}"/>
-                <TextBox x:Name="name_card_page_tb"  Style="{StaticResource tbstyle}" Width="400" VerticalAlignment="Top" Margin="31 0 0 0">
-                </TextBox>
-            </StackPanel>
-
+                <TextBox x:Name="name_card_page_tb"  Style="{StaticResource tbstyle}" Margin="15 0 0 0"/>
+            </DockPanel>
             <Button Content="NImadur Button" Style="{StaticResource FormPrimaryButton}" Margin="30"/>
         </StackPanel>
 
