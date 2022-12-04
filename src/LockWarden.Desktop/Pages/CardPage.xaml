@@ -17,7 +17,7 @@
             <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1" BlurRadius="30" Color="Black"/>
         </Border.Effect>
 
-        <StackPanel Margin="52,22,50,18">
+        <StackPanel Width="350" Height="500">
             <DockPanel  Margin="0 70 0 0">
                 <Label Content="Bank: " Style="{StaticResource FullNamePageLabel}"/>
                 <TextBox x:Name="bank_card_page_tb"  Style="{StaticResource tbstyle}" Margin="20 0 0 0" />

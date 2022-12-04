@@ -17,7 +17,7 @@
             <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1" BlurRadius="30" Color="Black"/>
         </Border.Effect>
 
-        <StackPanel Margin="51,22,51,18">
+        <StackPanel Width="400" Height="500">
             <DockPanel   Margin="0 70 0 0">
                 <Label Content="Username: " Style="{StaticResource FullNamePageLabel}"/>
                 <TextBox x:Name="username_Login_page_tb"  Style="{StaticResource tbstyle}" Margin="0">
