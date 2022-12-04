@@ -18,7 +18,7 @@
             <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1" BlurRadius="30" Color="Black"/>
         </Border.Effect>
 
-        <StackPanel Margin="120,40,120,40">
+        <StackPanel Margin="120,40,120, 0">
             <Label Content="Email" Style="{StaticResource FullNamePageLabel}"/>
             <TextBox Style="{StaticResource tbstyle}" Width="400">
                 <TextBox.Background>
@@ -43,6 +43,8 @@
                     <ImageBrush ImageSource="/Assets/Icons/password_verified.png" Stretch="Uniform" AlignmentX="Right"/>
                 </PasswordBox.Background>
             </PasswordBox>
+
+            <Button Content="submit" Style="{StaticResource FormPrimaryButton}"/>
         </StackPanel>
 
     </Border>
