@@ -1,31 +1,37 @@
 ﻿using LockWarden.DataAccess.Constants;
-using LockWarden.DataAccess.Interfaces;
 using LockWarden.DataAccess.Interfaces.IRepositories;
 using LockWarden.Domain.Models;
 using Microsoft.Data.Sqlite;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LockWarden.DataAccess.Repositories
-
 {
-    public class UserRepository : IUserRepository
+    public class CardRepository : ICardRepository
     {
-
         private readonly SqliteConnection _sqliteConnection = new(DBConstants.DB_Path);
-        public async Task<bool> CreateAsync(User entity)
+        public async Task<bool> CreateAsync(Card entity)
         {
+
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "insert into users(name,login,password_hash,salt) " +
-                    "values (@name,@login,@password_hash,@salt);";
+                string query = "insert into cards(Deleted,UserId,Id,Bank,Number,Pin,Name) " +
+                    "values (@Deleted,@UserId,@Id,@Bank,@Number,@Pin,@Name);";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
-                        new SqliteParameter("name",entity.Name),
-                        new SqliteParameter("login",entity.Login),
-                        new SqliteParameter("password_hash",entity.PasswordHash),
-                        new SqliteParameter("salt",entity.Salt)
+                        new SqliteParameter("Deleted",entity.Deleted),
+                        new SqliteParameter("UserId",entity.UserId),
+                        new SqliteParameter("Id",entity.Id),
+                        new SqliteParameter("Bank",entity.Bank),
+                        new SqliteParameter("Number",entity.Number),
+                        new SqliteParameter("Pin",entity.Pin),
+                        new SqliteParameter("Name",entity.Name)
                     }
                 };
                 var result = await command.ExecuteNonQueryAsync();
@@ -40,7 +46,6 @@ namespace LockWarden.DataAccess.Repositories
             {
                 await _sqliteConnection.CloseAsync();
             }
-
         }
 
         public async Task<bool> DeleteAsync(int id)
@@ -48,7 +53,7 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"delete from users where id={id};";
+                string query = $"delete from cards where id={id};";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
                 var result = await command.ExecuteNonQueryAsync();
                 if (result == 0) return false; else return true;
@@ -64,18 +69,45 @@ namespace LockWarden.DataAccess.Repositories
             }
         }
 
-        public async Task<User> FindByLoginAsync(string login)
+        public async Task<List<Card>> GetAllAsync()
         {
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"select * from users where login='{login}';";
+                string query = $"select * from cards;";
+                SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
+                var readly = await command.ExecuteReaderAsync();
+                List<Card> cards = new List<Card>();
+                while (await readly.ReadAsync())
+                {
+                    Card card = new Card(readly.GetDateTime(0), readly.GetInt32(1), readly.GetInt32(2), readly.GetString(3), readly.GetString(4), readly.GetString(5), readly.GetString(6));
+                    cards.Add(card);
+                }
+                return cards;
+
+            }
+            catch
+            {
+                return new List<Card>();
+            }
+            finally
+            {
+                await _sqliteConnection.CloseAsync();
+            }
+        }
+
+        public async Task<Card> GetAsync(int id)
+        {
+            try
+            {
+                await _sqliteConnection.OpenAsync();
+                string query = $"select * from cards where id='{id}';";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
                 var readly = await command.ExecuteReaderAsync();
                 if (await readly.ReadAsync())
                 {
-                    User user = new User(readly.GetString(1), readly.GetString(2), readly.GetString(3), readly.GetString(4));
-                    return user;
+                    Card card = new Card(readly.GetDateTime(0), readly.GetInt32(1), readly.GetInt32(2), readly.GetString(3), readly.GetString(4), readly.GetString(5), readly.GetString(6));
+                    return card;
                 }
                 else
                 {
@@ -92,75 +124,23 @@ namespace LockWarden.DataAccess.Repositories
             }
         }
 
-        public async Task<List<User>> GetAllAsync()
+        public async Task<bool> UpdateAsync(int id, Card entity)
         {
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"select * from users;";
-                SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
-                var readly = await command.ExecuteReaderAsync();
-                List<User> users = new List<User>();
-                while(await readly.ReadAsync())
-                { 
-                    User user = new User(readly.GetString(1), readly.GetString(2), readly.GetString(3), readly.GetString(4));
-                    users.Add(user);
-                }
-                return users;
-               
-            }
-            catch
-            {
-                return new List<User>();
-            }
-            finally
-            {
-                await _sqliteConnection.CloseAsync();
-            }
-        }
-
-        public async Task<User> GetAsync(int id)
-        {
-            try
-            {
-                await _sqliteConnection.OpenAsync();
-                string query = $"select * from users where id='{id}';";
-                SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
-                var readly = await command.ExecuteReaderAsync();
-                if (await readly.ReadAsync())
-                {
-                    User user = new User(readly.GetString(1), readly.GetString(2), readly.GetString(3), readly.GetString(4));
-                    return user;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            catch
-            {
-                return null;
-            }
-            finally
-            {
-                await _sqliteConnection.CloseAsync();
-            }
-        }
-
-        public async Task<bool> UpdateAsync(int id, User entity)
-        {
-            try
-            {
-                await _sqliteConnection.OpenAsync();
-                string query = "update users set name=@name, login=@login, password_hash=@password_hash,salt=@salt;" ;
+                string query = "update cards set Deleted=@Deleted, UserId=@UserId, Id=@Id,Bank=@Bank, Number=@Number, Pin=@Pin, Name=@Name;";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
-                        new SqliteParameter("name",entity.Name),
-                        new SqliteParameter("login",entity.Login),
-                        new SqliteParameter("password_hash",entity.PasswordHash),
-                        new SqliteParameter("salt",entity.Salt),
+                        new SqliteParameter("Deleted",entity.Deleted),
+                        new SqliteParameter("UserId",entity.UserId),
+                        new SqliteParameter("Id",entity.Id),
+                        new SqliteParameter("Bank",entity.Bank),
+                        new SqliteParameter("Number",entity.Number),
+                        new SqliteParameter("Pin",entity.Pin),
+                        new SqliteParameter("Name",entity.Name)
                     }
                 };
                 var result = await command.ExecuteNonQueryAsync();
@@ -176,7 +156,9 @@ namespace LockWarden.DataAccess.Repositories
                 await _sqliteConnection.CloseAsync();
             }
         }
-
-       
     }
 }
+
+
+
+

@@ -1,31 +1,30 @@
 ﻿using LockWarden.DataAccess.Constants;
-using LockWarden.DataAccess.Interfaces;
 using LockWarden.DataAccess.Interfaces.IRepositories;
 using LockWarden.Domain.Models;
 using Microsoft.Data.Sqlite;
-
 namespace LockWarden.DataAccess.Repositories
 
 {
-    public class UserRepository : IUserRepository
+    public class ImageRepository : IImageRepository
     {
-
+       
         private readonly SqliteConnection _sqliteConnection = new(DBConstants.DB_Path);
-        public async Task<bool> CreateAsync(User entity)
+        public async Task<bool> CreateAsync(Image entity)
         {
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "insert into users(name,login,password_hash,salt) " +
-                    "values (@name,@login,@password_hash,@salt);";
+                string query = "insert into images(Deleted,Id,Name,Content,UserId) " +
+                    "values (@Deleted,@Id,@Name,@Content, @UserId);";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
-                        new SqliteParameter("name",entity.Name),
-                        new SqliteParameter("login",entity.Login),
-                        new SqliteParameter("password_hash",entity.PasswordHash),
-                        new SqliteParameter("salt",entity.Salt)
+                        new SqliteParameter("Deleted",entity.Deleted),
+                        new SqliteParameter("Id",entity.Id),
+                        new SqliteParameter("Name",entity.Name),
+                        new SqliteParameter("Content",entity.Content),
+                        new SqliteParameter("UserId",entity.UserId)
                     }
                 };
                 var result = await command.ExecuteNonQueryAsync();
@@ -42,13 +41,14 @@ namespace LockWarden.DataAccess.Repositories
             }
 
         }
+
 
         public async Task<bool> DeleteAsync(int id)
         {
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"delete from users where id={id};";
+                string query = $"delete from Images where id={id};";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
                 var result = await command.ExecuteNonQueryAsync();
                 if (result == 0) return false; else return true;
@@ -64,18 +64,18 @@ namespace LockWarden.DataAccess.Repositories
             }
         }
 
-        public async Task<User> FindByLoginAsync(string login)
+        public async Task<Image> FindByLoginAsync(string login)
         {
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"select * from users where login='{login}';";
+                string query = $"select * from Images where login='{login}';";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
                 var readly = await command.ExecuteReaderAsync();
                 if (await readly.ReadAsync())
                 {
-                    User user = new User(readly.GetString(1), readly.GetString(2), readly.GetString(3), readly.GetString(4));
-                    return user;
+                    Image image = new Image(readly.GetDateTime(0), readly.GetInt32(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+                    return image;
                 }
                 else
                 {
@@ -92,26 +92,26 @@ namespace LockWarden.DataAccess.Repositories
             }
         }
 
-        public async Task<List<User>> GetAllAsync()
+        public async Task<List<Image>> GetAllAsync()
         {
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"select * from users;";
+                string query = $"select * from Images;";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
                 var readly = await command.ExecuteReaderAsync();
-                List<User> users = new List<User>();
-                while(await readly.ReadAsync())
-                { 
-                    User user = new User(readly.GetString(1), readly.GetString(2), readly.GetString(3), readly.GetString(4));
-                    users.Add(user);
+                List<Image> images = new List<Image>();
+                while (await readly.ReadAsync())
+                {
+                    Image image = new Image(readly.GetDateTime(0), readly.GetInt32(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+                    images.Add(image);
                 }
-                return users;
-               
+                return images;
+
             }
             catch
             {
-                return new List<User>();
+                return null;            
             }
             finally
             {
@@ -119,18 +119,18 @@ namespace LockWarden.DataAccess.Repositories
             }
         }
 
-        public async Task<User> GetAsync(int id)
+        public async Task<Image> GetAsync(int id)
         {
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"select * from users where id='{id}';";
+                string query = $"select * from Images where id='{id}';";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
                 var readly = await command.ExecuteReaderAsync();
                 if (await readly.ReadAsync())
                 {
-                    User user = new User(readly.GetString(1), readly.GetString(2), readly.GetString(3), readly.GetString(4));
-                    return user;
+                    Image image = new Image(readly.GetDateTime(0), readly.GetInt32(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+                    return image;
                 }
                 else
                 {
@@ -147,20 +147,21 @@ namespace LockWarden.DataAccess.Repositories
             }
         }
 
-        public async Task<bool> UpdateAsync(int id, User entity)
+        public async Task<bool> UpdateAsync(int id, Image entity)
         {
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "update users set name=@name, login=@login, password_hash=@password_hash,salt=@salt;" ;
+                string query = "update Images set Deleted=@Deleted, Id=@Id, Name=@Name,Content=@Content,UserId=@UserId;";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
-                        new SqliteParameter("name",entity.Name),
-                        new SqliteParameter("login",entity.Login),
-                        new SqliteParameter("password_hash",entity.PasswordHash),
-                        new SqliteParameter("salt",entity.Salt),
+                         new SqliteParameter("Deleted",entity.Deleted),
+                        new SqliteParameter("Id",entity.Id),
+                        new SqliteParameter("Name",entity.Name),
+                        new SqliteParameter("Content",entity.Content),
+                        new SqliteParameter("UserId",entity.UserId)
                     }
                 };
                 var result = await command.ExecuteNonQueryAsync();
@@ -176,7 +177,5 @@ namespace LockWarden.DataAccess.Repositories
                 await _sqliteConnection.CloseAsync();
             }
         }
-
-       
     }
 }

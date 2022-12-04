@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace LockWarden.DataAccess.Interfaces
 {
-    public interface IGenericRepository<T>
+    public interface IGenericRepository<T>where T:IReferenceable
     {
         public Task<bool> CreateAsync(T entity);
 
         public Task<bool> DeleteAsync(int id);
-        public Task<bool> UpdateAsync(int id,User user);
+        public Task<bool> UpdateAsync(int id,T entity);
 
-        public Task<User> GetUserAsync(int id);
-        public Task<List<User>> GetAllUsers();
+        public Task<T> GetAsync(int id);
+        public Task<List<T>> GetAllAsync(); 
     }
 }
