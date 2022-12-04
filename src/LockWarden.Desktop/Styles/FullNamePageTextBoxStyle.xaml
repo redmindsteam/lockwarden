@@ -2,13 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <SolidColorBrush x:Key="BrushStyle" Color="#151516" Opacity="0.3"/>
+    
     <Style x:Key="tbstyle" TargetType="TextBox">
-        <Setter Property="Margin" Value="0 0 0 5"/>
         <Setter Property="FontSize" Value="18"/>
-        <Setter Property="Width" Value="400"/>
         <Setter Property="Height" Value="40"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#D1DBE4"/>
         <Setter Property="BorderThickness" Value="0 0 0 1"/>
@@ -43,10 +40,7 @@
     <Style x:Key="tbstylePassword" TargetType="PasswordBox">
         <Setter Property="Margin" Value="0 0 0 5"/>
         <Setter Property="FontSize" Value="18"/>
-        <Setter Property="Width" Value="400"/>
         <Setter Property="Height" Value="40"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#D1DBE4"/>
         <Setter Property="BorderThickness" Value="0 0 0 1"/>

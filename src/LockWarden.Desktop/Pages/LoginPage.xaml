@@ -18,31 +18,32 @@
         </Border.Effect>
 
         <StackPanel Margin="52,22,50,18">
-            <WrapPanel Margin="0 70 0 0">
-            <Label Content="Username: " Style="{StaticResource FullNamePageLabel}"/>
-            <TextBox x:Name="name_Login_page_tb"  Style="{StaticResource tbstyle}" Width="400" VerticalAlignment="Top" Margin="0 0 0 0">
-                <TextBox.Background>
-                    <ImageBrush ImageSource="/Assets/Icons/username.png" Stretch="Uniform" AlignmentX="Right"/>
-                </TextBox.Background>
-            </TextBox>
-            </WrapPanel>
-            <WrapPanel Margin="0 30 0 0">
+            <StackPanel Orientation="Horizontal" Margin="0 70 0 0">
+                <Label Content="Username: " Style="{StaticResource FullNamePageLabel}"/>
+                <TextBox x:Name="username_Login_page_tb"  Style="{StaticResource tbstyle}" Margin="0 0 0 0">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Assets/Icons/username.png" Stretch="Uniform" AlignmentX="Right"/>
+                    </TextBox.Background>
+                </TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
             <Label Content="Password: " Style="{StaticResource FullNamePageLabel}"/>
-            <PasswordBox x:Name="password_Login_page_tb" Style="{StaticResource tbstylePassword}" Width="400">
+            <PasswordBox x:Name="password_Login_page_tb" Style="{StaticResource tbstylePassword}">
                 <PasswordBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/password.png" Stretch="Uniform" AlignmentX="Right"/>
                 </PasswordBox.Background>
             </PasswordBox>
-            </WrapPanel>
+            </StackPanel>
 
-            <WrapPanel Margin="0 30 0 0">
+            <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                 <Label Content="Name: " Style="{StaticResource FullNamePageLabel}"/>
-                <TextBox x:Name="name_login_page_tb"  Style="{StaticResource tbstyle}" Width="400" VerticalAlignment="Top" Margin="28 0 0 0">
+                <TextBox x:Name="name_login_page_tb"  Style="{StaticResource tbstyle}" Margin="28 0 0 0">
                     <TextBox.Background>
                         <ImageBrush ImageSource="/Assets/Icons/user.png" Stretch="Uniform" AlignmentX="Right"/>
                     </TextBox.Background>
                 </TextBox>
-            </WrapPanel>
+            </StackPanel>
 
             <Button Content="NImadur Button" Style="{StaticResource FormPrimaryButton}" Margin="70"/>
         </StackPanel>

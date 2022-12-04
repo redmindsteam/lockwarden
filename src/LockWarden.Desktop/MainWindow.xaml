@@ -28,7 +28,7 @@
                         </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Margin="0 10 0 0">
-                        <Menu Height="250"
+                        <Menu Height="297"
                               Background="Transparent">
                             <Menu.ItemsPanel>
 

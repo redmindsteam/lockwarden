@@ -5,10 +5,42 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LockWarden.Desktop.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="CardPage">
+      d:DesignHeight="590" d:DesignWidth="750"
+      Title="CardPage"
+      Background="{DynamicResource PrimaryBackgroundColor}"
+      >
 
-    <Grid>
-        
-    </Grid>
+    <Border Margin="40"
+            CornerRadius="20"
+            Background="{DynamicResource TertiaryBlackColor}">
+        <Border.Effect>
+            <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1" BlurRadius="30" Color="Black"/>
+        </Border.Effect>
+
+        <StackPanel Margin="52,22,50,18">
+            <StackPanel Orientation="Horizontal" Margin="0 70 0 0">
+                <Label Content="Bank: " Style="{StaticResource FullNamePageLabel}"/>
+                <TextBox x:Name="bank_card_page_tb"  Style="{StaticResource tbstyle}" Width="400" Margin="33 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                <Label Content="Number: " Style="{StaticResource FullNamePageLabel}"/>
+                <TextBox x:Name="number_card_page_tb"  Style="{StaticResource tbstyle}" Width="400" VerticalAlignment="Center" Margin="15 0 0 0">
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                <Label Content="Pin: " Style="{StaticResource FullNamePageLabel}" />
+                <PasswordBox x:Name="pin_card_page_tb" Style="{StaticResource tbstylePassword}" Width="400" Margin="46 0 0 0">
+                </PasswordBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                <Label Content="Name: " Style="{StaticResource FullNamePageLabel}"/>
+                <TextBox x:Name="name_card_page_tb"  Style="{StaticResource tbstyle}" Width="400" VerticalAlignment="Top" Margin="31 0 0 0">
+                </TextBox>
+            </StackPanel>
+
+            <Button Content="NImadur Button" Style="{StaticResource FormPrimaryButton}" Margin="30"/>
+        </StackPanel>
+
+    </Border>
 </Page>
