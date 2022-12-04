@@ -5,10 +5,47 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LockWarden.Desktop.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="LoginPage">
+      d:DesignHeight="590" d:DesignWidth="750"
+      Title="LoginPage"
+      Background="{DynamicResource PrimaryBackgroundColor}"
+      >
 
-    <Grid>
-        
-    </Grid>
+    <Border Margin="40"
+            CornerRadius="20"
+            Background="{DynamicResource TertiaryBlackColor}">
+        <Border.Effect>
+            <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1" BlurRadius="30" Color="Black"/>
+        </Border.Effect>
+
+        <StackPanel Margin="52,22,50,18">
+            <WrapPanel Margin="0 70 0 0">
+            <Label Content="Username: " Style="{StaticResource FullNamePageLabel}"/>
+            <TextBox x:Name="name_Login_page_tb"  Style="{StaticResource tbstyle}" Width="400" VerticalAlignment="Top" Margin="0 0 0 0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Assets/Icons/username.png" Stretch="Uniform" AlignmentX="Right"/>
+                </TextBox.Background>
+            </TextBox>
+            </WrapPanel>
+            <WrapPanel Margin="0 30 0 0">
+            <Label Content="Password: " Style="{StaticResource FullNamePageLabel}"/>
+            <PasswordBox x:Name="password_Login_page_tb" Style="{StaticResource tbstylePassword}" Width="400">
+                <PasswordBox.Background>
+                    <ImageBrush ImageSource="/Assets/Icons/password.png" Stretch="Uniform" AlignmentX="Right"/>
+                </PasswordBox.Background>
+            </PasswordBox>
+            </WrapPanel>
+
+            <WrapPanel Margin="0 30 0 0">
+                <Label Content="Name: " Style="{StaticResource FullNamePageLabel}"/>
+                <TextBox x:Name="name_login_page_tb"  Style="{StaticResource tbstyle}" Width="400" VerticalAlignment="Top" Margin="28 0 0 0">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Assets/Icons/user.png" Stretch="Uniform" AlignmentX="Right"/>
+                    </TextBox.Background>
+                </TextBox>
+            </WrapPanel>
+
+            <Button Content="NImadur Button" Style="{StaticResource FormPrimaryButton}" Margin="70"/>
+        </StackPanel>
+
+    </Border>
 </Page>

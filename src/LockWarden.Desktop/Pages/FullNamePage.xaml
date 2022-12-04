@@ -20,7 +20,7 @@
 
         <StackPanel Margin="120,40,120, 0">
             <Label Content="Email" Style="{StaticResource FullNamePageLabel}"/>
-            <TextBox x:Name="full_name_email_tb" Text="Eva Elfy" Style="{StaticResource tbstyle}" Width="400">
+            <TextBox x:Name="full_name_email_tb" Text="Eva Elfie" Style="{StaticResource tbstyle}" Width="400">
                 <TextBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/mail.png" Stretch="Uniform" AlignmentX="Right"/>
                 </TextBox.Background>
@@ -44,7 +44,7 @@
                 </PasswordBox.Background>
             </PasswordBox>
 
-            <Button Content="submit" Style="{StaticResource FormPrimaryButton}"/>
+            <Button Content="Nimadur button" Style="{StaticResource FormPrimaryButton}"/>
         </StackPanel>
 
     </Border>
