@@ -8,7 +8,8 @@
         Title="MainWindow" Height="650" Width="1000"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True"
-        ResizeMode="NoResize" WindowState="Normal">
+        ResizeMode="NoResize" WindowState="Normal"
+        Icon="Assets/Icons/lockwarden.png">
     <Border CornerRadius="8" Background="{DynamicResource PrimaryBackgroundColor}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -22,12 +23,12 @@
                     Background="{DynamicResource SecundaryBackgroundColor}">
                 <Grid x:Name="gridMenu">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="250"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="295"/>
+                        <RowDefinition/>
                         <RowDefinition Height="150"/>
-                        </Grid.RowDefinitions>
+                    </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0" Margin="0 10 0 0">
+                    <StackPanel Grid.Row="0" Margin="0,10,0,0">
                         <Menu Height="297"
                               Background="Transparent">
                             <Menu.ItemsPanel>
@@ -75,12 +76,12 @@
                             </MenuItem>
                             <MenuItem Header="Trash bin" Click="TrashPage_click"
                                       Style="{DynamicResource Menu_Template}"
-                                      Margin="0 10 0 0"
+                                      Margin="0,10,0,2"
                                       Icon="{DynamicResource trash}">
                             </MenuItem>
                         </Menu>
                     </StackPanel>
-                    <StackPanel Grid.Row="3">
+                    <StackPanel Grid.Row="2">
                         <Image Source="Assets/Icons/lockwarden.png" Stretch="Uniform" Height="80"/>
                         <TextBlock Text="LockWarden" FontSize="30" FontFamily="Jetbrains Mono" FontWeight="SemiBold" Foreground="#FFF" HorizontalAlignment="Center"/>
                     </StackPanel>

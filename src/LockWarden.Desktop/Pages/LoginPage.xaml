@@ -17,33 +17,33 @@
             <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1" BlurRadius="30" Color="Black"/>
         </Border.Effect>
 
-        <StackPanel Margin="52,22,50,18">
-            <StackPanel Orientation="Horizontal" Margin="0 70 0 0">
+        <StackPanel Width="400" Height="500">
+            <DockPanel   Margin="0 70 0 0">
                 <Label Content="Username: " Style="{StaticResource FullNamePageLabel}"/>
-                <TextBox x:Name="username_Login_page_tb"  Style="{StaticResource tbstyle}" Margin="0 0 0 0">
+                <TextBox x:Name="username_Login_page_tb"  Style="{StaticResource tbstyle}" Margin="0">
                     <TextBox.Background>
                         <ImageBrush ImageSource="/Assets/Icons/username.png" Stretch="Uniform" AlignmentX="Right"/>
                     </TextBox.Background>
                 </TextBox>
-            </StackPanel>
+            </DockPanel>
             
-            <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+            <DockPanel  Margin="0 30 0 0">
             <Label Content="Password: " Style="{StaticResource FullNamePageLabel}"/>
             <PasswordBox x:Name="password_Login_page_tb" Style="{StaticResource tbstylePassword}">
                 <PasswordBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/password.png" Stretch="Uniform" AlignmentX="Right"/>
                 </PasswordBox.Background>
             </PasswordBox>
-            </StackPanel>
+            </DockPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+            <DockPanel  Margin="0 30 0 0">
                 <Label Content="Name: " Style="{StaticResource FullNamePageLabel}"/>
                 <TextBox x:Name="name_login_page_tb"  Style="{StaticResource tbstyle}" Margin="28 0 0 0">
                     <TextBox.Background>
-                        <ImageBrush ImageSource="/Assets/Icons/user.png" Stretch="Uniform" AlignmentX="Right"/>
+                        <ImageBrush  ImageSource="/Assets/Icons/user.png" Stretch="Uniform" AlignmentX="Right"/>
                     </TextBox.Background>
                 </TextBox>
-            </StackPanel>
+            </DockPanel>
 
             <Button Content="NImadur Button" Style="{StaticResource FormPrimaryButton}" Margin="70"/>
         </StackPanel>

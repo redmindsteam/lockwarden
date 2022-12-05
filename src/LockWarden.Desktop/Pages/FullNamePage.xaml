@@ -11,14 +11,15 @@
       Background="{DynamicResource PrimaryBackgroundColor}"
       >
 
-    <Border Margin="40"
+    <Border x:Name="FullNameBorder"
+            Margin="40"
             CornerRadius="20"
             Background="{DynamicResource TertiaryBlackColor}">
         <Border.Effect>
             <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1" BlurRadius="30" Color="Black"/>
         </Border.Effect>
 
-        <StackPanel Margin="120,40,120, 0">
+        <StackPanel Width="400" Height="500">
             <Label Content="Email" Style="{StaticResource FullNamePageLabel}"/>
             <TextBox x:Name="full_name_email_tb" Text="John Snow" Style="{StaticResource tbstyle}">
                 <TextBox.Background>
