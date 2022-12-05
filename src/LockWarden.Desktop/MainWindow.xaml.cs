@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using LockWarden.DataAccess.Interfaces;
+using LockWarden.DataAccess.Repositories;
+using System.Linq;
 using System.Windows;
 
 namespace LockWarden.Desktop
@@ -8,10 +10,14 @@ namespace LockWarden.Desktop
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+	
 		public MainWindow()
 		{
+		
 			InitializeComponent();
-		}
+        
+
+        }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {

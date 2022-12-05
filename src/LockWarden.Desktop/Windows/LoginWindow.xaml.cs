@@ -1,4 +1,8 @@
-﻿using System;
+﻿using LockWarden.DataAccess.Repositories;
+using LockWarden.Domain.ViewModels;
+using LockWarden.Service.Services;
+using Microsoft.EntityFrameworkCore.Storage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +25,11 @@ namespace LockWarden.Desktop.Windows
 
     public partial class LoginWindow : Window
     {
-        public LoginWindow()
+        Repository repository = new Repository();
+        public   LoginWindow()
         {
             InitializeComponent();
+            repository.CreateDataBaseAsync();
         }
 
         private void textEmail_MouseDown(object sender, MouseButtonEventArgs e)
@@ -68,6 +74,27 @@ namespace LockWarden.Desktop.Windows
             this.WindowState = WindowState.Minimized;
         }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            LoginBorder.Visibility = Visibility.Collapsed;
+            RegsBorder.Visibility = Visibility.Visible;
+        }
+
+        private async void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            UserService userService = new  UserService();
+            var result = await userService.LoginAsync(txtemail.Text, txtPasswords.Password);
+            if(!result.IsSuccesful)
+            {
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                this.Close();
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+            }
+        }
         private void textFullname_MouseDown(object sender, MouseButtonEventArgs e)
         {
             txtFullname.Focus();
@@ -132,9 +159,38 @@ namespace LockWarden.Desktop.Windows
             RegsBorder.Visibility = Visibility.Collapsed;
         }
 
-        private void Register_verify_button(object sender, RoutedEventArgs e)
+        private async void Register_verify_button(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Regsitered");
+            try
+            {
+                if (txtpaswordRegs.Password == txtVerify.Password)
+                {
+                    UserViewModel userViewModel = new UserViewModel(txtFullname.Text, txtEmailRegs.Text, textPasswordRegs.Text);
+                    UserService userService = new UserService();
+                    var result = await userService.RegistrationAsync(userViewModel);
+                    if (result.IsSuccesful)
+                    {
+                        MessageBox.Show("Muvaffaqqiyatli ro'yxatdan o'tdingiz");
+                        LoginWindow loginWindow = new LoginWindow();
+                        this.Close();
+                        loginWindow.Show();
+                    }
+                    else MessageBox.Show("Bunday foydalanuvchi mavjud");
+
+                }
+                else MessageBox.Show("Parollar bir-briga mos eman");
+            }
+            catch
+            {
+                MessageBox.Show("Xatolik!");
+            }
+            finally
+            {
+                txtFullname.Text = "";
+                txtEmailRegs.Text = "";
+                txtpaswordRegs.Password = "";
+                txtVerify.Password = "";
+            }
         }
     }
 }

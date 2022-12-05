@@ -10,7 +10,7 @@ namespace LockWarden.DataAccess.Repositories
     public class UserRepository : IUserRepository
     {
 
-        private readonly SqliteConnection _sqliteConnection = new(DBConstants.DB_Path);
+        private readonly SqliteConnection _sqliteConnection = new(DB_Constants.DB_Path_File);
         public async Task<bool> CreateAsync(User entity)
         {
             try
@@ -75,6 +75,7 @@ namespace LockWarden.DataAccess.Repositories
                 if (await readly.ReadAsync())
                 {
                     User user = new User(readly.GetString(1), readly.GetString(2), readly.GetString(3), readly.GetString(4));
+                    user.Id = readly.GetInt32(0);
                     return user;
                 }
                 else
