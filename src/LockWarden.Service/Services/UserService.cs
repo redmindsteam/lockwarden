@@ -33,6 +33,18 @@ namespace LockWarden.Service.Services
 
             else return (IsSuccessful: false, Message: "Notug'ri parol kritildi!");
         }
+        public async Task<(bool IsSuccesful, string Message)> LoginUpdateAsync(string login, string password)
+        {
+            var user = await _repository.FindByLoginAsync(login);
+            if (user is null) return (IsSuccessful: false, Message: "Noto'g'ri login  kiritildi");
+            var hashResult = Crypter.Verify(user.PasswordHash, password, user.Salt);
+            if (hashResult)
+            {
+                return (IsSuccessful: true, Message: "");
+            }
+
+            else return (IsSuccessful: false, Message: "Notug'ri parol kritildi!");
+        }
 
         public async Task<(bool IsSuccesful, string Message)> RegistrationAsync(UserViewModel userCreateViewModel)
         {
@@ -41,6 +53,16 @@ namespace LockWarden.Service.Services
             var result = await _repository.CreateAsync(user);
             if (result) return (IsSuccessful: true, Message: "Muvaffaqiyatli");
             else return (IsSuccesful: false, Message: "Bu login hozirgi vaqtda band");
+        }
+        public async Task<(bool IsSuccesful, string Message)> UpdateAsync(UserViewModel userUpdateViewModel)
+
+        {
+            var hashresult = Crypter.Hash(userUpdateViewModel.Password);
+            User user = new User(userUpdateViewModel.Name, userUpdateViewModel.Login, hashresult.hash, hashresult.salt);
+            var result =await _repository.UpdateAsync(IdentitySingelton.GetInstance().UserId, user);
+            if (result) return (IsSuccessful: true, Message: "Muvaffaqiyatli");
+            else return (IsSuccesful: false, Message: "Malumot qo'shishda xatolik");
+
         }
     }
 }
