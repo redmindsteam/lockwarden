@@ -148,6 +148,7 @@ namespace LockWarden.Desktop.Windows
             var result = await userService.LoginAsync(txtemail.Text, txtPasswords.Password);
             if (!result.IsSuccesful)
             {
+                this.Close();
                 MessageBox.Show(result.Message);
             }
             else

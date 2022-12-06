@@ -9,7 +9,9 @@
 
   <ItemGroup>
     <None Remove="Assets\Icons\emailicon.png" />
+    <None Remove="Assets\Icons\lockPng.png" />
     <None Remove="Assets\Icons\lockwarden.png" />
+    <None Remove="Assets\Icons\mergeHorizontal.png" />
     <None Remove="Assets\Icons\password.png" />
     <None Remove="Assets\Icons\password_re.png" />
     <None Remove="Assets\Icons\password_verified.png" />
@@ -61,6 +63,8 @@
     <Resource Include="Assets\Icons\emailicon.png" />
     <Resource Include="Assets\Icons\icon_arrow.png" />
     <Resource Include="Assets\Icons\lockwarden.png" />
+    <Resource Include="Assets\Icons\lockPng.png" />
+    <Resource Include="Assets\Icons\mergeHorizontal.png" />
     <Resource Include="Assets\Icons\password.png" />
     <Resource Include="Assets\Icons\password_re.png" />
     <Resource Include="Assets\Icons\password_verified.png" />

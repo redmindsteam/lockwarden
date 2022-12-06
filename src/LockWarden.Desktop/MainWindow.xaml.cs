@@ -1,5 +1,6 @@
 ﻿using LockWarden.DataAccess.Interfaces;
 using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Windows;
 using System.Linq;
 using System.Windows;
 
