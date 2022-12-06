@@ -24,5 +24,10 @@ namespace LockWarden.Desktop.Pages
         {
             InitializeComponent();
         }
+
+        private void MergeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
