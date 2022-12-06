@@ -142,9 +142,20 @@ namespace LockWarden.Desktop.Windows
         }
 
 
-        private void Login_button(object sender, RoutedEventArgs e)
+        private async void Login_button(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Login");
+            UserService userService = new UserService();
+            var result = await userService.LoginAsync(txtemail.Text, txtPasswords.Password);
+            if (!result.IsSuccesful)
+            {
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+               
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+            }
         }
 
         private void Register_button(object sender, RoutedEventArgs e)
@@ -165,7 +176,7 @@ namespace LockWarden.Desktop.Windows
             {
                 if (txtpaswordRegs.Password == txtVerify.Password)
                 {
-                    UserViewModel userViewModel = new UserViewModel(txtFullname.Text, txtEmailRegs.Text, textPasswordRegs.Text);
+                    UserViewModel userViewModel = new UserViewModel(txtFullname.Text, txtEmailRegs.Text, txtpaswordRegs.Password);
                     UserService userService = new UserService();
                     var result = await userService.RegistrationAsync(userViewModel);
                     if (result.IsSuccesful)

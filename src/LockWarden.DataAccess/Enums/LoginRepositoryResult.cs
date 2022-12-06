@@ -12,7 +12,7 @@ public enum GetLoginResult
     NotFound,
     InvalidPassword,
 }
-public enum GetInfoResult
+public enum GetInfoLoginResult
 {
     Success,
     NotFound,

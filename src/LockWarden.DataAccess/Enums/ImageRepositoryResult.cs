@@ -12,7 +12,7 @@ public enum GetImageResult
     NotFound,
     InvalidPassword,
 }
-public enum GetInfoResult
+public enum GetInfoImageResult
 {
     Success,
     NotFound,
