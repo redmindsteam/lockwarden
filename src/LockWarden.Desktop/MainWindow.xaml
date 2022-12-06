@@ -82,8 +82,8 @@
                         </Menu>
                     </StackPanel>
                     <StackPanel Grid.Row="2">
-                        <Image Source="Assets/Icons/lockwarden.png" Stretch="Uniform" Height="80"/>
-                        <TextBlock Text="LockWarden" FontSize="30" FontFamily="Jetbrains Mono" FontWeight="SemiBold" Foreground="#FFF" HorizontalAlignment="Center"/>
+                        <Image Source="Assets/Icons/lockPng.png" Stretch="Uniform" Height="80"/>
+                        <TextBlock Text="LockWarden" FontSize="30" FontFamily="Jetbrains Mono" FontWeight="SemiBold" Foreground="#FFF" HorizontalAlignment="Center" Margin="0 8"/>
                     </StackPanel>
                 </Grid>
             </Border>
