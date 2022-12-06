@@ -24,7 +24,7 @@ namespace LockWarden.Service.Services
         {
             var user = await _repository.FindByLoginAsync(login);
             if (user is null) return (IsSuccessful: false, Message: "Noto");
-            var hashResult = Crypter.Verify(password, user.PasswordHash, user.Salt);
+            var hashResult = Crypter.Verify(user.PasswordHash, password, user.Salt);
             if (hashResult)
             {
                 IdentitySingelton.BuildInstance(user.Id);
