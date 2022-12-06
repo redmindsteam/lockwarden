@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LockWarden.Desktop.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,15 @@ namespace LockWarden.Desktop.Pages
         private void MergeButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            for(int i=0; i<10; i++)
+            {
+                var logincontrol = new LoginControls();
+                loginControlStackPanel.Children.Add(logincontrol);
+            }
         }
     }
 }

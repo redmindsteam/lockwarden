@@ -15,4 +15,12 @@
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="FontFamily" Value="Arial"/>
     </Style>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="LoginControlTextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+    </Style>
 </ResourceDictionary>
