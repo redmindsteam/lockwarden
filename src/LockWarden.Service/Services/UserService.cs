@@ -3,6 +3,7 @@ using LockWarden.DataAccess.Repositories;
 using LockWarden.Domain.Models;
 using LockWarden.Domain.ViewModels;
 using LockWarden.Service.Commons;
+using LockWarden.Service.Interfaces;
 using LockWarden.Service.Tools;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace LockWarden.Service.Services
 {
-    public class UserService
+    public class UserService:IUserService
     {
         private readonly IUserRepository _repository;
         public UserService()

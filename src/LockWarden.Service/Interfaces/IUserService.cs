@@ -12,5 +12,8 @@ namespace LockWarden.Service.Interfaces
         Task<(bool IsSuccesful, string Message)> RegistrationAsync(UserViewModel userCreateViewModel);
 
         Task<(bool IsSuccesful, string Message)> LoginAsync(string login, string password);
+        Task<(bool IsSuccesful, string Message)> LoginUpdateAsync(string login, string password);
+        Task<(bool IsSuccesful, string Message)> UpdateAsync(UserViewModel userUpdateViewModel);
+
     }
 }
