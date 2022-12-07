@@ -19,6 +19,8 @@
 
                 <ResourceDictionary Source="Styles/FullNamePageTextBoxStyle.xaml"/>
 
+                <ResourceDictionary Source="Styles/ScrollViewer.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
             
             <!--Image-->
