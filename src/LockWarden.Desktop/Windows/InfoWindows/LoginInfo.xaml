@@ -12,6 +12,7 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent"
+        MouseDown="Window_MouseDown"
         Title="LoginInfo">
 
     <Border Margin="20"
@@ -54,8 +55,11 @@
                     <ImageBrush ImageSource="/Assets/Icons/web.png" Stretch="Uniform" AlignmentX="Right"/>
                 </TextBox.Background>
             </TextBox>
-
-            <Button  Content="Nimadur button" Style="{StaticResource FormPrimaryButton}" Margin="10"/>
+            <StackPanel Orientation="Horizontal">
+                <Button  Content="Save Edit" Style="{StaticResource FormPrimaryButton}" Margin="10 20 0 10" Height="40" Width="120"/>
+                <Button  Content="delete" Style="{StaticResource FormPrimaryButton}" Margin="30 20 10 10" Height="40" Width="120"/>
+            </StackPanel>
+            
         </StackPanel>
     </Border>
 </Window>
