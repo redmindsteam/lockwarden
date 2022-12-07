@@ -15,7 +15,7 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "insert into Login(Deleted,UserId,Id,Service,Username,Password,Name) " +
+                string query = "insert into Login(Deleted,UserId,Service,Username,Password,Name) " +
                     "values (@Deleted,@UserId,@Id,@Service,@Username,@Password,@Name );";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
@@ -23,7 +23,6 @@ namespace LockWarden.DataAccess.Repositories
                     {
                         new SqliteParameter("Deleted",entity.Deleted),
                         new SqliteParameter("UserId",entity.UserId),
-                        new SqliteParameter("Id",entity.Id),
                         new SqliteParameter("Service",entity.Service),
                         new SqliteParameter("Username",entity.Username),
                         new SqliteParameter("Password",entity.Password),
@@ -99,7 +98,7 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"select * from Logins where id='{id}';";
+                string query = $"select * from Logins where id={id};";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
                 var readly = await command.ExecuteReaderAsync();
                 if (await readly.ReadAsync())
