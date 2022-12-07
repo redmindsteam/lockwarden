@@ -1,6 +1,8 @@
-﻿using System;
+﻿using LockWarden.Desktop.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,6 +30,14 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
+        }
+
+
+
+        private void ButtonBack_click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            LoginControls.check = false;
         }
     }
 }

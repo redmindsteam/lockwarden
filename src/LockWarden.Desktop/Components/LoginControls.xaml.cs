@@ -21,6 +21,8 @@ namespace LockWarden.Desktop.Components
     /// </summary>
     public partial class LoginControls : UserControl
     {
+
+        public static bool check;
         public LoginControls()
         {
             InitializeComponent();
@@ -28,8 +30,16 @@ namespace LockWarden.Desktop.Components
 
         private void UserControl_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
-            LoginInfo info = new LoginInfo();
-            info.Show();
+            if (!check)
+            {
+                LoginInfo info = new LoginInfo();
+                info.Show();
+                info.Activate();
+                info.Topmost= true;
+                check= true;
+            }
         }
+
+        
     }
 }
