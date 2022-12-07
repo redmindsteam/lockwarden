@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:LockWarden.Desktop.Components"
              mc:Ignorable="d" 
              Height="100" 
-             Width="600">
+             Width="620">
     <Border BorderThickness="1"
             Margin="5"
             CornerRadius="4"
