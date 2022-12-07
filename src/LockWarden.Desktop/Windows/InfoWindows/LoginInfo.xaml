@@ -17,10 +17,10 @@
 
     <Border Margin="20"
         CornerRadius="20" Background="#004FC4"
-        BorderThickness="3" Opacity="100" >
+        BorderThickness="1" Opacity="100" >
         <Border.Effect>
             <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1"
-                              BlurRadius="35" Color="#004FC4"/>
+                              BlurRadius="50" Color="#004FC4"/>
         </Border.Effect>
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -56,10 +56,15 @@
                 </TextBox.Background>
             </TextBox>
             <StackPanel Orientation="Horizontal">
-                <Button  Content="Save Edit" Style="{StaticResource FormPrimaryButton}" Margin="10 20 0 10" Height="40" Width="120"/>
-                <Button  Content="delete" Style="{StaticResource FormPrimaryButton}" Margin="30 20 10 10" Height="40" Width="120"/>
+                <Button   Style="{StaticResource FormPrimaryButton}" Margin="10 20 0 10" Height="40" Width="50">
+                    <Image Source="/Assets/Icons/editButton.png" />
+                </Button>
+                <Button   Style="{StaticResource FormPrimaryButton}" Margin="10 20 10 10" Height="40" Width="50">
+                    <Image Source="/Assets/Icons/deleteButton.png" />
+                </Button>
+                <Button Content="Back" Click="ButtonBack_click" Style="{StaticResource FormPrimaryButton}" Margin="50 20 10 10" Height="40" Width="100">
+                </Button>
             </StackPanel>
-            
         </StackPanel>
     </Border>
 </Window>
