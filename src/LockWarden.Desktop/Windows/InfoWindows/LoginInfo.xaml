@@ -29,31 +29,31 @@
             </LinearGradientBrush>
         </Border.BorderBrush>
         
-        <StackPanel x:Name="LoginWindowInfoStackpanel">
+        <StackPanel x:Name="LoginWindowInfoStackpanel" Margin="5">
             <Label Content="name" Style="{StaticResource FullNamePageLabel}"/>
-            <TextBox Style="{StaticResource tbstyle}" Height="30" VerticalAlignment="Center">
+            <TextBox Style="{StaticResource tbstyle}" Height="30" Padding="0">
                 <TextBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/web.png" Stretch="Uniform" AlignmentX="Right"/>
                 </TextBox.Background>
             </TextBox>
             <Label Content="username" Style="{StaticResource FullNamePageLabel}"/>
-            <PasswordBox Style="{StaticResource tbstylePassword}"  Height="30">
-                <PasswordBox.Background>
+            <TextBox Style="{StaticResource tbstyle}"  Height="30"  Padding="0">
+                <TextBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/web.png" Stretch="Uniform" AlignmentX="Right"/>
-                </PasswordBox.Background>
-            </PasswordBox>
+                </TextBox.Background>
+            </TextBox>
             <Label Content="password" Style="{StaticResource FullNamePageLabel}"/>
-            <PasswordBox x:Name="NewPassword_pb" Style="{StaticResource tbstylePassword}" Height="30">
+            <PasswordBox x:Name="NewPassword_pb" Style="{StaticResource tbstylePassword}" Height="30"  Padding="0">
                 <PasswordBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/password_re.png" Stretch="Uniform" AlignmentX="Right"/>
                 </PasswordBox.Background>
             </PasswordBox>
             <Label Content="website" Style="{StaticResource FullNamePageLabel}"/>
-            <PasswordBox x:Name="ConfirmPassoword_pb" Style="{StaticResource tbstylePassword}" Height="30">
-                <PasswordBox.Background>
+            <TextBox x:Name="ConfirmPassoword_pb" Style="{StaticResource tbstyle}" Height="30"  Padding="0">
+                <TextBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/web.png" Stretch="Uniform" AlignmentX="Right"/>
-                </PasswordBox.Background>
-            </PasswordBox>
+                </TextBox.Background>
+            </TextBox>
 
             <Button  Content="Nimadur button" Style="{StaticResource FormPrimaryButton}" Margin="10"/>
         </StackPanel>
