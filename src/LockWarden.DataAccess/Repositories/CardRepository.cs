@@ -21,14 +21,14 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "insert into cards(deleted,bank,number,pin,name,userid) " +
-                    "values (@deleted,@bank,@number,@pin,@name,@userid);";
+                string query = "insert into cards(deleted,bank,number,pin,name,user_id) " +
+                    "values (@deleted,@bank,@number,@pin,@name,@user_id);";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                         {
                             new SqliteParameter("deleted",entity.Deleted),
-                            new SqliteParameter("userid",entity.UserId),
+                            new SqliteParameter("user_id",entity.UserId),
                             new SqliteParameter("bank",entity.Bank),
                             new SqliteParameter("number",entity.Number),
                             new SqliteParameter("pin",entity.Pin),
