@@ -1,7 +1,11 @@
 ﻿using LockWarden.DataAccess.Interfaces;
+using LockWarden.DataAccess.Interfaces.IRepositories;
 using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Pages;
 using LockWarden.Desktop.Windows;
+using LockWarden.Service.Commons;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace LockWarden.Desktop
@@ -15,7 +19,7 @@ namespace LockWarden.Desktop
 		public MainWindow()
 		{
 			InitializeComponent();
-        }
+    }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -35,11 +39,12 @@ namespace LockWarden.Desktop
             WindowState = WindowState.Minimized;
         }
 
-        private void FullNamePage_click(object sender, RoutedEventArgs e)
+        private async void FullNamePage_click(object sender, RoutedEventArgs e)
         {
+          
             frameContent.Content = new Pages.FullNamePage();
         }
-
+           
         private void LoginPage_click(object sender, RoutedEventArgs e)
         {
             frameContent.Content = new Pages.LoginPage();
