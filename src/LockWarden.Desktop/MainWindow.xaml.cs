@@ -18,10 +18,8 @@ namespace LockWarden.Desktop
 	
 		public MainWindow()
 		{
-		
 			InitializeComponent();
-
-        }
+    }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -78,6 +76,21 @@ namespace LockWarden.Desktop
         private void MenuItem_Click_All(object sender, RoutedEventArgs e)
         {
             frameContent.Content = new Pages.All_Records_Pages.All();
+        }
+
+        private void MenuItem_CardPage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.All_Records_Pages.Card();
+        }
+
+        private void MenuItem_NotePage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.All_Records_Pages.Note();
+        }
+
+        private void MenuItem_LoginPage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.All_Records_Pages.Allitems();
         }
     }
 }

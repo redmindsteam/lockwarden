@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace LockWarden.Desktop.Components
 {
     /// <summary>
-    /// Interaction logic for LoginControls.xaml
+    /// Interaction logic for NoteControls.xaml
     /// </summary>
-    public partial class LoginControls : UserControl
+    public partial class NoteControls : UserControl
     {
-        public LoginControls()
+        public NoteControls()
         {
             InitializeComponent();
-        }
-
-        private void UserControl_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("hi");
         }
     }
 }

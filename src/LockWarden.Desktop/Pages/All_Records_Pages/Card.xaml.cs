@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LockWarden.Desktop.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,21 +14,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LockWarden.Desktop.Components
+namespace LockWarden.Desktop.Pages.All_Records_Pages
 {
     /// <summary>
-    /// Interaction logic for LoginControls.xaml
+    /// Interaction logic for Card.xaml
     /// </summary>
-    public partial class LoginControls : UserControl
+    public partial class Card : Page
     {
-        public LoginControls()
+        public Card()
         {
             InitializeComponent();
         }
 
-        private void UserControl_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("hi");
+            for (int i = 0; i < 50; i++)
+            {
+                var cardControl = new CardControls();
+                loginControlStackPanel.Children.Add(cardControl);
+            }
         }
     }
 }
