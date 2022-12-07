@@ -21,7 +21,7 @@ namespace LockWarden.DataAccess.Repositories
 			try
 			{
 				await _sqliteConnection.OpenAsync();
-				string query = "insert into cards(Deleted,UserId,Id,Bank,Number,Pin,Name) " +
+				string query = "insert into cards(Deleted,UserId,Bank,Number,Pin,Name) " +
 					"values (@Deleted,@UserId,@Id,@Bank,@Number,@Pin,@Name);";
 				SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
 				{
@@ -29,7 +29,6 @@ namespace LockWarden.DataAccess.Repositories
 					{
 						new SqliteParameter("Deleted",entity.Deleted),
 						new SqliteParameter("UserId",entity.UserId),
-						new SqliteParameter("Id",entity.Id),
 						new SqliteParameter("Bank",entity.Bank),
 						new SqliteParameter("Number",entity.Number),
 						new SqliteParameter("Pin",entity.Pin),
@@ -137,14 +136,13 @@ namespace LockWarden.DataAccess.Repositories
 			try
 			{
 				await _sqliteConnection.OpenAsync();
-				string query = "update cards set Deleted=@Deleted, UserId=@UserId, Id=@Id,Bank=@Bank, Number=@Number, Pin=@Pin, Name=@Name;";
+				string query = "update cards set Deleted=@Deleted, UserId=@UserId,Bank=@Bank, Number=@Number, Pin=@Pin, Name=@Name;";
 				SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
 				{
 					Parameters =
 					{
 						new SqliteParameter("Deleted",entity.Deleted),
 						new SqliteParameter("UserId",entity.UserId),
-						new SqliteParameter("Id",entity.Id),
 						new SqliteParameter("Bank",entity.Bank),
 						new SqliteParameter("Number",entity.Number),
 						new SqliteParameter("Pin",entity.Pin),

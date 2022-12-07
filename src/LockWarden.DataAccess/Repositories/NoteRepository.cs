@@ -19,14 +19,13 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "insert into notes(Deleted,Id,Header,Content,UserId) " +
+                string query = "insert into notes(Deleted,Header,Content,UserId) " +
                     "values (@Deleted,@Id,@Header,@Content,@UserId);";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
                         new SqliteParameter("Deleted",entity.Deleted),
-                        new SqliteParameter("Id",entity.Id),
                         new SqliteParameter("Header",entity.Header),
                         new SqliteParameter("Content",entity.Content),
                         new SqliteParameter("UserId", entity.UserId)
@@ -129,13 +128,12 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "update notes set Deleted=@Deleted, Id=@Id, Header=@Header,Content=@Content,UserId=@UserId;";
+                string query = "update notes set Deleted=@Deleted, Header=@Header,Content=@Content,UserId=@UserId;";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
                        new SqliteParameter("Deleted",entity.Deleted),
-                        new SqliteParameter("Id",entity.Id),
                         new SqliteParameter("Header",entity.Header),
                         new SqliteParameter("Content",entity.Content),
                         new SqliteParameter("UserId", entity.UserId)

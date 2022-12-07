@@ -14,14 +14,13 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "insert into images(Deleted,Id,Name,Content,UserId) " +
+                string query = "insert into images(Deleted,Name,Content,UserId) " +
                     "values (@Deleted,@Id,@Name,@Content, @UserId);";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
                         new SqliteParameter("Deleted",entity.Deleted),
-                        new SqliteParameter("Id",entity.Id),
                         new SqliteParameter("Name",entity.Name),
                         new SqliteParameter("Content",entity.Content),
                         new SqliteParameter("UserId",entity.UserId)
@@ -152,13 +151,12 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "update Images set Deleted=@Deleted, Id=@Id, Name=@Name,Content=@Content,UserId=@UserId;";
+                string query = "update Images set Deleted=@Deleted,Name=@Name,Content=@Content,UserId=@UserId;";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
                          new SqliteParameter("Deleted",entity.Deleted),
-                        new SqliteParameter("Id",entity.Id),
                         new SqliteParameter("Name",entity.Name),
                         new SqliteParameter("Content",entity.Content),
                         new SqliteParameter("UserId",entity.UserId)
