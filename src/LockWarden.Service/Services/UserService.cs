@@ -23,7 +23,7 @@ namespace LockWarden.Service.Services
         public async Task<(bool IsSuccesful, string Message)> LoginAsync(string login, string password)
         {
             var user = await _repository.FindByLoginAsync(login);
-            if (user is null) return (IsSuccessful: false, Message: "Noto");
+            if (user is null) return (IsSuccessful: false, Message: "Noto'g'ri ma'lumot kritildi");
             var hashResult = Crypter.Verify(user.PasswordHash, password, user.Salt);
             if (hashResult)
             {

@@ -26,13 +26,14 @@
             <StackPanel Grid.Column="1">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="7*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="10*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="Name........................................................." 
-                               Style="{DynamicResource LoginControlTextBlock}" Margin="5 8 0 0"/>
-                    
-                    <TextBlock Grid.Row="1" Text="Link..........................................................." 
+                               Style="{DynamicResource LoginControlTextBlock}" Margin="5 8 0 0" Grid.RowSpan="2"/>
+
+                    <TextBlock Grid.Row="2" Text="Link..........................................................." 
                                Style="{DynamicResource LoginControlTextBlock}" Margin="5 8 0 0" Foreground="Gray" FontSize="10"/>
                 </Grid>
             </StackPanel>
