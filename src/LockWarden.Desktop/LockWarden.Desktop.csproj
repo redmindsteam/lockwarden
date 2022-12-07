@@ -18,6 +18,7 @@
     <None Remove="Assets\Icons\password_verified.png" />
     <None Remove="Assets\Icons\user.png" />
     <None Remove="Assets\Icons\username.png" />
+    <None Remove="Assets\Icons\Web.png" />
     <None Remove="Assets\Images\LoginLogo.png" />
     <None Remove="Assets\Images\LogoPanel.jpg" />
     <None Remove="Assets\Images\regsImg.jpg" />
@@ -72,6 +73,7 @@
     <Resource Include="Assets\Icons\password_verified.png" />
     <Resource Include="Assets\Icons\user.png" />
     <Resource Include="Assets\Icons\username.png" />
+    <Resource Include="Assets\Icons\Web.png" />
     <Resource Include="Assets\Images\LoginLogo.png" />
     <Resource Include="Assets\Images\LogoPanel.jpg" />
     <Resource Include="Assets\Images\regsImg.jpg" />
