@@ -1,5 +1,6 @@
 ﻿using LockWarden.DataAccess.Interfaces;
 using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Pages.All_Records_Pages;
 using LockWarden.Desktop.Windows;
 using System.Linq;
 using System.Windows;
@@ -86,6 +87,11 @@ namespace LockWarden.Desktop
         private void MenuItem_LoginPage_click(object sender, RoutedEventArgs e)
         {
             frameContent.Content = new Pages.All_Records_Pages.Allitems();
+        }
+
+        private void MenuItems_ImagePage_click(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.All_Records_Pages.Image();
         }
     }
 }

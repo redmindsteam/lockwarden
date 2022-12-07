@@ -99,7 +99,7 @@
                                           Icon="{DynamicResource all}">
                                 </MenuItem>
 
-                                <MenuItem Header="Image" Click="ImagePage_click"
+                                <MenuItem Header="Image" Click="MenuItems_ImagePage_click"
                                           Style="{DynamicResource Item_Template}"
                                           Icon="{DynamicResource all}">
                                 </MenuItem>
