@@ -78,23 +78,23 @@
                                       Style="{DynamicResource SubMenu}"
                                       Margin="0 10 0 0"
                                       Icon="{DynamicResource all}">
+                                <MenuItem Header="All" Click="MenuItem_LoginPage_click"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
                                 
-                                <MenuItem Header="All" Click="MenuItem_Click_All"
+                                <MenuItem Header="Login" Click="MenuItem_Click_All"
                                           Style="{DynamicResource Item_Template}"
                                           Icon="{DynamicResource all}">
                                 </MenuItem>
 
-                                <MenuItem Header="Login" Click="LoginPage_click"
+
+                                <MenuItem Header="Card" Click="MenuItem_CardPage_click"
                                           Style="{DynamicResource Item_Template}"
                                           Icon="{DynamicResource all}">
                                 </MenuItem>
 
-                                <MenuItem Header="Card" Click="CardPage_click"
-                                          Style="{DynamicResource Item_Template}"
-                                          Icon="{DynamicResource all}">
-                                </MenuItem>
-
-                                <MenuItem Header="Note" Click="NotePage_click"
+                                <MenuItem Header="Note" Click="MenuItem_NotePage_click"
                                           Style="{DynamicResource Item_Template}"
                                           Icon="{DynamicResource all}">
                                 </MenuItem>
@@ -149,7 +149,6 @@
                     <Frame x:Name="frameContent" NavigationUIVisibility="Hidden" Margin="10"/>
                 </Border>
                 <!-- End: Frame Container -->
-
             </Grid>
         </Grid>
     </Border>
