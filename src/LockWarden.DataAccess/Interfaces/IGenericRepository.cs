@@ -13,7 +13,6 @@ namespace LockWarden.DataAccess.Interfaces
 
         public Task<bool> DeleteAsync(int id);
         public Task<bool> UpdateAsync(int id,T entity);
-
         public Task<T> GetAsync(int id);
         public Task<List<T>> GetAllAsync(); 
     }

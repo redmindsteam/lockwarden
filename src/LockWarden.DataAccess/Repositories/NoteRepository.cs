@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace LockWarden.DataAccess.Repositories
 {
+
     public class NoteRepository : INoteRepository
     {
         private readonly SqliteConnection _sqliteConnection = new(DB_Constants.DB_Path_File);
@@ -19,16 +20,16 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "insert into notes(Deleted,Header,Content,UserId) " +
-                    "values (@Deleted,@Id,@Header,@Content,@UserId);";
+                string query = "insert into notes(deleted,header,content,user_id) " +
+                    "values (@deleted,@header,@content,@user_id);";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
-                        new SqliteParameter("Deleted",entity.Deleted),
-                        new SqliteParameter("Header",entity.Header),
-                        new SqliteParameter("Content",entity.Content),
-                        new SqliteParameter("UserId", entity.UserId)
+                        new SqliteParameter("deleted",entity.Deleted),
+                        new SqliteParameter("header",entity.Header),
+                        new SqliteParameter("content",entity.Content),
+                        new SqliteParameter("user_id", entity.UserId)
                     }
                 };
                 var result = await command.ExecuteNonQueryAsync();
@@ -78,7 +79,7 @@ namespace LockWarden.DataAccess.Repositories
                 List<Note> notes = new List<Note>();
                 while (await readly.ReadAsync())
                 {
-                    Note note = new Note(readly.GetDateTime(0), readly.GetInt32(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+                    Note note = new Note(readly.GetInt32(0), readly.GetDateTime(1),  readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
                     notes.Add(note);
                 }
                 return notes;
@@ -104,7 +105,7 @@ namespace LockWarden.DataAccess.Repositories
                 var readly = await command.ExecuteReaderAsync();
                 if (await readly.ReadAsync())
                 {
-                    Note note = new Note(readly.GetDateTime(0), readly.GetInt32(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+                    Note note = new Note(readly.GetInt32(0), readly.GetDateTime(1),  readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
                     return note;
                 }
                 else
@@ -128,15 +129,15 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "update notes set Deleted=@Deleted, Header=@Header,Content=@Content,UserId=@UserId;";
+                string query = $"update notes set  header=@header,content=@content,user_id=@user_id where id={id};";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
-                       new SqliteParameter("Deleted",entity.Deleted),
-                        new SqliteParameter("Header",entity.Header),
-                        new SqliteParameter("Content",entity.Content),
-                        new SqliteParameter("UserId", entity.UserId)
+                       new SqliteParameter("deleted",entity.Deleted),
+                        new SqliteParameter("header",entity.Header),
+                        new SqliteParameter("content",entity.Content),
+                        new SqliteParameter("user_id", entity.UserId)
                     }
                 };
                 var result = await command.ExecuteNonQueryAsync();

@@ -37,6 +37,7 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
                 loginControls.LoginControltitle.Text=login.Name;
                 loginControls.LoginControlName.Text = login.Service;
                 loginControls.Uid = login.Id.ToString();
+                loginControlStackPanel.Children.Add(loginControls);
             }
         }
     }
