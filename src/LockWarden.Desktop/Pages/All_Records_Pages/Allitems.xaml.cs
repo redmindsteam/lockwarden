@@ -33,7 +33,6 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
                 var logincontrol = new LoginControls();
                 var noteControls = new NoteControls();
                 var cardControl = new CardControls();
-                logincontrol.LoginControltitle.Text = "salom";
                 loginControlStackPanel.Children.Add(cardControl);
                 loginControlStackPanel.Children.Add(noteControls);
                 loginControlStackPanel.Children.Add(logincontrol);
