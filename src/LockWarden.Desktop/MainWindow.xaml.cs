@@ -63,14 +63,17 @@ namespace LockWarden.Desktop
             frameContent.Content = new Pages.ImagePage();
         }
 
-        private void AllRecordsPage_click(object sender, RoutedEventArgs e)
-        {
-            frameContent.Content = new Pages.AllRecordsPage();
-        }
+
 
         private void TrashPage_click(object sender, RoutedEventArgs e)
         {
             frameContent.Content = new Pages.TrashPage();
+        }
+
+
+        private void MenuItem_Click_All(object sender, RoutedEventArgs e)
+        {
+            frameContent.Content = new Pages.All_Records_Pages.All();
         }
     }
 }
