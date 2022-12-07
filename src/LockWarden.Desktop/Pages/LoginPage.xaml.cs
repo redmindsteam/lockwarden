@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LockWarden.Domain.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace LockWarden.Desktop.Pages
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoginViewModel loginViewModel = new LoginViewModel(Web_site_login_page_tb.Text,username_Login_page_tb.Text,password_Login_page_tb.Password,name_login_page_tb.Text);
+
         }
     }
 }
