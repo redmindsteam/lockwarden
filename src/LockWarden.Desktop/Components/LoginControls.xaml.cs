@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LockWarden.Desktop.Windows.InfoWindows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,8 @@ namespace LockWarden.Desktop.Components
 
         private void UserControl_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("hi");
+            LoginInfo info = new LoginInfo();
+            info.Show();
         }
     }
 }

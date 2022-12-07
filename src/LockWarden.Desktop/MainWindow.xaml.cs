@@ -97,5 +97,10 @@ namespace LockWarden.Desktop
         {
             frameContent.Content = new Pages.All_Records_Pages.Image();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
