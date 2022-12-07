@@ -16,15 +16,14 @@ public class Repository
 	public Repository()
 	{
 		Users = new UserRepository();
-		//throw new NotImplementedException("Not done. Use just UserRepository");
-		//Notes = new NoteRepository();
-		//Images = new ImageRepository();
-		//Logins = new LoginRepository();
-		//Cards = new CardRepository();
+		Notes = new NoteRepository();
+		Images = new ImageRepository();
+		Logins = new LoginRepository();
+		Cards = new CardRepository();
 	}
 	private bool DataBaseExists()
 	{
-		string file = DB_Constants.DB_Path_File;
+		string file = DB_Constants.DB_Path_File.Split("=")[1];
 		return new FileInfo(file).Exists;
 	}
 	public async void Initialize()
@@ -34,7 +33,7 @@ public class Repository
 			await CreateDataBaseAsync();
 		}
 	}
-	public async Task<bool> CreateDataBaseAsync()
+	private async Task<bool> CreateDataBaseAsync()
 	{
 		SqliteConnection _sqliteConnection = new(DB_Constants.DB_Path_File);
 		try
