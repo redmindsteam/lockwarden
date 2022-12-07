@@ -100,7 +100,7 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"select * from notes where id='{id}';";
+                string query = $"select * from notes where id={id};";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
                 var readly = await command.ExecuteReaderAsync();
                 if (await readly.ReadAsync())
