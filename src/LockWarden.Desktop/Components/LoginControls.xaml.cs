@@ -1,4 +1,5 @@
-﻿using LockWarden.Desktop.Windows.InfoWindows;
+﻿using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Windows.InfoWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,15 +29,22 @@ namespace LockWarden.Desktop.Components
             InitializeComponent();
         }
 
-        private void UserControl_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        private async void UserControl_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
             if (!check)
             {
+                Repository repository = new Repository();
+                var login = await repository.Logins.GetAsync(int.Parse(Uid));
                 LoginInfo info = new LoginInfo();
+                info.LoginName.Text = login.Name;
+                info.LoginUsername.Text = login.Username;
+                info.LoginPassword.Password = login.Password;
+                info.LoginWebSite.Text = login.Service;
                 info.Show();
                 info.Activate();
                 info.Topmost= true;
                 check= true;
+
             }
         }
 
