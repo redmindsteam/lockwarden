@@ -1,10 +1,6 @@
-﻿using LockWarden.DataAccess.Interfaces.IRepositories;
-using LockWarden.DataAccess.Repositories;
-using LockWarden.Domain.Models;
+﻿using LockWarden.DataAccess.Repositories;
 using LockWarden.Domain.ViewModels;
-using LockWarden.Service.Commons;
 using LockWarden.Service.Interfaces;
-using LockWarden.Service.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace LockWarden.Service.Services
 {
-    public class LoginService : ILoginService
+    public class ImageService:IImageService
     {
         private readonly Repository _repository;
-        public LoginService()
+        public ImageService()
         {
             _repository = new Repository();
         }
 
-        public Task<(bool IsSuccesful, string Message)> CreateAsync(LoginViewModel loginViewModel)
+        public Task<(bool IsSuccesful, string Message)> CreateAsync(ImageViewModel imageViewModel)
         {
             throw new NotImplementedException();
         }
 
-        public Task<(bool IsSuccesful, string Message)> DeleteAsync(int loginid)
+        public Task<(bool IsSuccesful, string Message)> DeleteAsync(int imageid)
         {
             throw new NotImplementedException();
         }
@@ -36,7 +32,7 @@ namespace LockWarden.Service.Services
             throw new NotImplementedException();
         }
 
-        public Task<(bool IsSuccesful, string Message)> UpdateAsync(LoginViewModel loginViewModel)
+        public Task<(bool IsSuccesful, string Message)> UpdateAsync(ImageViewModel imageViewModel)
         {
             throw new NotImplementedException();
         }

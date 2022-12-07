@@ -30,7 +30,7 @@ namespace LockWarden.Desktop.Windows
         public   LoginWindow()
         {
             InitializeComponent();
-            repository.CreateDataBaseAsync();
+            repository.Initialize();
         }
 
         private void textEmail_MouseDown(object sender, MouseButtonEventArgs e)
