@@ -39,6 +39,8 @@
 
                                 </ItemsPanelTemplate>
 
+                            
+                                
                             </Menu.ItemsPanel>
                             <MenuItem Header="full name" Click="FullNamePage_click"
                                       Style="{DynamicResource Menu_Template}"
@@ -69,10 +71,38 @@
                                           Icon="{DynamicResource image}">
                                 </MenuItem>
                             </MenuItem>
-                            <MenuItem Header="All records" Click="AllRecordsPage_click"
-                                      Style="{DynamicResource Menu_Template}"
+                            
+                            <!--All_Records-->
+                            
+                            <MenuItem Header="All records"
+                                      Style="{DynamicResource SubMenu}"
                                       Margin="0 10 0 0"
                                       Icon="{DynamicResource all}">
+                                
+                                <MenuItem Header="All" Click="MenuItem_Click_All"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
+
+                                <MenuItem Header="Login" Click="LoginPage_click"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
+
+                                <MenuItem Header="Card" Click="CardPage_click"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
+
+                                <MenuItem Header="Note" Click="NotePage_click"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
+
+                                <MenuItem Header="Image" Click="ImagePage_click"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
                             </MenuItem>
                             <MenuItem Header="Trash bin" Click="TrashPage_click"
                                       Style="{DynamicResource Menu_Template}"

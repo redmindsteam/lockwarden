@@ -14,26 +14,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LockWarden.Desktop.Pages
+namespace LockWarden.Desktop.Pages.All_Records_Pages
 {
     /// <summary>
-    /// Interaction logic for AllRecordsPage.xaml
+    /// Interaction logic for All.xaml
     /// </summary>
-    public partial class AllRecordsPage : Page
+    public partial class All : Page
     {
-        public AllRecordsPage()
+        public All()
         {
             InitializeComponent();
         }
 
-        private void MergeButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            for(int i=0; i<10; i++)
+            for (int i = 0; i < 50; i++)
             {
                 var logincontrol = new LoginControls();
                 loginControlStackPanel.Children.Add(logincontrol);
