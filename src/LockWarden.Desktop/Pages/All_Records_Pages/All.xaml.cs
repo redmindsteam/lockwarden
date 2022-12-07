@@ -1,4 +1,5 @@
-﻿using LockWarden.Desktop.Components;
+﻿using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,12 +27,16 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < 50; i++)
+            Repository repository = new Repository();
+            var logins = await repository.Logins.GetAllAsync();
+            foreach(var login in logins)
             {
-                var logincontrol = new LoginControls();
-                loginControlStackPanel.Children.Add(logincontrol);
+                LoginControls loginControls = new LoginControls();
+                loginControls.LoginControltitle.Text=login.Name;
+                loginControls.LoginControlName.Text = login.Service;
+                loginControls.Uid = login.Id.ToString();
             }
         }
     }

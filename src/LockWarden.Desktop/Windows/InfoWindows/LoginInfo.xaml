@@ -32,25 +32,25 @@
         
         <StackPanel x:Name="LoginWindowInfoStackpanel" Margin="5">
             <Label Content="name" Style="{StaticResource FullNamePageLabel}"/>
-            <TextBox Style="{StaticResource tbstyle}" Height="30" Padding="0">
+            <TextBox x:Name="LoginName" Style="{StaticResource tbstyle}" Height="30" Padding="0">
                 <TextBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/web.png" Stretch="Uniform" AlignmentX="Right"/>
                 </TextBox.Background>
             </TextBox>
             <Label Content="username" Style="{StaticResource FullNamePageLabel}"/>
-            <TextBox Style="{StaticResource tbstyle}"  Height="30"  Padding="0">
+            <TextBox x:Name="LoginUsername" Style="{StaticResource tbstyle}"  Height="30"  Padding="0">
                 <TextBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/web.png" Stretch="Uniform" AlignmentX="Right"/>
                 </TextBox.Background>
             </TextBox>
             <Label Content="password" Style="{StaticResource FullNamePageLabel}"/>
-            <PasswordBox x:Name="NewPassword_pb" Style="{StaticResource tbstylePassword}" Height="30"  Padding="0">
+            <PasswordBox x:Name="LoginPassword" Style="{StaticResource tbstylePassword}" Height="30"  Padding="0">
                 <PasswordBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/password_re.png" Stretch="Uniform" AlignmentX="Right"/>
                 </PasswordBox.Background>
             </PasswordBox>
             <Label Content="website" Style="{StaticResource FullNamePageLabel}"/>
-            <TextBox x:Name="ConfirmPassoword_pb" Style="{StaticResource tbstyle}" Height="30"  Padding="0">
+            <TextBox x:Name="LoginWebSite" Style="{StaticResource tbstyle}" Height="30"  Padding="0">
                 <TextBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/web.png" Stretch="Uniform" AlignmentX="Right"/>
                 </TextBox.Background>
