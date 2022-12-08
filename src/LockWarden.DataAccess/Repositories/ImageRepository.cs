@@ -81,7 +81,8 @@ namespace LockWarden.DataAccess.Repositories
 				var readly = await command.ExecuteReaderAsync();
 				if(await readly.ReadAsync())
 				{
-					Image image = new Image(readly.GetInt32(0), readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+					Image image = new Image(readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+					image.Id = readly.GetInt32(0);
 					return image;
 				}
 				else
@@ -110,8 +111,9 @@ namespace LockWarden.DataAccess.Repositories
 				List<Image> images = new List<Image>();
 				while(await readly.ReadAsync())
 				{
-					Image image = new Image(readly.GetInt32(0), readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
-					images.Add(image);
+					Image image = new Image( readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+					image.Id = readly.GetInt32(0);
+                    images.Add(image);
 				}
 				return images;
 
@@ -136,8 +138,10 @@ namespace LockWarden.DataAccess.Repositories
 				var readly = await command.ExecuteReaderAsync();
 				if(await readly.ReadAsync())
 				{
-					Image image = new Image(readly.GetInt32(0), readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
-					return image;
+					Image image = new Image( readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+					image.Id = readly.GetInt32(0);
+
+                    return image;
 				}
 				else
 				{
