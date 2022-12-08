@@ -18,6 +18,7 @@
                 <ResourceDictionary Source="Styles/LoginTextBoxStyle.xaml"/>
 
                 <ResourceDictionary Source="Styles/FullNamePageTextBoxStyle.xaml"/>
+                <ResourceDictionary Source="Styles/RichTextBoxStyle.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
             
