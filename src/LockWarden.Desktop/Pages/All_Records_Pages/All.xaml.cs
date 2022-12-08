@@ -1,5 +1,7 @@
 ﻿using LockWarden.DataAccess.Repositories;
 using LockWarden.Desktop.Components;
+using LockWarden.Domain.Models;
+using LockWarden.Service.Commons;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,7 +34,13 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
         {
             Repository repository = new Repository();
             var logins = await repository.Logins.GetAllAsync();
-            foreach(var login in logins)
+            var userlogins = new List<Login>();
+            foreach(var user in logins)
+            {
+                if(user.UserId==IdentitySingelton.GetInstance().UserId)
+                    userlogins.Add(user);
+            }
+            foreach(var login in userlogins)
             {
                 LoginControls loginControls = new LoginControls();
                 loginControls.LoginControltitle.Text=login.Name;
