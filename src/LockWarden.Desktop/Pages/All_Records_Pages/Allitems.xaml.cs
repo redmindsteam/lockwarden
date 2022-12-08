@@ -1,6 +1,10 @@
-﻿using LockWarden.Desktop.Components;
+﻿using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Components;
+using LockWarden.Domain.Models;
+using LockWarden.Service.Commons;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,18 +30,43 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < 50; i++)
+            Repository repository = new Repository();
+            var logins = await repository.Logins.GetAllAsync();
+            var userlogins = new List<Login>();
+            foreach (var user in logins)
             {
-                var logincontrol = new LoginControls();
-                var noteControls = new NoteControls();
-                var cardControl = new CardControls();
-                loginControlStackPanel.Children.Add(cardControl);
-                loginControlStackPanel.Children.Add(noteControls);
-                loginControlStackPanel.Children.Add(logincontrol);
-
+                if (user.UserId == IdentitySingelton.GetInstance().UserId)
+                    userlogins.Add(user);
             }
+            foreach (var login in userlogins)
+            {
+                LoginControls loginControls = new LoginControls();
+                loginControls.LoginControltitle.Text = login.Name;
+                loginControls.LoginControlName.Text = login.Service;
+                loginControls.Uid = login.Id.ToString();
+                try
+                {
+
+                    loginControls.imageIcon.ImageSource = new BitmapImage(new Uri($"https://{login.Service}/favicon.ico"));
+                    loginControlStackPanel.Children.Add(loginControls);
+                }
+                catch
+                {
+                    var str = new FileInfo("Assets/Icons/LoginControlDefaultWebIcon.png").FullName;
+                    loginControls.imageIcon.ImageSource = new BitmapImage(new Uri("https://google.com/favicon.ico"));
+                    loginControlStackPanel.Children.Add(loginControls);
+                }
+            }
+            for (int i = 0; i < 20; i++)
+            {
+                var cardControl = new CardControls();
+                var imageControl = new ImageControl();
+                loginControlStackPanel.Children.Add(cardControl);
+                loginControlStackPanel.Children.Add(imageControl);
+            }
+
         }
     }
 }

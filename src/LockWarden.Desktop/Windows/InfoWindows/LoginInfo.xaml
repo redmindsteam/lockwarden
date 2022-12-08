@@ -59,7 +59,7 @@
                 <Button   Style="{StaticResource FormPrimaryButton}" Margin="10 20 0 10" Height="40" Width="50">
                     <Image Source="/Assets/Icons/editButton.png" />
                 </Button>
-                <Button   Style="{StaticResource FormPrimaryButton}" Margin="10 20 10 10" Height="40" Width="50">
+                <Button Click="Delete" Style="{StaticResource FormPrimaryButton}" Margin="10 20 10 10" Height="40" Width="50">
                     <Image Source="/Assets/Icons/deleteButton.png" />
                 </Button>
                 <Button Content="Back" Click="ButtonBack_click" Style="{StaticResource FormPrimaryButton}" Margin="50 20 10 10" Height="40" Width="100">

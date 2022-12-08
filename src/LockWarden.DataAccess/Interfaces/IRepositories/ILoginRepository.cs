@@ -10,9 +10,8 @@ namespace LockWarden.DataAccess.Interfaces.IRepositories
 {
 	public interface ILoginRepository : IGenericRepository<Login>
 	{
-		public Task<bool> AddAllAsync(List<Login> entities);
-		public Task<bool> DeleteOldAsync();
-		public Task<bool> DeleteAllAsync(int userId);
+        public Task<bool> DeleteAllAsync(int userId);
+        public Task<bool> AddAllAsync(List<Login> entities);
 
-	}
+    }
 }

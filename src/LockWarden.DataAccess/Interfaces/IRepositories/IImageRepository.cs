@@ -10,9 +10,8 @@ namespace LockWarden.DataAccess.Interfaces.IRepositories
 {
 	public interface IImageRepository : IGenericRepository<Image>
 	{
-		public Task<bool> DeleteAllAsync(int userId);
-		public Task<bool> DeleteOldAsync();
-		public Task<bool> AddAllAsync(List<Image> entities);
+        public Task<bool> DeleteAllAsync(int userId);
+        public Task<bool> AddAllAsync(List<Image> entities);
 
-	}
+    }
 }

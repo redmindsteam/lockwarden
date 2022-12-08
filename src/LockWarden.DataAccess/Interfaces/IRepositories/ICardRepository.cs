@@ -10,8 +10,7 @@ namespace LockWarden.DataAccess.Interfaces.IRepositories
 {
 	public interface ICardRepository : IGenericRepository<Card>
 	{
-		public Task<bool> DeleteAllAsync(int userId);
-		public Task<bool> AddAllAsync(List<Card> entities);
-		public Task<bool> DeleteOldAsync();
-	}
+        public Task<bool> DeleteAllAsync(int userId);
+        public Task<bool> AddAllAsync(List<Card> entities);
+    }
 }

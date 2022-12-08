@@ -25,6 +25,7 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
     /// </summary>
     public partial class All : Page
     {
+        public int Id;
         public All()
         {
             InitializeComponent();
@@ -35,17 +36,18 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
             Repository repository = new Repository();
             var logins = await repository.Logins.GetAllAsync();
             var userlogins = new List<Login>();
-            foreach(var user in logins)
+            foreach (var user in logins)
             {
-                if(user.UserId==IdentitySingelton.GetInstance().UserId)
+                if (user.UserId == IdentitySingelton.GetInstance().UserId)
                     userlogins.Add(user);
             }
-            foreach(var login in userlogins)
+            foreach (var login in userlogins)
             {
                 LoginControls loginControls = new LoginControls();
-                loginControls.LoginControltitle.Text=login.Name;
+                loginControls.LoginControltitle.Text = login.Name;
                 loginControls.LoginControlName.Text = login.Service;
                 loginControls.Uid = login.Id.ToString();
+                Id = int.Parse(loginControls.Uid);
                 try
                 {
 

@@ -10,8 +10,7 @@ namespace LockWarden.DataAccess.Interfaces.IRepositories
 {
 	public interface INoteRepository : IGenericRepository<Note>
 	{
-		public Task<bool> AddAllAsync(List<Note> entities);
-		public Task<bool> DeleteOldAsync();
-		public Task<bool> DeleteAllAsync(int userId);
-	}
+        public Task<bool> DeleteAllAsync(int userId);
+        public Task<bool> AddAllAsync(List<Note> entities);
+    }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LockWarden.Domain.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace LockWarden.Desktop.Pages
         public CardPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CardViewModel cardViewModel = new CardViewModel(bank_card_page_tb.Text,number_card_page_tb.Text,pin_card_page_tb.Password,name_card_page_tb.Text);
+
         }
     }
 }
