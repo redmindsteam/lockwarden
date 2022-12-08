@@ -10,9 +10,9 @@ namespace LockWarden.Service.Interfaces
 {
     public interface IImageService
     {
-        Task<(bool IsSuccesful, string Message)> CreateAsync(ImageViewModel imageViewModel);
-        Task<(bool IsSuccesful, string Message)> UpdateAsync(ImageViewModel imageViewModel);
-        Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid);
-        Task<(bool IsSuccesful, string Message)> DeleteAsync(int imageid);
+        Task<(bool IsSuccesful, string Message)> CreateAsync(ImageViewModel imageViewModel, string userpassword);
+        Task<(bool IsSuccesful, string Message)> UpdateAsync(ImageViewModel imageViewModel,string userpassword);
+        Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid, string userpassword);
+        Task<(bool IsSuccesful, string Message)> DeleteAsync(int imageid, string userpassword);
     }
 }

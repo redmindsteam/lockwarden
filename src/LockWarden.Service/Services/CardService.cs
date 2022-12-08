@@ -43,17 +43,17 @@ namespace LockWarden.Service.Services
 
         }
 
-        public Task<(bool IsSuccesful, string Message)> DeleteAsync(int cardid)
+        public Task<(bool IsSuccesful, string Message)> DeleteAsync(int cardid, string userpassword)
         {
             throw new NotImplementedException();
         }
 
-        public Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid)
+        public Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid, string userpassword)
         {
             throw new NotImplementedException();
         }
 
-        public Task<(bool IsSuccesful, string Message)> UpdateAsync(CardViewModel cardViewModel)
+        public Task<(bool IsSuccesful, string Message)> UpdateAsync(CardViewModel cardViewModel, string userpassword)
         {
             throw new NotImplementedException();
         }

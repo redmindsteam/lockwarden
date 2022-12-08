@@ -17,22 +17,22 @@ namespace LockWarden.Service.Services
             _repository = new Repository();
         }
 
-        public Task<(bool IsSuccesful, string Message)> CreateAsync(ImageViewModel imageViewModel)
+        public Task<(bool IsSuccesful, string Message)> CreateAsync(ImageViewModel imageViewModel, string userpassword)
         {
             throw new NotImplementedException();
         }
 
-        public Task<(bool IsSuccesful, string Message)> DeleteAsync(int imageid)
+        public Task<(bool IsSuccesful, string Message)> DeleteAsync(int imageid, string userpassword)
         {
             throw new NotImplementedException();
         }
 
-        public Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid)
+        public Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid, string userpassword)
         {
             throw new NotImplementedException();
         }
 
-        public Task<(bool IsSuccesful, string Message)> UpdateAsync(ImageViewModel imageViewModel)
+        public Task<(bool IsSuccesful, string Message)> UpdateAsync(ImageViewModel imageViewModel, string userpassword)
         {
             throw new NotImplementedException();
         }

@@ -10,9 +10,9 @@ namespace LockWarden.Service.Interfaces
 {
     public interface ICardService
     {
-        Task<(bool IsSuccesful, string Message)> CreateAsync(CardViewModel cardViewModel,string userpassword);
-        Task<(bool IsSuccesful, string Message)> UpdateAsync(CardViewModel cardViewModel);
-        Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid);
-        Task<(bool IsSuccesful, string Message)> DeleteAsync(int cardid);
+        Task<(bool IsSuccesful, string Message)> CreateAsync(CardViewModel cardViewModel, string userpassword);
+        Task<(bool IsSuccesful, string Message)> UpdateAsync(CardViewModel cardViewModel, string userpassword);
+        Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid, string userpassword);
+        Task<(bool IsSuccesful, string Message)> DeleteAsync(int cardid, string userpassword);
     }
 }

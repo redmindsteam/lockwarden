@@ -10,9 +10,9 @@ namespace LockWarden.Service.Interfaces
 {
     public interface INoteService
     {
-        Task<(bool IsSuccesful, string Message)> CreateAsync(NoteViewModel noteViewModel);
-        Task<(bool IsSuccesful, string Message)> UpdateAsync(NoteViewModel noteViewModel);
-        Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid);
-        Task<(bool IsSuccesful, string Message)> DeleteAsync(int noteid);
+        Task<(bool IsSuccesful, string Message)> CreateAsync(NoteViewModel noteViewModel, string userpassword);
+        Task<(bool IsSuccesful, string Message)> UpdateAsync(NoteViewModel noteViewModel, string userpassword);
+        Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid, string userpassword);
+        Task<(bool IsSuccesful, string Message)> DeleteAsync(int noteid, string userpassword);
     }
 }
