@@ -5,10 +5,31 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LockWarden.Desktop.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="NotePage">
+      d:DesignHeight="590" d:DesignWidth="750"
+      Title="NotePage"
+      Background="{DynamicResource PrimaryBackgroundColor}"
+      >
 
-    <Grid>
-        
-    </Grid>
+    <Border Margin="40"
+            CornerRadius="20"
+            Background="{DynamicResource TertiaryBlackColor}">
+        <Border.Effect>
+            <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1" BlurRadius="30" Color="Black"/>
+        </Border.Effect>
+
+        <StackPanel Width="450" Height="500">
+            <StackPanel  Margin="0 50 0 0">
+                <Label Content="Title" Style="{StaticResource FullNamePageLabel}"/>
+                <TextBox x:Name="title_note_page_tb"  Style="{StaticResource tbstyle}"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Text" Style="{StaticResource FullNamePageLabel}"/>
+                <RichTextBox x:Name="text_note_page_tb" Style="{StaticResource rtbStyle}" Margin="0 10 0 0"/>
+            </StackPanel>
+
+            <Button Content="Create Note" Style="{StaticResource FormPrimaryButton}" Margin="0 30 0 0"/>
+            <Button Content="Back" Style="{StaticResource FormPrimaryButton}" Background="{StaticResource SecundaryRedColor}" Height="40" Margin="100 10 100 0"/>
+        </StackPanel>
+
+    </Border>
 </Page>

@@ -1,4 +1,4 @@
-using LockWarden.Desktop.Components;
+﻿using LockWarden.Desktop.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +16,12 @@ using System.Windows.Shapes;
 namespace LockWarden.Desktop.Windows.InfoWindows
 {
     /// <summary>
-    /// Interaction logic for CardWindow.xaml
+    /// Interaction logic for NoteInfo.xaml
     /// </summary>
-    public partial class CardWindow : Window
+    public partial class NoteInfo : Window
     {
-        public static int CardId;
-        public CardWindow(int id)
+        public NoteInfo()
         {
-            CardId = id;
             InitializeComponent();
         }
 
@@ -35,7 +33,7 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         private void ButtonBack_click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            CardControls.checkcard = false;
+            NoteControls.checknote = false;
         }
     }
 }
