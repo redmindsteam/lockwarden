@@ -23,7 +23,7 @@
                     Margin="15,15,15,15"
                     CornerRadius="100" Grid.ColumnSpan="2">
                 <Border.Background>
-                    <ImageBrush ImageSource="/Assets/Icons/LoginControlDefaultWebIcon.png"/>
+                    <ImageBrush ImageSource="/Assets/Icons/LoginControlDefaultWebIcon.png" x:Name="imageIcon"/>
                 </Border.Background>
             </Border>
             <StackPanel Grid.Column="2" Grid.ColumnSpan="2">

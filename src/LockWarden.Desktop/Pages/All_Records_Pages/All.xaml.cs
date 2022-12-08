@@ -2,6 +2,7 @@
 using LockWarden.Desktop.Components;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,18 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
                 loginControls.LoginControltitle.Text=login.Name;
                 loginControls.LoginControlName.Text = login.Service;
                 loginControls.Uid = login.Id.ToString();
+                try
+                {
+
+                    loginControls.imageIcon.ImageSource = new BitmapImage(new Uri($"https://{login.Service}/favicon.ico"));
+                    loginControlStackPanel.Children.Add(loginControls);
+                }
+                catch
+                {
+                    var str = new FileInfo("Assets/Icons/LoginControlDefaultWebIcon.png").FullName;
+                    loginControls.imageIcon.ImageSource = new BitmapImage(new Uri("https://google.com/favicon.ico"));
+                    loginControlStackPanel.Children.Add(loginControls);
+                }
             }
         }
     }

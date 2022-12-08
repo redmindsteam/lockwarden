@@ -153,7 +153,7 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = "update users set name=@name, password_hash=@password_hash,salt=@salt;" ;
+                string query = $"update users  set name=@name, password_hash=@password_hash,salt=@salt where id={id};" ;
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
