@@ -23,13 +23,13 @@
                     Background="{DynamicResource SecundaryBackgroundColor}">
                 <Grid x:Name="gridMenu">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="295"/>
+                        <RowDefinition Height="400"/>
                         <RowDefinition/>
                         <RowDefinition Height="150"/>
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Margin="0,10,0,0">
-                        <Menu Height="297"
+                        <Menu Height="400"
                               Background="Transparent">
                             <Menu.ItemsPanel>
 
@@ -73,37 +73,28 @@
                             </MenuItem>
                             
                             <!--All_Records-->
-                            
-                            <MenuItem Header="All records"
-                                      Style="{DynamicResource SubMenu}"
-                                      Margin="0 10 0 0"
-                                      Icon="{DynamicResource all}">
-                                <!--<MenuItem Header="All" Click="MenuItem_LoginPage_click"
-                                          Style="{DynamicResource Item_Template}"
-                                          Icon="{DynamicResource all}">
-                                </MenuItem>-->
-                                
-                                <MenuItem Header="Login" Click="MenuItem_Click_All"
-                                          Style="{DynamicResource Item_Template}"
-                                          Icon="{DynamicResource all}">
-                                </MenuItem>
 
-
-                                <MenuItem Header="Card" Click="MenuItem_CardPage_click"
-                                          Style="{DynamicResource Item_Template}"
-                                          Icon="{DynamicResource all}">
-                                </MenuItem>
-
-                                <MenuItem Header="Note" Click="MenuItem_NotePage_click"
-                                          Style="{DynamicResource Item_Template}"
-                                          Icon="{DynamicResource all}">
-                                </MenuItem>
-
-                                <MenuItem Header="Image" Click="MenuItems_ImagePage_click"
-                                          Style="{DynamicResource Item_Template}"
-                                          Icon="{DynamicResource all}">
-                                </MenuItem>
+                            <MenuItem Header="Login" Click="MenuItem_Click_All"
+                                          Style="{DynamicResource Menu_Template}"
+                                          Icon="{DynamicResource loginshow}"
+                                          Margin="0 10 0 0">
                             </MenuItem>
+                            <MenuItem Header="Card" Click="MenuItem_CardPage_click"
+                                          Style="{DynamicResource Menu_Template}"
+                                          Icon="{DynamicResource cardshow}"
+                                          Margin="0 10 0 0">
+                            </MenuItem>
+                            <MenuItem Header="Note" Click="MenuItem_NotePage_click"
+                                          Style="{DynamicResource Menu_Template}"
+                                          Icon="{DynamicResource noteshow}"
+                                          Margin="0 10 0 0">
+                            </MenuItem>
+                            <MenuItem Header="Image" Click="MenuItems_ImagePage_click"
+                                          Style="{DynamicResource Menu_Template}"
+                                          Icon="{DynamicResource imageshow}"
+                                          Margin="0 10 0 0">
+                            </MenuItem>
+
                             <!--<MenuItem Header="Trash bin" Click="TrashPage_click"
                                       Style="{DynamicResource Menu_Template}"
                                       Margin="0,10,0,2"
