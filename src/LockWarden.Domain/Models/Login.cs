@@ -16,7 +16,7 @@ public class Login : IUsable
     public string Name { get; set; }
     public int UserId { get; set; }
 
-    public Login(DateTime deleted, string service, string username, string password, string name, int userId)
+    public Login(DateTime? deleted, string service, string username, string password, string name, int userId)
     {
         Deleted = deleted;
         Service = service;
