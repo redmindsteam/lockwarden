@@ -1,4 +1,10 @@
-﻿using LockWarden.Desktop.Components;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Components;
+using LockWarden.Domain.Models;
+using LockWarden.Service.Commons;
+using LockWarden.Service.Interfaces;
+using LockWarden.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,17 +27,24 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
     /// </summary>
     public partial class Card : Page
     {
+        private readonly ICardService cardService;
         public Card()
         {
             InitializeComponent();
+            cardService = new CardService();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < 50; i++)
+            var cards = await cardService.GetAllAsync(IdentitySingelton.GetInstance().UserId, DB_Constants.UserPassword);
+
+            foreach (var card in cards.cards)
             {
-                var cardControl = new CardControls(CardControls.CardId);
-                loginControlStackPanel.Children.Add(cardControl);
+                CardControls cardControls = new CardControls();
+                cardControls.cardname.Text = card.Name;
+                cardControls.bankname.Text = card.Bank;
+                cardControls.Uid = card.Id.ToString();
+                loginControlStackPanel.Children.Add(cardControls);
             }
         }
     }

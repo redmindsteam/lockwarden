@@ -10,16 +10,15 @@ using System.Windows;
 
 namespace LockWarden.Desktop
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
-	public partial class MainWindow : Window
-	{
-	
-		public MainWindow()
-		{
-			InitializeComponent();
-    }
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -41,10 +40,10 @@ namespace LockWarden.Desktop
 
         private async void FullNamePage_click(object sender, RoutedEventArgs e)
         {
-          
+
             frameContent.Content = new Pages.FullNamePage();
         }
-           
+
         private void LoginPage_click(object sender, RoutedEventArgs e)
         {
             frameContent.Content = new Pages.LoginPage();

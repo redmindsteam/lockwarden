@@ -20,11 +20,10 @@ namespace LockWarden.Desktop.Windows.InfoWindows
     /// </summary>
     public partial class ImageWindow : Window
     {
-        public static int ImageId;
-        public ImageWindow(int id)
+
+        public ImageWindow()
         {
             InitializeComponent();
-            ImageId=id;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

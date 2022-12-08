@@ -1,4 +1,11 @@
+using LockWarden.DataAccess.Constants;
+using LockWarden.DataAccess.Repositories;
 using LockWarden.Desktop.Components;
+using LockWarden.Desktop.Pages.All_Records_Pages;
+using LockWarden.Domain.Models;
+using LockWarden.Domain.ViewModels;
+using LockWarden.Service.Interfaces;
+using LockWarden.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +28,12 @@ namespace LockWarden.Desktop.Windows.InfoWindows
     public partial class CardWindow : Window
     {
         public static int CardId;
+        private readonly ICardService  cardService;
         public CardWindow(int id)
         {
-            CardId = id;
             InitializeComponent();
+            cardService= new CardService();
+
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -38,14 +47,21 @@ namespace LockWarden.Desktop.Windows.InfoWindows
             CardControls.checkcard = false;
         }
 
-        private void Delete(object sender, RoutedEventArgs e)
+        private async void Delete(object sender, RoutedEventArgs e)
         {
-
+            CardId = Convert.ToInt32(Uid);
+            await cardService.DeleteAsync(Convert.ToInt32(Uid), DB_Constants.UserPassword);
+            this.Close();
+            MessageBox.Show("Deleted");
+            CardControls.checkcard = false;
         }
 
-        private void Update(object sender, RoutedEventArgs e)
+        private async void Update(object sender, RoutedEventArgs e)
         {
-
+            CardViewModel cardViewModel = new CardViewModel(Bankname.Text,cardNumber.Text,pin.Password,cardname.Text);
+            var result = await cardService.UpdateAsync(cardViewModel, DB_Constants.UserPassword, CardId);
+            MessageBox.Show(result.ToString());
+            LoginControls.check = false;
         }
     }
 }

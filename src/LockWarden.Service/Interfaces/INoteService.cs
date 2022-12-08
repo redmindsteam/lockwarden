@@ -12,7 +12,8 @@ namespace LockWarden.Service.Interfaces
     {
         Task<(bool IsSuccesful, string Message)> CreateAsync(NoteViewModel noteViewModel, string userpassword);
         Task<(bool IsSuccesful, string Message)> UpdateAsync(NoteViewModel noteViewModel, string userpassword, int NoteId);
-        Task<(string Content, string Message)> GetAsync(int NoteId, string userpassword);
-        Task<(bool IsSuccesful, string Message)> DeleteAsync(int noteid, string userpassword);
+        Task<(NoteViewModel note, string Message)> GetAsync(int NoteId, string userpassword);
+        Task<(List<NoteViewModel> notes, string Message)> GetAllAsync(int userid, string userpassword);
+        Task<(bool IsSuccesful, string Message)> DeleteAsync(int noteid, string userpassword);  
     }
 }
