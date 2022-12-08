@@ -68,6 +68,7 @@ namespace LockWarden.Service.Services
 			try
 			{
 				await _repository.Images.DeleteAsync(ImageId);
+				await CreateAsync(imageViewModel, userpassword);
 				return (true, "Successful");
 			}
 			catch(Exception ex)
