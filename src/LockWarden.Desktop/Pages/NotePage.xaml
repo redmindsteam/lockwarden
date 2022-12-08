@@ -1,4 +1,4 @@
-﻿<Page x:Class="LockWarden.Desktop.Pages.NotePage"
+<Page x:Class="LockWarden.Desktop.Pages.NotePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -18,7 +18,7 @@
         </Border.Effect>
 
         <StackPanel Width="450" Height="500">
-            <StackPanel  Margin="0 50 0 0">
+            <StackPanel  Margin="0 70 0 0">
                 <Label Content="Title" Style="{StaticResource FullNamePageLabel}"/>
                 <TextBox x:Name="title_note_page_tb"  Style="{StaticResource tbstyle}"/>
             </StackPanel>
@@ -27,8 +27,8 @@
                 <RichTextBox x:Name="text_note_page_tb" Style="{StaticResource rtbStyle}" Margin="0 10 0 0"/>
             </StackPanel>
 
-            <Button Content="Create Note" Style="{StaticResource FormPrimaryButton}" Margin="0 30 0 0" IsDefault="True"/>
-            <Button Content="Back" Style="{StaticResource FormPrimaryButton}" Background="{StaticResource SecundaryRedColor}" Height="40" Margin="100 10 100 0" IsDefault="True"/>
+
+            <Button Content="Create Note" Style="{StaticResource FormPrimaryButton}" Margin="30"/>
         </StackPanel>
 
     </Border>
