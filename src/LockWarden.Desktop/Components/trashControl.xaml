@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:LockWarden.Desktop.Components"
              mc:Ignorable="d" 
              Height="100" 
+             Cursor="Hand"
              Width="620">
     <Border BorderThickness="1"
             Margin="5"

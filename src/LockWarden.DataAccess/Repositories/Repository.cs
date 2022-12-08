@@ -14,7 +14,9 @@ public class Repository
 	public ILoginRepository Logins { get; set; }
 	public ICardRepository Cards { get; set; }
 
-	public Repository()
+
+
+    public Repository()
 	{
 		Users = new UserRepository();
 		Notes = new NoteRepository();
