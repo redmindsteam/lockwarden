@@ -25,6 +25,7 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
     /// </summary>
     public partial class Allitems : Page
     {
+        
         public Allitems()
         {
             InitializeComponent();
@@ -61,8 +62,8 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
             }
             for (int i = 0; i < 20; i++)
             {
-                var cardControl = new CardControls();
-                var imageControl = new ImageControl();
+                var cardControl = new CardControls(CardControls.CardId);
+                var imageControl = new ImageControl(ImageControl.ImageId);
                 loginControlStackPanel.Children.Add(cardControl);
                 loginControlStackPanel.Children.Add(imageControl);
             }

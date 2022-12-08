@@ -20,32 +20,30 @@
         </Border.Effect>
 
         <StackPanel Width="400" Height="500">
-            <Label Content="Email" Style="{StaticResource FullNamePageLabel}"/>
+
+            <Label Content="Name" Style="{StaticResource FullNamePageLabel}" Margin="0 100 0 0"/>
             <TextBox x:Name="full_name_email_tb" Style="{StaticResource tbstyle}">
                 <TextBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/emailicon.png" Stretch="Uniform" AlignmentX="Right"/>
                 </TextBox.Background>
             </TextBox>
+            
+            <Label Content="UserName" Style="{StaticResource FullNamePageLabel}" />
+            <TextBox x:Name="full_name_tb" Style="{StaticResource tbstyle}">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Assets/Icons/user.png" Stretch="Uniform" AlignmentX="Right"/>
+                </TextBox.Background>
+            </TextBox>
+            
+            
             <Label Content="Password" Style="{StaticResource FullNamePageLabel}"/>
-            <PasswordBox x:Name="Password_pb" Style="{StaticResource tbstylePassword}">
-                <PasswordBox.Background>
+            <TextBox x:Name="Password_pb" Style="{StaticResource tbstyle}">
+                <TextBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/password.png" Stretch="Uniform" AlignmentX="Right"/>
-                </PasswordBox.Background>
-            </PasswordBox>
-            <Label Content="New password" Style="{StaticResource FullNamePageLabel}"/>
-            <PasswordBox x:Name="NewPassword_pb" Style="{StaticResource tbstylePassword}">
-                <PasswordBox.Background>
-                    <ImageBrush ImageSource="/Assets/Icons/password_re.png" Stretch="Uniform" AlignmentX="Right"/>
-                </PasswordBox.Background>
-            </PasswordBox>
-            <Label Content="Confirm new password" Style="{StaticResource FullNamePageLabel}"/>
-            <PasswordBox x:Name="ConfirmPassoword_pb" Style="{StaticResource tbstylePassword}">
-                <PasswordBox.Background>
-                    <ImageBrush ImageSource="/Assets/Icons/password_verified.png" Stretch="Uniform" AlignmentX="Right"/>
-                </PasswordBox.Background>
-            </PasswordBox>
+                </TextBox.Background>
+            </TextBox>
 
-            <Button  Click="Button_Click" Content="Add" Style="{StaticResource FormPrimaryButton}"/>
+            <Button  Click="Button_Click" Content="change" Style="{StaticResource FormPrimaryButton}" IsDefault="True"/>
         </StackPanel>
 
     </Border>

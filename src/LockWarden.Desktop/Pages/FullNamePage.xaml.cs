@@ -1,4 +1,5 @@
-﻿using LockWarden.DataAccess.Interfaces.IRepositories;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.DataAccess.Interfaces.IRepositories;
 using LockWarden.DataAccess.Repositories;
 using LockWarden.Domain.Models;
 using LockWarden.Domain.ViewModels;
@@ -34,6 +35,9 @@ namespace LockWarden.Desktop.Pages
         {
             InitializeComponent();
             full_name_email_tb.Text = UserLogin().Result.Name;
+            full_name_tb.Text = UserLogin().Result.Login;
+            Password_pb.Text = DB_Constants.UserPassword;
+            
         }
        public async Task<User> UserLogin()
         {
@@ -45,31 +49,7 @@ namespace LockWarden.Desktop.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            var userlogin = UserLogin().Result.Login;
-            UserService userService = new UserService();
-            var result=await userService.LoginUpdateAsync(userlogin, Password_pb.Password);
-            if (result.IsSuccesful)
-            {
-                if (NewPassword_pb.Password == ConfirmPassoword_pb.Password)
-                {
-                    UserViewModel userViewModel = new UserViewModel(full_name_email_tb.Text,userlogin,NewPassword_pb.Password);
-                    var check = await userService.UpdateAsync(userViewModel);
-                    if (check.IsSuccesful)
-                    {
-                        MessageBox.Show(check.Message);
-                    }
-                    else MessageBox.Show(check.Message);
-                            
-                }
-                else
-                {
-                    MessageBox.Show("Yangi kritilgan parollar bir-briga mos emas");
-                }
-            }
-            else
-            {
-                MessageBox.Show(result.Message);   
-            }
+            
 
         }
     }

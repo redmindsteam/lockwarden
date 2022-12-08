@@ -36,6 +36,7 @@ namespace LockWarden.Desktop.Components
                 Repository repository = new Repository();
                 var login = await repository.Logins.GetAsync(int.Parse(Uid));
                 LoginInfo info = new LoginInfo(login.Id);
+                
                 info.LoginName.Text = login.Name;
                 info.LoginUsername.Text = login.Username;
                 info.LoginPassword.Password = login.Password;
@@ -44,7 +45,6 @@ namespace LockWarden.Desktop.Components
                 info.Activate();
                 info.Topmost= true;
                 check= true;
-
             }
         }
 
