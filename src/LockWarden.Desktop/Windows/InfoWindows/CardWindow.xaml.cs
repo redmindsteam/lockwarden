@@ -37,5 +37,10 @@ namespace LockWarden.Desktop.Windows.InfoWindows
             this.Close();
             CardControls.checkcard = false;
         }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

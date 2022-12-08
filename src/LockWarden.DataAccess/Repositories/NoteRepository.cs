@@ -87,8 +87,9 @@ namespace LockWarden.DataAccess.Repositories
 				List<Note> notes = new List<Note>();
 				while(await readly.ReadAsync())
 				{
-					Note note = new Note(readly.GetInt32(0), readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
-					notes.Add(note);
+					Note note = new Note( readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+					note.Id = readly.GetInt32(0);
+                    notes.Add(note);
 				}
 				return notes;
 
@@ -113,8 +114,10 @@ namespace LockWarden.DataAccess.Repositories
 				var readly = await command.ExecuteReaderAsync();
 				if(await readly.ReadAsync())
 				{
-					Note note = new Note(readly.GetInt32(0), readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
-					return note;
+					Note note = new Note( readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetInt32(4));
+					note.Id = readly.GetInt32(0);
+
+                    return note;
 				}
 				else
 				{
