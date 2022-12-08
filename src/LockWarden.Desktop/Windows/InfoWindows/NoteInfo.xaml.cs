@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace LockWarden.Desktop.Windows.InfoWindows
 {
     /// <summary>
-    /// Interaction logic for CardWindow.xaml
+    /// Interaction logic for NoteInfo.xaml
     /// </summary>
-    public partial class CardWindow : Window
+    public partial class NoteInfo : Window
     {
-        public CardWindow()
+        public NoteInfo()
         {
             InitializeComponent();
         }
@@ -33,8 +33,7 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         private void ButtonBack_click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            CardControls.checkcard = false;
+            NoteControls.checknote = false;
         }
-
     }
 }

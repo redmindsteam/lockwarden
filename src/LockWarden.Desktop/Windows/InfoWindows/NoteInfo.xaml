@@ -1,0 +1,54 @@
+﻿<Window x:Class="LockWarden.Desktop.Windows.InfoWindows.NoteInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LockWarden.Desktop.Windows.InfoWindows"
+        mc:Ignorable="d"
+        Height="430" 
+        Width="350"
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" 
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        MouseDown="Window_MouseDown"
+        Title="NoteInfo">
+    <Border Margin="20"
+        CornerRadius="20" Background="#004FC4"
+        BorderThickness="1" Opacity="100" >
+        <Border.Effect>
+            <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1"
+                              BlurRadius="50" Color="#004FC4"/>
+        </Border.Effect>
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="Cyan" Offset="0.1"/>
+                <GradientStop Color="DarkCyan" Offset="0.95"/>
+                <GradientStop Color="LightCyan" Offset="0.4"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        
+        <StackPanel Margin="10">
+            <StackPanel  Margin="0 0 0 0">
+                <Label Content="Title" Style="{StaticResource FullNamePageLabel}"/>
+                <TextBox x:Name="title_note_page_tb"  Style="{StaticResource tbstyle}"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Text" Style="{StaticResource FullNamePageLabel}"/>
+                <RichTextBox x:Name="text_note_page_tb" Style="{StaticResource rtbStyle}" Margin="0 10 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button   Style="{StaticResource FormPrimaryButton}" Margin="10 20 0 10" Height="40" Width="50">
+                    <Image Source="/Assets/Icons/editButton.png" />
+                </Button>
+                <Button   Style="{StaticResource FormPrimaryButton}" Margin="10 20 10 10" Height="40" Width="50">
+                    <Image Source="/Assets/Icons/deleteButton.png" />
+                </Button>
+                <Button Content="Back" Click="ButtonBack_click" Style="{StaticResource FormPrimaryButton}" Margin="50 20 10 10" Height="40" Width="100">
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+    </Border>
+</Window>
