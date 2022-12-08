@@ -12,5 +12,8 @@ namespace LockWarden.DataAccess.Constants
         static public string DB_Path_Directory = "Data Source=" + Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\Lock Warden";
         
         static public string DB_Path_File = "Data Source=" + Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\Lock Warden" + "\\lock-warden.db";
+
+        public static string UserPassword = string.Empty;
+        public static string ImagePath = string.Empty;
     }
 }

@@ -5,10 +5,29 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LockWarden.Desktop.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="590" d:DesignWidth="750"
+      Background="{DynamicResource PrimaryBackgroundColor}"
       Title="ImagePage">
 
-    <Grid>
-        
-    </Grid>
+    <Border Margin="40"
+            CornerRadius="20"
+            Background="{DynamicResource TertiaryBlackColor}">
+        <Border.Effect>
+            <DropShadowEffect Direction="-75" ShadowDepth="2" Opacity="1" BlurRadius="30" Color="Black"/>
+        </Border.Effect>
+
+        <StackPanel Width="350" Height="500">
+            <DockPanel  Margin="0 70 0 0">
+                <Label Content="Name: " Style="{StaticResource FullNamePageLabel}"/>
+                <TextBox x:Name="bank_card_page_tb"  Style="{StaticResource tbstyle}" Margin="20 0 0 0" />
+            </DockPanel>
+            <Border Margin="20" Width="200" Height="200" BorderThickness="2" BorderBrush="{DynamicResource TertiaryGreenColor}">
+                <Image x:Name="imagePicture" Height="200" Width="200"  Stretch="Uniform"/>
+            </Border>
+            <Button Content="Upload" Click="Button_Click" Style="{StaticResource FormPrimaryButton}" Margin="50 10 50 0" Background="{DynamicResource SecundaryGreenColor}"/>
+            <Button Content="save" Click="Button_Click_save" Style="{StaticResource FormPrimaryButton}" Margin="40 20 40 0"/>
+
+        </StackPanel>
+
+    </Border>
 </Page>

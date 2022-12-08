@@ -54,7 +54,7 @@
                 </TextBox>
             </DockPanel>
 
-            <Button Content="NImadur Button" Click="Button_Click" Style="{StaticResource FormPrimaryButton}" Margin="70"/>
+            <Button Content="Add" Click="Button_Click" Style="{StaticResource FormPrimaryButton}" Margin="70"/>
         </StackPanel>
 
     </Border>

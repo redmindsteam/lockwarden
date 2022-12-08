@@ -1,4 +1,5 @@
-﻿using LockWarden.DataAccess.Repositories;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.DataAccess.Repositories;
 using LockWarden.Desktop.Pages;
 using LockWarden.Domain.ViewModels;
 using LockWarden.Service.Services;
@@ -27,6 +28,7 @@ namespace LockWarden.Desktop.Windows
     public partial class LoginWindow : Window
     {
         Repository repository = new Repository();
+
         public   LoginWindow()
         {
             InitializeComponent();
@@ -93,6 +95,8 @@ namespace LockWarden.Desktop.Windows
             {
                 this.Close();
                 MainWindow mainWindow = new MainWindow();
+                DB_Constants.UserPassword= txtPasswords.Password;
+
                 mainWindow.Show();
             }
         }

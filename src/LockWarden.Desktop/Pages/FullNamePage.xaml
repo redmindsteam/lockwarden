@@ -45,7 +45,7 @@
                 </PasswordBox.Background>
             </PasswordBox>
 
-            <Button  Click="Button_Click" Content="Nimadur button" Style="{StaticResource FormPrimaryButton}"/>
+            <Button  Click="Button_Click" Content="Add" Style="{StaticResource FormPrimaryButton}"/>
         </StackPanel>
 
     </Border>

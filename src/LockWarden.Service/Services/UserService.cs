@@ -16,6 +16,8 @@ namespace LockWarden.Service.Services
     public class UserService:IUserService
     {
         private readonly IUserRepository _repository;
+
+
         public UserService()
         {
             _repository = new UserRepository();

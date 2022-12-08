@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:LockWarden.Desktop.Components"
              MouseLeftButtonDown="UserControl_MouseLeftButtonDown_1"
              mc:Ignorable="d" 
+             Cursor="Hand"
              Height="100" 
              Width="620">
     <Border BorderThickness="1"

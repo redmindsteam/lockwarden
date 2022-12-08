@@ -78,10 +78,10 @@
                                       Style="{DynamicResource SubMenu}"
                                       Margin="0 10 0 0"
                                       Icon="{DynamicResource all}">
-                                <MenuItem Header="All" Click="MenuItem_LoginPage_click"
+                                <!--<MenuItem Header="All" Click="MenuItem_LoginPage_click"
                                           Style="{DynamicResource Item_Template}"
                                           Icon="{DynamicResource all}">
-                                </MenuItem>
+                                </MenuItem>-->
                                 
                                 <MenuItem Header="Login" Click="MenuItem_Click_All"
                                           Style="{DynamicResource Item_Template}"
@@ -104,11 +104,11 @@
                                           Icon="{DynamicResource all}">
                                 </MenuItem>
                             </MenuItem>
-                            <MenuItem Header="Trash bin" Click="TrashPage_click"
+                            <!--<MenuItem Header="Trash bin" Click="TrashPage_click"
                                       Style="{DynamicResource Menu_Template}"
                                       Margin="0,10,0,2"
                                       Icon="{DynamicResource trash}">
-                            </MenuItem>
+                            </MenuItem>-->
                         </Menu>
                     </StackPanel>
                     <StackPanel Grid.Row="2">
