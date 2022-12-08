@@ -157,7 +157,7 @@ namespace LockWarden.Desktop.Windows
             }
             else
             {
-               
+               DB_Constants.UserPassword=txtPasswords.Password;
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();

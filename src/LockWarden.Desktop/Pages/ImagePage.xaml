@@ -25,7 +25,7 @@
                 <Image x:Name="imagePicture" Height="200" Width="200"  Stretch="Uniform"/>
             </Border>
             <Button Content="Upload" Click="Button_Click" Style="{StaticResource FormPrimaryButton}" Margin="50 10 50 0" Background="{DynamicResource SecundaryGreenColor}"/>
-            <Button Content="save" Click="Button_Click_save" Style="{StaticResource FormPrimaryButton}" Margin="40 20 40 0"/>
+            <Button Content="Save" Click="Button_Click_save" Style="{StaticResource FormPrimaryButton}" Margin="40 20 40 0" IsDefault="True"/>
 
         </StackPanel>
 

@@ -23,9 +23,11 @@ namespace LockWarden.Desktop.Components
     public partial class CardControls : UserControl
     {
         public static bool checkcard;
-        public CardControls()
+        public static int CardId;
+        public CardControls(int id)
         {
             InitializeComponent();
+            CardId = id;
         }
 
         private void UserControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -33,7 +35,7 @@ namespace LockWarden.Desktop.Components
             if (!checkcard)
             {
                 Repository repository = new Repository();
-                CardWindow info = new CardWindow();
+                CardWindow info = new CardWindow(CardId);
                 info.Show();
                 info.Activate();
                 info.Topmost = true;

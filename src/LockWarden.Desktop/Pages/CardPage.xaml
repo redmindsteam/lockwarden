@@ -36,7 +36,7 @@
                 <TextBox x:Name="name_card_page_tb"  Style="{StaticResource tbstyle}" Margin="15 0 0 0"/>
             </DockPanel>
 
-            <Button  Click="Button_Click" Content="Add" Style="{StaticResource FormPrimaryButton}" Margin="30"/>
+            <Button  Click="Button_Click" Content="Add" Style="{StaticResource FormPrimaryButton}" Margin="30" IsDefault="True"/>
 
         </StackPanel>
 

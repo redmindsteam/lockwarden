@@ -23,16 +23,19 @@ namespace LockWarden.Desktop.Components
     /// </summary>
     public partial class ImageControl : UserControl
     {
-        public ImageControl()
+        public static int ImageId;
+        public ImageControl(int id)
         {
+            ImageId = id;
             InitializeComponent();
         }
+        
         public static bool checkImage;
         private void UserControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (!checkImage)
             {
-                ImageWindow info = new ImageWindow();
+                ImageWindow info = new ImageWindow(ImageId);
                 info.Show();
                 info.Activate();
                 info.Topmost = true;

@@ -55,12 +55,12 @@
 
                         <StackPanel x:Name="LoginStackPanel" Margin="10">
 
-                            <Label Content="Email" Style="{StaticResource LoginLabelStyle}" Margin="0,135,0,0"/>
+                            <Label Content="Username" Style="{StaticResource LoginLabelStyle}" Margin="0,135,0,0"/>
                             <Border x:Name="emailBorder" BorderThickness="1"
                                     BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                     Height="30" Width="300" CornerRadius="9" Margin="0">
                                 <Grid>
-                                    <TextBlock x:Name="textEmail" MouseDown="textEmail_MouseDown" Text="example@gmail.com" Style="{StaticResource textHint}"/>
+                                    <TextBlock x:Name="textEmail" MouseDown="textEmail_MouseDown" Text="username" Style="{StaticResource textHint}"/>
                                     <TextBox x:Name="txtemail"  TextChanged="txtemail_TextChanged" Style="{StaticResource LoginTextBoxStyle}"/>
                                 </Grid>
                             </Border>
@@ -70,12 +70,12 @@
                                     BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                     Height="30" Width="300" CornerRadius="9" Margin="0">
                                 <Grid>
-                                    <TextBlock x:Name="textPassword" MouseDown="textPassword_MouseDown" Text="Your Password" Style="{StaticResource textHint}"/>
+                                    <TextBlock x:Name="textPassword" MouseDown="textPassword_MouseDown" Text="password" Style="{StaticResource textHint}"/>
                                     <PasswordBox x:Name="txtPasswords" PasswordChanged="txtPasswords_PasswordChanged" Style="{StaticResource LoginPasswordBox}"/>
                                 </Grid>
                             </Border>
 
-                            <Button Content="Login" Style="{StaticResource FormPrimaryButton}" Click="Login_button" />
+                            <Button Content="Login" Style="{StaticResource FormPrimaryButton}" Click="Login_button"  IsDefault="True"/>
                             <Button Content="Register" Style="{StaticResource FormSuccessButton}" Width="304" Click="Register_button" Height="50"/>
                         </StackPanel>
                     </Border>
@@ -132,8 +132,8 @@
                                 </Grid>
                             </Border>
                             
-                            <Button Content="Register" Style="{StaticResource FormPrimaryButton}" Click="Register_verify_button" Width="302" Height="40" Margin="0 20 0 0" />
-                            <Button Content="←" Style="{StaticResource RegisterBackStyle}" Click="register_back" />
+                            <Button Content="Register" Style="{StaticResource FormPrimaryButton}" Click="Register_verify_button" Width="302" Height="40" Margin="0 20 0 0" IsDefault="True" />
+                            <Button Content="←" Style="{StaticResource RegisterBackStyle}" Click="register_back" IsCancel="True" />
                         </StackPanel>
                         
                     </Border>

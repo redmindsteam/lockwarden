@@ -42,5 +42,10 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         {
 
         }
+
+        private void Update(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

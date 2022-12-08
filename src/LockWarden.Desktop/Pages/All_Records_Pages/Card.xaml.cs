@@ -30,7 +30,7 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
         {
             for (int i = 0; i < 50; i++)
             {
-                var cardControl = new CardControls();
+                var cardControl = new CardControls(CardControls.CardId);
                 loginControlStackPanel.Children.Add(cardControl);
             }
         }
