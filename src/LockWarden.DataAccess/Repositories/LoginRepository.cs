@@ -25,9 +25,9 @@ namespace LockWarden.DataAccess.Repositories
 						new SqliteParameter("deleted",entity.Deleted),
 						new SqliteParameter("service",entity.Service),
 						new SqliteParameter("username",entity.Username),
-						new SqliteParameter("Password",entity.Password),
-						new SqliteParameter("Name",entity.Name),
-						new SqliteParameter("userId",entity.UserId),
+						new SqliteParameter("password",entity.Password),
+						new SqliteParameter("name",entity.Name),
+						new SqliteParameter("user_id",entity.UserId),
 					}
 				};
 				var result = await command.ExecuteNonQueryAsync();
@@ -83,8 +83,9 @@ namespace LockWarden.DataAccess.Repositories
 				List<Login> logins = new List<Login>();
 				while(await readly.ReadAsync())
 				{
-					Login login = new Login(readly.GetInt32(0), readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetString(4), readly.GetString(5), readly.GetInt32(6));
+					Login login = new Login(readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetString(4), readly.GetString(5), readly.GetInt32(6));
 					logins.Add(login);
+					login.Id = readly.GetInt32(0);
 				}
 				return logins;
 
@@ -109,7 +110,8 @@ namespace LockWarden.DataAccess.Repositories
 				var readly = await command.ExecuteReaderAsync();
 				if(await readly.ReadAsync())
 				{
-					Login Login = new Login(readly.GetInt32(0), readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetString(4), readly.GetString(5), readly.GetInt32(2));
+					Login Login = new Login( readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetString(4), readly.GetString(5), readly.GetInt32(2));
+					Login.Id = readly.GetInt32(0);
 					return Login;
 				}
 				else

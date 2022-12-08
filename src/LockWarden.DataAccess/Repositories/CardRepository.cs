@@ -87,7 +87,8 @@ namespace LockWarden.DataAccess.Repositories
 				List<Card> cards = new List<Card>();
 				while(await readly.ReadAsync())
 				{
-					Card card = new Card(readly.GetInt32(0), readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetString(4), readly.GetString(5), readly.GetInt32(6));
+					Card card = new Card(readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetString(4), readly.GetString(5), readly.GetInt32(6));
+					card.Id = readly.GetInt32(0);
 					cards.Add(card);
 				}
 				return cards;
@@ -113,7 +114,8 @@ namespace LockWarden.DataAccess.Repositories
 				var readly = await command.ExecuteReaderAsync();
 				if(await readly.ReadAsync())
 				{
-					Card card = new Card(readly.GetInt32(0), readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetString(4), readly.GetString(5), readly.GetInt32(6));
+					Card card = new Card( readly.GetDateTime(1), readly.GetString(2), readly.GetString(3), readly.GetString(4), readly.GetString(5), readly.GetInt32(6));
+					card.Id = readly.GetInt32(0);
 					return card;
 				}
 				else

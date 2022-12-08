@@ -1,4 +1,6 @@
-﻿using LockWarden.Desktop.Components;
+﻿using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Components;
+using LockWarden.Desktop.Pages.All_Records_Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +40,13 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         {
             this.Close();
             LoginControls.check = false;
+        }
+
+        private async void Delete(object sender, RoutedEventArgs e)
+        {
+            Repository repository = new Repository();
+            All all = new All();
+            await repository.Logins.DeleteAsync(2);
         }
     }
 }

@@ -10,11 +10,10 @@ public class Card : IUsable
     public string Name { get; set; }
     public int UserId { get; set; }
 
-    public Card(int id, DateTime deleted,  string bank, string number, string pin, string name, int userId)
+    public Card(DateTime deleted,  string bank, string number, string pin, string name, int userId)
     {
         UserId = userId;
         Deleted = deleted;
-        Id = id;
         Bank = bank;
         Number = number;
         Pin = pin;
