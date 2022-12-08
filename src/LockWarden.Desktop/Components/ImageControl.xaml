@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LockWarden.Desktop.Components"
              MouseLeftButtonDown="UserControl_MouseLeftButtonDown"
+             Cursor="Hand"
              mc:Ignorable="d" 
              Height="100" 
              Width="620">
