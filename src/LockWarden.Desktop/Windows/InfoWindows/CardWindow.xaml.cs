@@ -1,4 +1,4 @@
-﻿using LockWarden.Desktop.Components;
+using LockWarden.Desktop.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +20,10 @@ namespace LockWarden.Desktop.Windows.InfoWindows
     /// </summary>
     public partial class CardWindow : Window
     {
-        public CardWindow()
+        public static int CardId;
+        public CardWindow(int id)
         {
+            CardId = id;
             InitializeComponent();
         }
 
@@ -35,6 +37,5 @@ namespace LockWarden.Desktop.Windows.InfoWindows
             this.Close();
             CardControls.checkcard = false;
         }
-
     }
 }

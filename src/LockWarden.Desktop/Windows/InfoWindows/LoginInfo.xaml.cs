@@ -23,8 +23,10 @@ namespace LockWarden.Desktop.Windows.InfoWindows
     /// </summary>
     public partial class LoginInfo : Window
     {
-        public LoginInfo()
+        public static int LoginId;
+        public LoginInfo(int id)
         {
+            LoginId = id;
             InitializeComponent();
         }
 
@@ -46,7 +48,12 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         {
             Repository repository = new Repository();
             All all = new All();
-            await repository.Logins.DeleteAsync(2);
+            await repository.Logins.DeleteAsync(LoginId);
+        }
+
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
