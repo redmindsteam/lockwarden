@@ -1,4 +1,7 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Windows;
+using MaterialDesignThemes.Wpf;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -28,7 +31,6 @@ namespace LockWarden.Desktop.Pages
             InitializeComponent();
         }
 
-       
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -38,6 +40,7 @@ namespace LockWarden.Desktop.Pages
             if (openFileDialog.ShowDialog() == true)
             {
                 imagePicture.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+                DB_Constants.ImagePath = openFileDialog.FileName;
             }
         }
 

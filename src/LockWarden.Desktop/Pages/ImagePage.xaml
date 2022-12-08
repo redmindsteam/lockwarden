@@ -21,9 +21,9 @@
                 <Label Content="Name: " Style="{StaticResource FullNamePageLabel}"/>
                 <TextBox x:Name="bank_card_page_tb"  Style="{StaticResource tbstyle}" Margin="20 0 0 0" />
             </DockPanel>
-
-            <Image x:Name="imagePicture" Height="200" Width="200" Margin="0 20 0 0" Stretch="None"/>
-            
+            <Border Margin="20" Width="200" Height="200" BorderThickness="2" BorderBrush="{DynamicResource TertiaryGreenColor}">
+                <Image x:Name="imagePicture" Height="200" Width="200"  Stretch="Uniform"/>
+            </Border>
             <Button Content="Upload" Click="Button_Click" Style="{StaticResource FormPrimaryButton}" Margin="50 10 50 0" Background="{DynamicResource SecundaryGreenColor}"/>
             <Button Content="save" Click="Button_Click_save" Style="{StaticResource FormPrimaryButton}" Margin="40 20 40 0"/>
 

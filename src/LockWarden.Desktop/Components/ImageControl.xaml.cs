@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Windows.InfoWindows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,19 @@ namespace LockWarden.Desktop.Components
         public ImageControl()
         {
             InitializeComponent();
+        }
+        public static bool checkImage;
+        private void UserControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (!checkImage)
+            {
+                ImageWindow info = new ImageWindow();
+                info.Show();
+                info.Activate();
+                info.Topmost = true;
+                checkImage = true;
+                
+            }
         }
     }
 }
