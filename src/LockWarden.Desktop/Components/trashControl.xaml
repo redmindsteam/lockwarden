@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="LockWarden.Desktop.Components.trashControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LockWarden.Desktop.Components"
+             mc:Ignorable="d" 
+             Height="100" 
+             Width="620">
+    <Border BorderThickness="1"
+            Margin="5"
+            CornerRadius="4"
+            Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="52.023"/>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="214*"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0"
+                    Margin="20"
+                    Grid.ColumnSpan="2">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Assets/Icons/bankCard.png"/>
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Column="2" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Item Name" 
+                               Style="{DynamicResource LoginControlTextBlock}" Margin="5 20 0 0"/>
+
+                    <TextBlock Grid.Row="1" Text="Item date" 
+                               Style="{DynamicResource LoginControlTextBlock}" Margin="5 17 0 0" Foreground="Gray" FontSize="14"/>
+                </Grid>
+            </StackPanel>
+
+            <Border Grid.Column="3"
+                    BorderThickness="0"
+                    Margin="20"
+                    >
+                <Button Grid.Column="3" Background="Transparent">
+                        <Image Source="/Assets/Icons/restore.png" />
+                </Button>
+            </Border>
+            
+        </Grid>
+    </Border>
+</UserControl>

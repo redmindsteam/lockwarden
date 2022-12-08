@@ -1,4 +1,5 @@
 ﻿using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Pages;
 using LockWarden.Domain.ViewModels;
 using LockWarden.Service.Services;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -29,7 +30,7 @@ namespace LockWarden.Desktop.Windows
         public   LoginWindow()
         {
             InitializeComponent();
-            repository.CreateDataBaseAsync();
+            repository.Initialize();
         }
 
         private void textEmail_MouseDown(object sender, MouseButtonEventArgs e)
@@ -155,6 +156,7 @@ namespace LockWarden.Desktop.Windows
                
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
+                this.Close();
             }
         }
 

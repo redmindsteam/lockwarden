@@ -39,6 +39,8 @@
 
                                 </ItemsPanelTemplate>
 
+                            
+                                
                             </Menu.ItemsPanel>
                             <MenuItem Header="full name" Click="FullNamePage_click"
                                       Style="{DynamicResource Menu_Template}"
@@ -69,10 +71,38 @@
                                           Icon="{DynamicResource image}">
                                 </MenuItem>
                             </MenuItem>
-                            <MenuItem Header="All records" Click="AllRecordsPage_click"
-                                      Style="{DynamicResource Menu_Template}"
+                            
+                            <!--All_Records-->
+                            
+                            <MenuItem Header="All records"
+                                      Style="{DynamicResource SubMenu}"
                                       Margin="0 10 0 0"
                                       Icon="{DynamicResource all}">
+                                <MenuItem Header="All" Click="MenuItem_LoginPage_click"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
+                                
+                                <MenuItem Header="Login" Click="MenuItem_Click_All"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
+
+
+                                <MenuItem Header="Card" Click="MenuItem_CardPage_click"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
+
+                                <MenuItem Header="Note" Click="MenuItem_NotePage_click"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
+
+                                <MenuItem Header="Image" Click="MenuItems_ImagePage_click"
+                                          Style="{DynamicResource Item_Template}"
+                                          Icon="{DynamicResource all}">
+                                </MenuItem>
                             </MenuItem>
                             <MenuItem Header="Trash bin" Click="TrashPage_click"
                                       Style="{DynamicResource Menu_Template}"
@@ -82,8 +112,8 @@
                         </Menu>
                     </StackPanel>
                     <StackPanel Grid.Row="2">
-                        <Image Source="Assets/Icons/lockwarden.png" Stretch="Uniform" Height="80"/>
-                        <TextBlock Text="LockWarden" FontSize="30" FontFamily="Jetbrains Mono" FontWeight="SemiBold" Foreground="#FFF" HorizontalAlignment="Center"/>
+                        <Image Source="Assets/Icons/lockPng.png" Stretch="Uniform" Height="80"/>
+                        <TextBlock Text="LockWarden" FontSize="30" FontFamily="Jetbrains Mono" FontWeight="SemiBold" Foreground="#FFF" HorizontalAlignment="Center" Margin="0 8"/>
                     </StackPanel>
                 </Grid>
             </Border>
@@ -94,22 +124,24 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <!-- Start: Button Close | Restore | Minimize -->
-                <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
-                    <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
-                    <Button x:Name="btnRestore" Margin="5 0" Click="btnRestore_Click">
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonsStyle}">
-                                <Setter Property="Content" Value="{DynamicResource maximize}"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}"                                Value="Maximized">
-                                        <Setter Property="Content" Value="{DynamicResource restore}"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
-                    <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
-                </StackPanel>
+                <Border BorderThickness="0 0 0 2" BorderBrush="{DynamicResource TertiaryBlackColor}">
+                    <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
+                        <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
+                        <Button x:Name="btnRestore" Margin="5 0" Click="btnRestore_Click">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonsStyle}">
+                                    <Setter Property="Content" Value="{DynamicResource maximize}"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}" Value="Maximized">
+                                            <Setter Property="Content" Value="{DynamicResource restore}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
+                        </StackPanel>
+                </Border>
                 <!-- End: Button Close | Restore | Minimize -->
 
                 <!-- Start: Frame Container -->
@@ -117,7 +149,6 @@
                     <Frame x:Name="frameContent" NavigationUIVisibility="Hidden" Margin="10"/>
                 </Border>
                 <!-- End: Frame Container -->
-
             </Grid>
         </Grid>
     </Border>

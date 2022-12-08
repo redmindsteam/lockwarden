@@ -142,6 +142,32 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="RecordPageButton" TargetType="Button">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Background" Value="{DynamicResource PrimaryBlueColor}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="13" BorderThickness="1" Padding="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver"  Value="True">
+                <Setter Property="Background" Value="{DynamicResource PrimaryBlueColor}"/>
+                <Setter Property="Foreground" Value="gray"/>
+            </Trigger>
+            <Trigger Property="IsMouseCaptured" Value="True">
+                <Setter Property="Background" Value="{DynamicResource TertiaryBlueColor}"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
 
 </ResourceDictionary>

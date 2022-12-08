@@ -1,0 +1,18 @@
+﻿<Page x:Class="LockWarden.Desktop.Pages.All_Records_Pages.All"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LockWarden.Desktop.Pages.All_Records_Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="590" d:DesignWidth="750"
+      Background="#32407B"
+      Title="All"
+      Loaded="Page_Loaded">
+    <Grid>
+        <ScrollViewer >
+            <WrapPanel x:Name="loginControlStackPanel" Background="#32407B">
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="LockWarden.Desktop.Components.NoteControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LockWarden.Desktop.Components"
+             mc:Ignorable="d" 
+             Height="100" 
+             Width="620">
+    <Border BorderThickness="1"
+            Margin="5"
+            CornerRadius="4"
+            Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="52.023"/>
+                <ColumnDefinition Width="37.977"/>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="251*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0"
+                    Margin="20"
+                    Grid.ColumnSpan="2">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Assets/Icons/note.png"/>
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Column="2" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Title" 
+                               Style="{DynamicResource LoginControlTextBlock}" Margin="5 20 0 0"/>
+
+                    <TextBlock Grid.Row="1" Text="description" 
+                               Style="{DynamicResource LoginControlTextBlock}" Margin="5 17 0 0" Foreground="Gray" FontSize="14"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

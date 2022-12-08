@@ -45,7 +45,16 @@
                 </TextBox>
             </DockPanel>
 
-            <Button Content="NImadur Button" Style="{StaticResource FormPrimaryButton}" Margin="70"/>
+            <DockPanel  Margin="0 30 0 0">
+                <Label Content="Web Site: " Style="{StaticResource FullNamePageLabel}"/>
+                <TextBox x:Name="Web_site_login_page_tb"  Style="{StaticResource tbstyle}" Margin="7 0 0 0">
+                    <TextBox.Background>
+                        <ImageBrush  ImageSource="/Assets/Icons/Web.png" Stretch="Uniform" AlignmentX="Right"/>
+                    </TextBox.Background>
+                </TextBox>
+            </DockPanel>
+
+            <Button Content="NImadur Button" Click="Button_Click" Style="{StaticResource FormPrimaryButton}" Margin="70"/>
         </StackPanel>
 
     </Border>

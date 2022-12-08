@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LockWarden.Desktop.Pages
+namespace LockWarden.Desktop.Components
 {
     /// <summary>
-    /// Interaction logic for AllRecordsPage.xaml
+    /// Interaction logic for trashControl.xaml
     /// </summary>
-    public partial class AllRecordsPage : Page
+    public partial class trashControl : UserControl
     {
-        public AllRecordsPage()
+        public trashControl()
         {
             InitializeComponent();
         }

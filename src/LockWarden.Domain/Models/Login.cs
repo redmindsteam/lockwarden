@@ -8,22 +8,22 @@ namespace LockWarden.Domain.Models;
 
 public class Login : IUsable
 {
-	public DateTime? Deleted { get; set; }
-	public int UserId { get; set; }
-	public int Id { get; set; }
-	public string Service { get; set; }
-	public string Username { get; set; }
-	public string Password { get; set; }
-	public string Name { get; set; }
+    public int Id { get; set; }
+    public DateTime? Deleted { get; set; }
+    public string Service { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public string Name { get; set; }
+    public int UserId { get; set; }
 
-	public Login(DateTime deleted, int userId, int id, string service, string username, string password, string name)
-	{
-		Deleted = deleted;
-		UserId = userId;
-		Id = id;
-		Service = service;
-		Username = username;
-		Password = password;
-		Name = name;
-	}
+    public Login(int id, DateTime deleted, string service, string username, string password, string name, int userId)
+    {
+        Id = id;
+        Deleted = deleted;
+        Service = service;
+        Username = username;
+        Password = password;
+        Name = name;
+        UserId = userId;
+    }
 }
