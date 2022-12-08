@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -27,6 +28,8 @@ namespace LockWarden.Desktop.Pages
             InitializeComponent();
         }
 
+       
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog= new OpenFileDialog();
@@ -34,8 +37,13 @@ namespace LockWarden.Desktop.Pages
             openFileDialog.FilterIndex= 1;
             if (openFileDialog.ShowDialog() == true)
             {
-                var path  = imagePicture.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+                imagePicture.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
+        }
+
+        private void Button_Click_save(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
