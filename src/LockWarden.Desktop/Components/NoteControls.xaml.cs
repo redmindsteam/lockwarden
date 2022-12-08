@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Windows.InfoWindows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,21 @@ namespace LockWarden.Desktop.Components
         public NoteControls()
         {
             InitializeComponent();
+        }
+
+        public static bool checknote;
+        private void NoteControls_click(object sender, MouseButtonEventArgs e)
+        {
+            if (!checknote)
+            {
+                //Repository repository = new Repository();
+                //var login = await repository.Logins.GetAsync(int.Parse(Uid));
+                NoteInfo info = new NoteInfo();
+                info.Show();
+                info.Activate();
+                info.Topmost = true;
+                checknote = true;
+            }
         }
     }
 }
