@@ -1,4 +1,5 @@
 ﻿using LockWarden.Domain.ViewModels;
+using LockWarden.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +27,12 @@ namespace LockWarden.Desktop.Pages
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             CardViewModel cardViewModel = new CardViewModel(bank_card_page_tb.Text,number_card_page_tb.Text,pin_card_page_tb.Password,name_card_page_tb.Text);
-
+            var cardService = new CardService();
+            var result = await cardService.CreateAsync(cardViewModel, "123");
+            MessageBox.Show(result.Message);
         }
     }
 }
