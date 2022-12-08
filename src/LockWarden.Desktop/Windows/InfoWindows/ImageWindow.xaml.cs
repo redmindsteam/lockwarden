@@ -20,9 +20,11 @@ namespace LockWarden.Desktop.Windows.InfoWindows
     /// </summary>
     public partial class ImageWindow : Window
     {
-        public ImageWindow()
+        public static int ImageId;
+        public ImageWindow(int id)
         {
             InitializeComponent();
+            ImageId=id;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -34,6 +36,11 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         {
             this.Close();
             ImageControl.checkImage = false;
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

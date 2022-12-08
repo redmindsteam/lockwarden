@@ -19,8 +19,10 @@ namespace LockWarden.Desktop.Windows.InfoWindows
     /// </summary>
     public partial class CardWindow : Window
     {
-        public CardWindow()
+        public static int CardId;
+        public CardWindow(int id)
         {
+            CardId = id;
             InitializeComponent();
         }
 
@@ -32,6 +34,11 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         private void ButtonBack_click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Update(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
