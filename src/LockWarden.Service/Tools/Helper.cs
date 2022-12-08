@@ -66,7 +66,7 @@ public class Helper
 	}
 	private static bool ValidText(string text)
 	{
-		return text.Length < 0;
+		return text.Length <= 0;
 	}
 	private static bool ValidPath(string path)
 	{
