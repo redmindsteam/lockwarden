@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LockWarden.Desktop.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace LockWarden.Desktop.Pages
         public TrashPage()
         {
             InitializeComponent();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+            for (int i = 0; i < 50; i++)
+            {
+                var trash = new trashControl();
+                loginControlStackPanel.Children.Add(trash);
+            }
         }
     }
 }

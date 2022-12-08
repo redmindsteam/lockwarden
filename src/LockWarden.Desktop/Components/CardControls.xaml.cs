@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LockWarden.DataAccess.Repositories;
+using LockWarden.Desktop.Windows.InfoWindows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,23 @@ namespace LockWarden.Desktop.Components
     /// </summary>
     public partial class CardControls : UserControl
     {
+        public static bool checkcard;
         public CardControls()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (!checkcard)
+            {
+                Repository repository = new Repository();
+                CardWindow info = new CardWindow();
+                info.Show();
+                info.Activate();
+                info.Topmost = true;
+                checkcard = true;
+            }
         }
     }
 }

@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="251*"/>
             </Grid.ColumnDefinitions>
             <Border Grid.Column="0"
-                    Margin="15,15,15,15"
+                    Margin="20"
                     CornerRadius="100" Grid.ColumnSpan="2">
                 <Border.Background>
                     <ImageBrush ImageSource="/Assets/Icons/LoginControlDefaultWebIcon.png" x:Name="imageIcon"/>
