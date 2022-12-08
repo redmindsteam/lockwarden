@@ -21,6 +21,7 @@
     <None Remove="Assets\Icons\password.png" />
     <None Remove="Assets\Icons\password_re.png" />
     <None Remove="Assets\Icons\password_verified.png" />
+    <None Remove="Assets\Icons\restore.png" />
     <None Remove="Assets\Icons\user.png" />
     <None Remove="Assets\Icons\username.png" />
     <None Remove="Assets\Icons\Web.png" />
@@ -81,6 +82,7 @@
     <Resource Include="Assets\Icons\password.png" />
     <Resource Include="Assets\Icons\password_re.png" />
     <Resource Include="Assets\Icons\password_verified.png" />
+    <Resource Include="Assets\Icons\restore.png" />
     <Resource Include="Assets\Icons\user.png" />
     <Resource Include="Assets\Icons\username.png" />
     <Resource Include="Assets\Icons\Web.png" />
