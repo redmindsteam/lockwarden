@@ -12,6 +12,7 @@ namespace LockWarden.Domain.ViewModels
         public string Number { get; set; }
         public string Pin { get; set; }
         public string Name { get; set; }
+        public int Id { get; set; }
 
         public CardViewModel(string bank, string number, string pin, string name)
         {

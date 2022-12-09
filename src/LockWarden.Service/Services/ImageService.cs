@@ -27,7 +27,7 @@ namespace LockWarden.Service.Services
 			try
 			{
 				var CiphredStringImage = Crypter.Ciphr(Helper.ImageToString(imageViewModel.Content), Helper.ToSeed(userpassword), Crypt.Encrypt);
-				var entity = new Image(null, imageViewModel.Name, CiphredStringImage, IdentitySingelton.GetInstance().UserId);
+				var entity = new Image(DateTime.Now, imageViewModel.Name, CiphredStringImage, IdentitySingelton.GetInstance().UserId);
 				await _repository.Images.CreateAsync(entity);
 				return (true, "Succesful");
 			}
@@ -47,34 +47,59 @@ namespace LockWarden.Service.Services
 			catch(Exception ex) { return (false, ex.Message); }
 		}
 
-		public async Task<(string Path, string Message)> GetAsync(int id, string userpassword)
+		public async Task<(List<ImageViewModel> images, string Message)> GetAllAsync(int userid, string userpassword)
 		{
-			try
-			{
-				var img = await _repository.Images.GetAsync(id);
-				var clearContent = Crypter.Ciphr(img.Content, Helper.ToSeed(userpassword), Crypt.Decrypt);
-				var name = DB_Constants.DB_Path_Directory + $"\\{img.Id}.png";
-				Helper.StringToImage(clearContent, name);
-				return (name, "Success");
-			}
-			catch(Exception ex)
-			{
-				return ("", ex.Message);
-			}
-		}
+            try
+            {
+                var imagesviewmodels = new List<ImageViewModel>();
+                var images = await _repository.Images.GetAllAsync();
+                var userimages = images.Where(x => x.Id == IdentitySingelton.GetInstance().UserId);
+                foreach (var image in userimages)
+                {
+                    var clearContent = Crypter.Ciphr(image.Content, Helper.ToSeed(userpassword), Crypt.Decrypt);
+                    ImageViewModel imageViewModel = new ImageViewModel(image.Content, clearContent);
+                    imageViewModel.Id = image.Id;
+                    var name = DB_Constants.DB_Path_Directory + $"\\{image.Id}.png";
+                    Helper.StringToImage(clearContent, name);
+                }
+                return (imagesviewmodels, "Success");
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
+        }
+
+		public async Task<(ImageViewModel image, string Message)> GetAsync(int id, string userpassword)
+		{
+            try
+            {
+                var img = await _repository.Images.GetAsync(id);
+                var clearContent = Crypter.Ciphr(img.Content, Helper.ToSeed(userpassword), Crypt.Decrypt);
+                ImageViewModel imageViewModel = new ImageViewModel(img.Content, clearContent);
+                imageViewModel.Id = img.Id;
+                var name = DB_Constants.DB_Path_Directory + $"\\{img.Id}.png";
+                Helper.StringToImage(clearContent, name);
+                return (imageViewModel, "Success");
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
+        }
 
 		public async Task<(bool IsSuccesful, string Message)> UpdateAsync(ImageViewModel imageViewModel, string userpassword, int ImageId)
 		{
-			try
-			{
-				await _repository.Images.DeleteAsync(ImageId);
-				await CreateAsync(imageViewModel, userpassword);
-				return (true, "Successful");
-			}
-			catch(Exception ex)
-			{
-				return (false, ex.Message);
-			}
-		}
+            try
+            {
+                await _repository.Images.DeleteAsync(ImageId);
+                await CreateAsync(imageViewModel, userpassword);
+                return (true, "Successful");
+            }
+            catch (Exception ex)
+            {
+                return (false, ex.Message);
+            }
+        }
 	}
 }

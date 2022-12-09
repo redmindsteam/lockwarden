@@ -1,6 +1,9 @@
 ﻿using LockWarden.DataAccess.Constants;
 using LockWarden.DataAccess.Repositories;
 using LockWarden.Desktop.Windows;
+using LockWarden.Domain.ViewModels;
+using LockWarden.Service.Interfaces;
+using LockWarden.Service.Services;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Win32;
 using System;
@@ -41,12 +44,17 @@ namespace LockWarden.Desktop.Pages
             {
                 imagePicture.Source = new BitmapImage(new Uri(openFileDialog.FileName));
                 DB_Constants.ImagePath = openFileDialog.FileName;
+
             }
         }
 
-        private void Button_Click_save(object sender, RoutedEventArgs e)
+        private async void Button_Click_save(object sender, RoutedEventArgs e)
         {
-            
+
+            ImageViewModel imageViewModel = new ImageViewModel(bank_card_page_tb.Text,DB_Constants.ImagePath);
+            IImageService imageService = new ImageService();
+            var result =await imageService.CreateAsync(imageViewModel,DB_Constants.UserPassword);
+            MessageBox.Show(result.Message);
         }
     }
 }

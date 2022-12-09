@@ -1,9 +1,11 @@
-﻿using LockWarden.DataAccess.Constants;
+using LockWarden.DataAccess.Constants;
 using LockWarden.DataAccess.Repositories;
 using LockWarden.Desktop.Pages;
 using LockWarden.Domain.ViewModels;
 using LockWarden.Service.Services;
+
 using Microsoft.EntityFrameworkCore.Storage;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -256,4 +258,3 @@ namespace LockWarden.Desktop.Windows
             txtPasswordbox.Focus();
         }
     }
-}

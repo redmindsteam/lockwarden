@@ -10,7 +10,7 @@ namespace LockWarden.Domain.ViewModels
     {
         public string Name { get; set; }
         public string Content { get; set; }
-
+        public int Id { get; set; }
         public ImageViewModel(string name, string content)
         {
             Name = name;

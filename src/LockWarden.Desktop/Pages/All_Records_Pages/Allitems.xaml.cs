@@ -60,13 +60,13 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
                     loginControlStackPanel.Children.Add(loginControls);
                 }
             }
-            for (int i = 0; i < 20; i++)
-            {
-                var cardControl = new CardControls(CardControls.CardId);
-                var imageControl = new ImageControl(ImageControl.ImageId);
-                loginControlStackPanel.Children.Add(cardControl);
-                loginControlStackPanel.Children.Add(imageControl);
-            }
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    var cardControl = new CardControls(CardControls.CardId);
+            //    var imageControl = new ImageControl(ImageControl.ImageId);
+            //    loginControlStackPanel.Children.Add(cardControl);
+            //    loginControlStackPanel.Children.Add(imageControl);
+            //}
 
         }
     }

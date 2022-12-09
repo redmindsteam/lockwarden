@@ -69,7 +69,7 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"select * from users where login={login};";
+                string query = $"select * from users where login ='{login}';";
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection);
                 var readly = await command.ExecuteReaderAsync();
                 if (await readly.ReadAsync())
@@ -153,14 +153,13 @@ namespace LockWarden.DataAccess.Repositories
             try
             {
                 await _sqliteConnection.OpenAsync();
-                string query = $"update users  set name=@name, password_hash=@password_hash,salt=@salt where id={id};" ;
+                string query = $"update users  set name=@name, login=@login where id={id};" ;
                 SqliteCommand command = new SqliteCommand(query, _sqliteConnection)
                 {
                     Parameters =
                     {
                         new SqliteParameter("name",entity.Name),
-                        new SqliteParameter("password_hash",entity.PasswordHash),
-                        new SqliteParameter("salt",entity.Salt),
+                        new SqliteParameter("login",entity.Login),
                     }
                 };
                 var result = await command.ExecuteNonQueryAsync();

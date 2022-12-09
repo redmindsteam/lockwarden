@@ -1,4 +1,8 @@
-﻿using LockWarden.Desktop.Components;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.Desktop.Components;
+using LockWarden.Domain.ViewModels;
+using LockWarden.Service.Interfaces;
+using LockWarden.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +24,11 @@ namespace LockWarden.Desktop.Windows.InfoWindows
     /// </summary>
     public partial class NoteInfo : Window
     {
+        private readonly INoteService noteService;
         public NoteInfo()
         {
             InitializeComponent();
+            noteService = new NoteService();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -34,6 +40,23 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         {
             this.Close();
             NoteControls.checknote = false;
+        }
+
+        private async void Edit(object sender, RoutedEventArgs e)
+        {
+            TextRange textRange = new TextRange(text_note_page_tb.Document.ContentStart, text_note_page_tb.Document.ContentEnd);
+            NoteViewModel noteViewModel = new NoteViewModel(title_note_page_tb.Text,textRange.Text);
+            var result = await noteService.UpdateAsync(noteViewModel, DB_Constants.UserPassword, Convert.ToInt32(Uid));
+            MessageBox.Show(result.Message);
+            LoginControls.check = false;
+        }
+
+        private async void Delete(object sender, RoutedEventArgs e)
+        {
+            await noteService.DeleteAsync(Convert.ToInt32(Uid), DB_Constants.UserPassword);
+            this.Close();
+            MessageBox.Show("Deleted");
+            CardControls.checkcard = false;
         }
     }
 }

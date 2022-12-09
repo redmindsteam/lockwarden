@@ -49,7 +49,11 @@ namespace LockWarden.Desktop.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            UserViewModel userViewModel = new UserViewModel(full_name_email_tb.Text, full_name_tb.Text, Password_pb.Text);
+            IUserService userService = new UserService();
+             var result = await userService.UpdateAsync(userViewModel);
+            MessageBox.Show(result.Message);
+
 
         }
     }

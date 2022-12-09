@@ -10,6 +10,7 @@ namespace LockWarden.Domain.ViewModels
     {
         public string Header { get; set; }
         public string Content { get; set; }
+        public int Id { get; set; }
 
         public NoteViewModel(string header, string content)
         {
