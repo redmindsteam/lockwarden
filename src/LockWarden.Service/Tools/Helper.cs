@@ -30,4 +30,56 @@ public class Helper
 		var img = Convert.FromBase64String(str);
 		File.WriteAllBytes(path, img);
 	}
+	public static bool Validate(Valid operand, string s)
+	{
+		switch((int)operand)
+		{
+			case 1:
+				return ValidUsername(s);
+			case 2:
+				return ValidNumber(s, 16);
+			case 3:
+				return ValidNumber(s, 4);
+			case 4:
+				return ValidText(s);
+			case 5:
+				return ValidPath(s);
+			default:
+				return false;
+		}
+	}
+	private static bool ValidUsername(string pasw)
+	{
+		return !(pasw.Contains(" ") || pasw.Length == 0 || pasw.Contains("	"));
+
+	}
+	private static bool ValidNumber(string number, int len)
+	{
+		if(number.Length != len)
+			return false;
+		foreach(char ch in number)
+		{
+			if(ch < 48 || ch > 57)
+				return false;
+		}
+		return true;
+	}
+	private static bool ValidText(string text)
+	{
+		return text.Length <= 0;
+	}
+	private static bool ValidPath(string path)
+	{
+		var fil = new FileInfo(path);
+		var can = new string[] { ".png", ".jpg", ".bmp" };
+		return fil.Exists && can.Contains(fil.Extension);
+	}
+}
+public enum Valid
+{
+	UserPasswordOrName = 1,
+	CardNumber = 2,
+	CardPin = 3,
+	Text = 4,
+	ImagePath=5,
 }
