@@ -4,6 +4,7 @@ using LockWarden.DataAccess.Repositories;
 using LockWarden.Domain.ViewModels;
 using LockWarden.Service.Interfaces;
 using LockWarden.Service.Services;
+using LockWarden.Service.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +36,17 @@ namespace LockWarden.Desktop.Pages
         {
             TextRange textRange = new TextRange(text_note_page_tb.Document.ContentStart, text_note_page_tb.Document.ContentEnd);
             NoteViewModel noteViewModel = new NoteViewModel(title_note_page_tb.Text, textRange.Text);
-            INoteService noteService = new NoteService();
-            var result = await noteService.CreateAsync(noteViewModel,DB_Constants.UserPassword);
-            MessageBox.Show(result.Message);
+            if (Helper.Validate(Valid.Text,noteViewModel.Content) &&
+                Helper.Validate(Valid.Text,noteViewModel.Header))
+            {
+                INoteService noteService = new NoteService();
+                var result = await noteService.CreateAsync(noteViewModel, DB_Constants.UserPassword);
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                MessageBox.Show("Noto'g'ri ma'lumot kritildi");
+            }
         }
     }
 }
