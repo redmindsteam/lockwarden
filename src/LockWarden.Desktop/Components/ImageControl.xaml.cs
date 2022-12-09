@@ -41,6 +41,8 @@ namespace LockWarden.Desktop.Components
                 var image = await imageService.GetAsync(int.Parse(Uid),DB_Constants.UserPassword);
                 ImageWindow info = new ImageWindow();
                 info.bank_card_page_tb.Text = image.image.Name;
+                info.imagePicture.Source = new BitmapImage(new Uri(image.image.Content));
+                info.Uid = image.image.Id.ToString();
                 info.Show();
                 info.Activate();
                 info.Topmost = true;

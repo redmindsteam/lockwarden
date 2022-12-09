@@ -53,13 +53,13 @@ namespace LockWarden.Service.Services
             {
                 var imagesviewmodels = new List<ImageViewModel>();
                 var images = await _repository.Images.GetAllAsync();
-                var userimages = images.Where(x => x.Id == IdentitySingelton.GetInstance().UserId);
+                var userimages = images.Where(x => x.UserId == IdentitySingelton.GetInstance().UserId);
                 foreach (var image in userimages)
                 {
                     var clearContent = Crypter.Ciphr(image.Content, Helper.ToSeed(userpassword), Crypt.Decrypt);
-                    ImageViewModel imageViewModel = new ImageViewModel(image.Content, clearContent);
-                    imageViewModel.Id = image.Id;
                     var name = DB_Constants.DB_Path_Directory + $"\\{image.Id}.png";
+                    ImageViewModel imageViewModel = new ImageViewModel(image.Name,name);
+                    imageViewModel.Id = image.Id;
                     Helper.StringToImage(clearContent, name);
                 }
                 return (imagesviewmodels, "Success");

@@ -1,4 +1,8 @@
-﻿using LockWarden.Desktop.Components;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.Desktop.Components;
+using LockWarden.Service.Commons;
+using LockWarden.Service.Interfaces;
+using LockWarden.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,17 +25,22 @@ namespace LockWarden.Desktop.Pages.All_Records_Pages
     /// </summary>
     public partial class Image : Page
     {
+        private readonly IImageService imageService;
         public Image()
         {
             InitializeComponent();
+            imageService = new ImageService();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < 50; i++)
+            var images = await imageService.GetAllAsync(IdentitySingelton.GetInstance().UserId, DB_Constants.UserPassword);
+            foreach(var image in images.images)
             {
-                var imageControls = new ImageControl();
-                loginControlStackPanel.Children.Add(imageControls);
+                ImageControl control = new ImageControl();
+                control.ImageTitle.Text=image.Name;
+                control.ImageDescriptioon.Text = "";
+                control.Imagephoto.ImageSource = new BitmapImage(new Uri(image.Content));
             }
         }
     }

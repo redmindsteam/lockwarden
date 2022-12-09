@@ -24,7 +24,7 @@
                     Margin="15,15,15,15"
                     Grid.ColumnSpan="2">
                 <Border.Background>
-                    <ImageBrush ImageSource="/Assets/Icons/image.png"/>
+                    <ImageBrush ImageSource="/Assets/Icons/image.png" x:Name="Imagephoto"/>
                 </Border.Background>
             </Border>
             <StackPanel Grid.Column="2" Grid.ColumnSpan="2">
@@ -33,10 +33,10 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Text="Title" 
+                    <TextBlock x:Name="ImageTitle" Grid.Row="0" Text="Title" 
                                Style="{DynamicResource LoginControlTextBlock}" Margin="5 20 0 0"/>
 
-                    <TextBlock Grid.Row="1" Text="description" 
+                    <TextBlock x:Name="ImageDescriptioon" Grid.Row="1" Text="description" 
                                Style="{DynamicResource LoginControlTextBlock}" Margin="5 17 0 0" Foreground="Gray" FontSize="14"/>
                 </Grid>
             </StackPanel>
