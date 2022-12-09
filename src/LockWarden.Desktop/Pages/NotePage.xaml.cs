@@ -1,4 +1,10 @@
-﻿using System;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.DataAccess.Interfaces.IRepositories;
+using LockWarden.DataAccess.Repositories;
+using LockWarden.Domain.ViewModels;
+using LockWarden.Service.Interfaces;
+using LockWarden.Service.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +29,15 @@ namespace LockWarden.Desktop.Pages
         public NotePage()
         {
             InitializeComponent();
+        }
+
+        private async void Create_Note(object sender, RoutedEventArgs e)
+        {
+            TextRange textRange = new TextRange(text_note_page_tb.Document.ContentStart, text_note_page_tb.Document.ContentEnd);
+            NoteViewModel noteViewModel = new NoteViewModel(title_note_page_tb.Text, textRange.Text);
+            INoteService noteService = new NoteService();
+            var result = await noteService.CreateAsync(noteViewModel,DB_Constants.UserPassword);
+            MessageBox.Show(result.Message);
         }
     }
 }

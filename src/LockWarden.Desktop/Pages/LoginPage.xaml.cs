@@ -1,4 +1,5 @@
-﻿using LockWarden.DataAccess.Repositories;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.DataAccess.Repositories;
 using LockWarden.Domain.ViewModels;
 using LockWarden.Service.Interfaces;
 using LockWarden.Service.Services;
@@ -33,7 +34,7 @@ namespace LockWarden.Desktop.Pages
         {
             LoginViewModel loginViewModel = new LoginViewModel(Web_site_login_page_tb.Text,username_Login_page_tb.Text,password_Login_page_tb.Password,name_login_page_tb.Text);
             var loginService = new LoginService();
-            var result = await loginService.CreateAsync(loginViewModel, "123");
+            var result = await loginService.CreateAsync(loginViewModel,DB_Constants.UserPassword);
             MessageBox.Show(result.Message);
         }
     }

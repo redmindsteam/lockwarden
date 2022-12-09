@@ -1,4 +1,5 @@
-﻿using LockWarden.Domain.ViewModels;
+﻿using LockWarden.DataAccess.Constants;
+using LockWarden.Domain.ViewModels;
 using LockWarden.Service.Services;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace LockWarden.Desktop.Pages
         {
             CardViewModel cardViewModel = new CardViewModel(bank_card_page_tb.Text,number_card_page_tb.Text,pin_card_page_tb.Password,name_card_page_tb.Text);
             var cardService = new CardService();
-            var result = await cardService.CreateAsync(cardViewModel, "123");
+            var result = await cardService.CreateAsync(cardViewModel,DB_Constants.UserPassword);
             MessageBox.Show(result.Message);
         }
     }
