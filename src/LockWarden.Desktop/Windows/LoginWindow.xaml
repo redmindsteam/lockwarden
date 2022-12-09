@@ -109,7 +109,7 @@
                             Margin="35,35,35,35"
                             Cursor="Arrow"
                             CornerRadius="15"
-                            BorderThickness="1" Visibility="Hidden">
+                            BorderThickness="1" Visibility="Collapsed">
                             <Border.Background>
                                 <ImageBrush ImageSource="/Assets/Images/regsImg.jpg" Opacity="0.4" Stretch="Fill"/>
                             </Border.Background>
@@ -130,7 +130,7 @@
                                     BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                     Height="30" Width="300" CornerRadius="9" Margin="0">
                                 <Grid>
-                                    <TextBlock x:Name="textEmailRegs" MouseDown="textEmailRegs_MouseDown_1" Text="example@gmail.com" Style="{StaticResource textHint}"/>
+                                    <TextBlock x:Name="textEmailRegs" MouseDown="textEmailRegs_MouseDown_1" Text="username" Style="{StaticResource textHint}"/>
                                     <TextBox x:Name="txtEmailRegs" TextChanged="txtEmailRegs_TextChanged_1"  Style="{StaticResource LoginTextBoxStyle }"/>
                                 </Grid>
                             </Border>
@@ -144,8 +144,19 @@
                                     <PasswordBox x:Name="txtpaswordRegs" PasswordChanged="txtpaswordRegs_PasswordChanged" Style="{StaticResource LoginPasswordBox}"/>
                                 </Grid>
                             </Border>
+                             
+                            <!--hidden box-->
+                            <Border  x:Name="RegsPasswordBorderHidden" BorderThickness="1" Visibility="Collapsed"
+                                     BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
+                                     Height="30" Width="300" CornerRadius="9" Margin="0">
+                                <Grid>
+                                    <TextBlock x:Name="textPasswordRegshidden" MouseDown="textPasswordRegs_MouseDownhidden" Text="Your password" Style="{StaticResource textHint}"/>
+                                    <TextBox x:Name="txtpaswordRegshidden" TextChanged="txtpaswordRegs_PasswordChangedhidden" Style="{StaticResource LoginTextBoxStyle}"/>
+                                </Grid>
+                            </Border>
 
                             <Label Content="Verify" Style="{StaticResource LoginLabelStyle}" Margin="0 20 0 0"/>
+                            
                             <Border  x:Name="RegsVerifyBorder" BorderThickness="1"
                                      BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                      Height="30" Width="300" CornerRadius="9" Margin="0">
@@ -155,6 +166,29 @@
                                 </Grid>
                             </Border>
                             
+                            <!--hidden box-->
+                            <Border  x:Name="RegsVerifyBorderhidden" BorderThickness="1" Visibility='Collapsed'
+                                     BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
+                                     Height="30" Width="300" CornerRadius="9" Margin="0">
+                                <Grid>
+                                    <TextBlock x:Name="textVerifyhidden" MouseDown="textVerify_MouseDownhidden" Text="Verify Your Password" Style="{StaticResource textHint}"/>
+                                    <TextBox x:Name="txtVerifyhidden" TextChanged="txtVerify_PasswordChangedhidden" Style="{StaticResource LoginTextBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <CheckBox  x:Name="btnCheckboxregs"
+                                       Margin="10 10 0 0"
+                                       Checked="CheckBox_Changed_Regs" 
+                                       Unchecked="CheckBox_Changed_Regs"
+                                       Content="Show Password"
+                                       Foreground="{DynamicResource TertiaryBlueColor}"
+                                       FontSize="15"
+                                       FontFamily="Arial"
+                                       FontWeight="Medium" 
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left">
+                            </CheckBox>
+
                             <Button Content="Register" Style="{StaticResource FormPrimaryButton}" Click="Register_verify_button" Width="302" Height="40" Margin="0 20 0 0" IsDefault="True" />
                             <Button Content="←" Style="{StaticResource RegisterBackStyle}" Click="register_back" IsCancel="True" />
                         </StackPanel>
