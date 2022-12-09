@@ -66,6 +66,7 @@
                             </Border>
 
                             <Label Content="Password" Style="{StaticResource LoginLabelStyle}" Margin="0 20 0 0"/>
+                           
                             <Border x:Name="passwordBorder" BorderThickness="1"
                                     BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                     Height="30" Width="300" CornerRadius="9" Margin="0">
@@ -74,6 +75,28 @@
                                     <PasswordBox x:Name="txtPasswords" PasswordChanged="txtPasswords_PasswordChanged" Style="{StaticResource LoginPasswordBox}"/>
                                 </Grid>
                             </Border>
+                            
+                            <Border x:Name="passwordBorder2" BorderThickness="1" Visibility="Collapsed"
+                                    BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
+                                    Height="30" Width="300" CornerRadius="9" Margin="0">
+                                <Grid>
+                                    <TextBlock x:Name="textPasswordbox" MouseDown="textPasswordbox_MouseDown" Text="password" Style="{StaticResource textHint}"/>
+                                    <TextBox x:Name="txtPasswordbox" TextChanged="txtPasswordbox_TextChanged" Style="{StaticResource LoginTextBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <CheckBox  x:Name="btnCheckbox"
+                                       Margin="10 10 0 0"
+                                       Checked="CheckBox_Changed" 
+                                       Unchecked="CheckBox_Changed"
+                                       Content="Show Password"
+                                       Foreground="{DynamicResource TertiaryBlueColor}"
+                                       FontSize="15"
+                                       FontFamily="Arial"
+                                       FontWeight="Medium" 
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left">
+                            </CheckBox>
 
                             <Button Content="Login" Style="{StaticResource FormPrimaryButton}" Click="Login_button"  IsDefault="True"/>
                             <Button Content="Register" Style="{StaticResource FormSuccessButton}" Width="304" Click="Register_button" Height="50"/>
@@ -102,7 +125,7 @@
                                 </Grid>
                             </Border>
 
-                            <Label Content="Email" Style="{StaticResource LoginLabelStyle}" Margin="0 20 0 0"/>
+                            <Label Content="Username" Style="{StaticResource LoginLabelStyle}" Margin="0 20 0 0"/>
                             <Border x:Name="RegsEmailBorder" BorderThickness="1"
                                     BorderBrush="{StaticResource TertiaryBlueColor}" Background="{StaticResource PrimaryGrayColor}" Opacity="0.7"
                                     Height="30" Width="300" CornerRadius="9" Margin="0">

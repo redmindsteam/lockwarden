@@ -150,18 +150,37 @@ namespace LockWarden.Desktop.Windows
         private async void Login_button(object sender, RoutedEventArgs e)
         {
             UserService userService = new UserService();
-            var result = await userService.LoginAsync(txtemail.Text, txtPasswords.Password);
-            if (!result.IsSuccesful)
+            if(btnCheckbox.IsChecked == false) 
             {
-                MessageBox.Show(result.Message);
+                var result = await userService.LoginAsync(txtemail.Text, txtPasswords.Password);
+                if (!result.IsSuccesful)
+                {
+                    MessageBox.Show(result.Message);
+                }
+                else
+                {
+                    DB_Constants.UserPassword = txtPasswords.Password;
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
+                }
             }
             else
             {
-               DB_Constants.UserPassword=txtPasswords.Password;
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
+                var result = await userService.LoginAsync(txtemail.Text, txtPasswordbox.Text);
+                if (!result.IsSuccesful)
+                {
+                    MessageBox.Show(result.Message);
+                }
+                else
+                {
+                    DB_Constants.UserPassword = txtPasswords.Password;
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
+                }
             }
+            
         }
 
         private void Register_button(object sender, RoutedEventArgs e)
@@ -208,6 +227,33 @@ namespace LockWarden.Desktop.Windows
                 txtpaswordRegs.Password = "";
                 txtVerify.Password = "";
             }
+        }
+
+        private void CheckBox_Changed(object sender, RoutedEventArgs e)
+        {
+            if (btnCheckbox.IsChecked == true)
+            {
+                txtPasswordbox.Text = txtPasswords.Password;
+                passwordBorder2.Visibility = Visibility.Visible;
+                passwordBorder.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                txtPasswords.Password = txtPasswordbox.Text;
+                passwordBorder2.Visibility = Visibility.Collapsed;
+                passwordBorder.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void txtPasswordbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textPasswordbox.Text) && textPasswordbox.Text.Length > 0) textPasswordbox.Visibility = Visibility.Collapsed;
+            else textPasswordbox.Visibility = Visibility.Visible;
+        }
+
+        private void textPasswordbox_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtPasswordbox.Focus();
         }
     }
 }
