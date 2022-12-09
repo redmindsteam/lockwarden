@@ -199,35 +199,71 @@ namespace LockWarden.Desktop.Windows
 
         private async void Register_verify_button(object sender, RoutedEventArgs e)
         {
-            try
+            if(btnCheckboxregs.IsChecked == false)
             {
-                if (txtpaswordRegs.Password == txtVerify.Password)
+                try
                 {
-                    UserViewModel userViewModel = new UserViewModel(txtFullname.Text, txtEmailRegs.Text, txtpaswordRegs.Password);
-                    UserService userService = new UserService();
-                    var result = await userService.RegistrationAsync(userViewModel);
-                    if (result.IsSuccesful)
+                    if (txtpaswordRegs.Password == txtVerify.Password)
                     {
-                        MessageBox.Show("Muvaffaqqiyatli ro'yxatdan o'tdingiz");
-                        LoginWindow loginWindow = new LoginWindow();
-                        this.Close();
-                        loginWindow.Show();
-                    }
-                    else MessageBox.Show("Bunday foydalanuvchi mavjud");
+                        UserViewModel userViewModel = new UserViewModel(txtFullname.Text, txtEmailRegs.Text, txtpaswordRegs.Password);
+                        UserService userService = new UserService();
+                        var result = await userService.RegistrationAsync(userViewModel);
+                        if (result.IsSuccesful)
+                        {
+                            MessageBox.Show("Muvaffaqqiyatli ro'yxatdan o'tdingiz");
+                            LoginWindow loginWindow = new LoginWindow();
+                            this.Close();
+                            loginWindow.Show();
+                        }
+                        else MessageBox.Show("Bunday foydalanuvchi mavjud");
 
+                    }
+                    else MessageBox.Show("Parollar bir-briga mos eman");
                 }
-                else MessageBox.Show("Parollar bir-briga mos eman");
+                catch
+                {
+                    MessageBox.Show("Xatolik!");
+                }
+                finally
+                {
+                    txtFullname.Text = "";
+                    txtEmailRegs.Text = "";
+                    txtpaswordRegs.Password = "";
+                    txtVerify.Password = "";
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Xatolik!");
-            }
-            finally
-            {
-                txtFullname.Text = "";
-                txtEmailRegs.Text = "";
-                txtpaswordRegs.Password = "";
-                txtVerify.Password = "";
+                try
+                {
+                    if (txtpaswordRegshidden.Text == txtVerifyhidden.Text)
+                    {
+                        UserViewModel userViewModel = new UserViewModel(txtFullname.Text, txtEmailRegs.Text, txtpaswordRegshidden.Text);
+                        UserService userService = new UserService();
+                        var result = await userService.RegistrationAsync(userViewModel);
+                        if (result.IsSuccesful)
+                        {
+                            MessageBox.Show("Muvaffaqqiyatli ro'yxatdan o'tdingiz");
+                            LoginWindow loginWindow = new LoginWindow();
+                            this.Close();
+                            loginWindow.Show();
+                        }
+                        else MessageBox.Show("Bunday foydalanuvchi mavjud");
+
+                    }
+                    else MessageBox.Show("Parollar bir-briga mos eman");
+                }
+                catch
+                {
+                    MessageBox.Show("Xatolik!");
+                }
+                finally
+                {
+                    txtFullname.Text = "";
+                    txtEmailRegs.Text = "";
+                    txtpaswordRegshidden.Text = "";
+                    txtVerifyhidden.Text = "";
+                }
             }
         }
 
@@ -257,4 +293,56 @@ namespace LockWarden.Desktop.Windows
         {
             txtPasswordbox.Focus();
         }
+
+        private void textPasswordRegs_MouseDownhidden(object sender, MouseButtonEventArgs e)
+        {
+            txtpaswordRegshidden.Focus();
+        }
+
+        private void txtpaswordRegs_PasswordChangedhidden(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textPasswordRegshidden.Text) && textPasswordRegshidden.Text.Length > 0) textPasswordRegshidden.Visibility = Visibility.Collapsed;
+            else txtpaswordRegshidden.Visibility = Visibility.Visible;
+        }
+
+        private void CheckBox_Changed_Regs(object sender, RoutedEventArgs e)
+        {
+            if (btnCheckboxregs.IsChecked == true)
+            {
+                txtpaswordRegshidden.Text = txtpaswordRegs.Password;
+                RegsPasswordBorderHidden.Visibility = Visibility.Visible;
+                RegsPasswordBorder.Visibility = Visibility.Collapsed;
+
+                //verify
+
+                txtVerifyhidden.Text = txtVerify.Password;
+                RegsVerifyBorderhidden.Visibility = Visibility.Visible;
+                RegsVerifyBorder.Visibility = Visibility.Collapsed;
+
+            }
+            else
+            {
+                txtpaswordRegs.Password = txtpaswordRegshidden.Text;
+                RegsPasswordBorderHidden.Visibility = Visibility.Collapsed;
+                RegsPasswordBorder.Visibility = Visibility.Visible;
+
+                //verify
+                txtVerify.Password = txtVerifyhidden.Text;
+                RegsVerifyBorderhidden.Visibility = Visibility.Collapsed;
+                RegsVerifyBorder.Visibility = Visibility.Visible;
+
+            }
+        }
+
+        private void textVerify_MouseDownhidden(object sender, MouseButtonEventArgs e)
+        {
+            txtVerifyhidden.Focus();
+        }
+
+        private void txtVerify_PasswordChangedhidden(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtVerifyhidden.Text) && txtVerifyhidden.Text.Length > 0) textVerifyhidden.Visibility = Visibility.Collapsed;
+            else textVerifyhidden.Visibility = Visibility.Visible;
+        }
     }
+}
