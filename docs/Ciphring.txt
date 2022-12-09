@@ -1,8 +1,0 @@
-User password kiritadi |string pasw = Console.ReadLine();
-Passwordni songa o'giramiz |int seed = ToSeed(pasw);
-Seedni Randomga beramiz |var engine = new Random(seed);
-Shifrlanadigan satrni har bir harfini ASCII codiga random son qo'shamiz |foreach(char ch in s){res+=ch+engine.Next();}
-Satrni qaytaramiz |return res.ToString();
-
-|DeShifrlash prosessi
-Huddi shu narsa, faqat ayiramiz |foreach(char ch in s){res-=ch+engine.Next();
