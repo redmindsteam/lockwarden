@@ -3,6 +3,7 @@ using LockWarden.DataAccess.Repositories;
 using LockWarden.Domain.ViewModels;
 using LockWarden.Service.Interfaces;
 using LockWarden.Service.Services;
+using LockWarden.Service.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,10 +33,21 @@ namespace LockWarden.Desktop.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            LoginViewModel loginViewModel = new LoginViewModel(Web_site_login_page_tb.Text,username_Login_page_tb.Text,password_Login_page_tb.Password,name_login_page_tb.Text);
-            var loginService = new LoginService();
-            var result = await loginService.CreateAsync(loginViewModel,DB_Constants.UserPassword);
-            MessageBox.Show(result.Message);
+            LoginViewModel loginViewModel = new LoginViewModel(Web_site_login_page_tb.Text, username_Login_page_tb.Text, password_Login_page_tb.Password, name_login_page_tb.Text);
+            if (Helper.Validate(Valid.UserPasswordOrName, loginViewModel.Username) &&
+                Helper.Validate(Valid.UserPasswordOrName, loginViewModel.Password) &&
+                Helper.Validate(Valid.UserPasswordOrName, loginViewModel.Service))
+                {
+                var loginService = new LoginService();
+                var result = await loginService.CreateAsync(loginViewModel, DB_Constants.UserPassword);
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                MessageBox.Show("To'g'ri to'ldirilmagan");
+                Web_site_login_page_tb.Text = ""; username_Login_page_tb.Text = ""; password_Login_page_tb.Password = "";name_login_page_tb.Text = "";
+
+            }
         }
     }
 }

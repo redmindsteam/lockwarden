@@ -1,6 +1,7 @@
 ﻿using LockWarden.DataAccess.Constants;
 using LockWarden.Domain.ViewModels;
 using LockWarden.Service.Services;
+using LockWarden.Service.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,10 +31,20 @@ namespace LockWarden.Desktop.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            CardViewModel cardViewModel = new CardViewModel(bank_card_page_tb.Text,number_card_page_tb.Text,pin_card_page_tb.Password,name_card_page_tb.Text);
-            var cardService = new CardService();
-            var result = await cardService.CreateAsync(cardViewModel,DB_Constants.UserPassword);
-            MessageBox.Show(result.Message);
+                CardViewModel cardViewModel = new CardViewModel(bank_card_page_tb.Text, number_card_page_tb.Text, pin_card_page_tb.Password, name_card_page_tb.Text);
+            if (Helper.Validate(Valid.CardPin,pin_card_page_tb.Password) &&
+                Helper.Validate(Valid.CardNumber,number_card_page_tb.Text)&&
+                Helper.Validate(Valid.Text,name_card_page_tb.Text)&&
+                Helper.Validate(Valid.Text,bank_card_page_tb.Text))
+                {
+                var cardService = new CardService();
+                var result = await cardService.CreateAsync(cardViewModel, DB_Constants.UserPassword);
+                MessageBox.Show(result.Message); 
+            }
+            else
+            {
+                MessageBox.Show("Noto'g'ri ma'lumot kritildi");
+            }
         }
     }
 }
