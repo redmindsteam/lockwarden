@@ -1,6 +1,9 @@
 ﻿using LockWarden.DataAccess.Constants;
 using LockWarden.DataAccess.Repositories;
 using LockWarden.Desktop.Windows.InfoWindows;
+using LockWarden.Service.Interfaces;
+using LockWarden.Service.Services;
+using LockWarden.Service.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,19 +26,21 @@ namespace LockWarden.Desktop.Components
     /// </summary>
     public partial class ImageControl : UserControl
     {
-        public static int ImageId;
-        public ImageControl(int id)
+        private readonly IImageService imageService;
+        public static bool checkImage;
+        public ImageControl()
         {
-            ImageId = id;
             InitializeComponent();
+            imageService = new ImageService();
         }
         
-        public static bool checkImage;
-        private void UserControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private async void UserControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (!checkImage)
             {
-                ImageWindow info = new ImageWindow(ImageId);
+                var image = await imageService.GetAsync(int.Parse(Uid),DB_Constants.UserPassword);
+                ImageWindow info = new ImageWindow();
+                info.bank_card_page_tb.Text = image.image.Name;
                 info.Show();
                 info.Activate();
                 info.Topmost = true;

@@ -27,7 +27,8 @@ namespace LockWarden.Service.Services
             {
                 var toseed = Helper.ToSeed(userpassword);
                 string password = Crypter.Ciphr(loginViewModel.Password, toseed, Crypt.Encrypt);
-                Login login = new Login(DateTime.Now, loginViewModel.Service, loginViewModel.Username, password, loginViewModel.Name, IdentitySingelton.GetInstance().UserId);
+                string username= Crypter.Ciphr(loginViewModel.Username, toseed, Crypt.Encrypt);
+                Login login = new Login(DateTime.Now, loginViewModel.Service, username, password, loginViewModel.Name, IdentitySingelton.GetInstance().UserId);
                 var result = await _repository.Logins.CreateAsync(login);
                 if (result)
                 {
@@ -44,19 +45,75 @@ namespace LockWarden.Service.Services
 
         }
 
-        public Task<(bool IsSuccesful, string Message)> DeleteAsync(int loginid, string userpassword)
+        public async  Task<(bool IsSuccesful, string Message)> DeleteAsync(int loginid, string userpassword)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _repository.Logins.DeleteAsync(loginid);
+                return (true, "Successful");
+            }
+            catch (Exception ex)
+            {
+                return (false, ex.Message);
+            }
         }
 
-        public Task<(bool IsSuccesful, string Message)> GetAllAsync(int userid, string userpassword)
+
+        public async Task<(LoginViewModel loginView, string Message)> GetAsync(int loginid, string userpassword)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var login = await _repository.Logins.GetAsync(loginid);
+                string password = Crypter.Ciphr(login.Password, Helper.ToSeed(userpassword), Crypt.Decrypt);
+                string username = Crypter.Ciphr(login.Username, Helper.ToSeed(userpassword), Crypt.Decrypt);
+                LoginViewModel loginViewModel = new LoginViewModel(login.Service, username, password, login.Name);
+                loginViewModel.Id = login.Id;
+
+                return (loginViewModel, "Succesful");
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
         }
 
-        public Task<(bool IsSuccesful, string Message)> UpdateAsync(LoginViewModel loginViewModel, string userpassword)
+        public async Task<(bool IsSuccesful, string Message)> UpdateAsync(LoginViewModel loginViewModel, string userpassword,int loginid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _repository.Logins.DeleteAsync(loginid);
+                await CreateAsync(loginViewModel, userpassword);
+                return (true, "Successful");
+            }
+            catch (Exception ex)
+            {
+                return (false, ex.Message);
+            }
+        }
+
+        public async Task<(List<LoginViewModel> loginView, string Message)> GetAllAsync(int userid, string userpassword)
+        {
+            try
+            {
+                var loginviewmodels = new List<LoginViewModel>();
+                var logins = await _repository.Logins.GetAllAsync();
+                var userlogins = logins.Where(x => x.UserId == IdentitySingelton.GetInstance().UserId);
+                foreach (var login in userlogins)
+                {
+
+                    string password = Crypter.Ciphr(login.Password, Helper.ToSeed(userpassword), Crypt.Decrypt);
+                    string username = Crypter.Ciphr(login.Username, Helper.ToSeed(userpassword), Crypt.Decrypt);
+                    LoginViewModel loginViewModel = new LoginViewModel(login.Service, username, password, login.Name);
+                    loginViewModel.Id = login.Id;
+                    loginviewmodels.Add(loginViewModel);
+                }
+
+                return (loginviewmodels, "Succesful");
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
         }
     }
 }

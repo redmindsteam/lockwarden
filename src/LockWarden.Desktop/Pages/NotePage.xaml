@@ -28,7 +28,7 @@
             </StackPanel>
 
 
-            <Button Content="Create Note" Style="{StaticResource FormPrimaryButton}" Margin="30"/>
+            <Button Click="Create_Note" Content="Create Note" Style="{StaticResource FormPrimaryButton}" Margin="30"/>
         </StackPanel>
 
     </Border>
