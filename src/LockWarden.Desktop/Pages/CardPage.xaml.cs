@@ -53,7 +53,6 @@ namespace LockWarden.Desktop.Pages
                 var cardService = new CardService();
                 var result = await cardService.CreateAsync(cardViewModel, DB_Constants.UserPassword);
                 MessageBox.Show(result.Message);
-                MessageBox.Show(cardViewModel.Bank + "\n" + cardViewModel.Pin + "\n" + cardViewModel.Name + "\n" + cardViewModel.Number);
             }
             else
             {

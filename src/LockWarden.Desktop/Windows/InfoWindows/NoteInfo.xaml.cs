@@ -47,7 +47,7 @@ namespace LockWarden.Desktop.Windows.InfoWindows
             TextRange textRange = new TextRange(text_note_page_tb.Document.ContentStart, text_note_page_tb.Document.ContentEnd);
             NoteViewModel noteViewModel = new NoteViewModel(title_note_page_tb.Text,textRange.Text);
             var result = await noteService.UpdateAsync(noteViewModel, DB_Constants.UserPassword, Convert.ToInt32(Uid));
-            MessageBox.Show(result.Message);
+            MessageBox.Show(result.Message+ "\nTo view the changes refresh this page by clicking \"Note\" button");
             LoginControls.check = false;
         }
 
@@ -55,7 +55,7 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         {
             await noteService.DeleteAsync(Convert.ToInt32(Uid), DB_Constants.UserPassword);
             this.Close();
-            MessageBox.Show("Deleted");
+            MessageBox.Show("Deleted\nTo view the changes refresh this page by clicking \"Note\" button");
             CardControls.checkcard = false;
         }
     }

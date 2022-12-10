@@ -52,7 +52,7 @@ namespace LockWarden.Desktop.Windows.InfoWindows
             CardId = Convert.ToInt32(Uid);
             await cardService.DeleteAsync(Convert.ToInt32(Uid), DB_Constants.UserPassword);
             this.Close();
-            MessageBox.Show("Deleted");
+            MessageBox.Show("Deleted\nTo view the changes refresh this page by clicking \"Card\" button");
             CardControls.checkcard = false;
         }
 
@@ -60,7 +60,7 @@ namespace LockWarden.Desktop.Windows.InfoWindows
         {
             CardViewModel cardViewModel = new CardViewModel(Bankname.Text,cardNumber.Text,pin.Text,cardname.Text);
             var result = await cardService.UpdateAsync(cardViewModel, DB_Constants.UserPassword, CardId);
-            MessageBox.Show(result.Message);
+            MessageBox.Show(result.Message+ "\nTo view the changes refresh this page by clicking \"Card\" button");
             LoginControls.check = false;
         }
     }
