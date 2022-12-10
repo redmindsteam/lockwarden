@@ -66,10 +66,10 @@
                                           Icon="{DynamicResource note}">
                                 </MenuItem>
 
-                                <MenuItem Header="Image" Click="ImagePage_click"
+                                <!--<MenuItem Header="Image" Click="ImagePage_click"
                                           Style="{DynamicResource Item_Template}"
                                           Icon="{DynamicResource image}">
-                                </MenuItem>
+                                </MenuItem>-->
                             </MenuItem>
                             
                             <!--All_Records-->
@@ -89,11 +89,11 @@
                                           Icon="{DynamicResource noteshow}"
                                           Margin="0 10 0 0">
                             </MenuItem>
-                            <MenuItem Header="Image" Click="MenuItems_ImagePage_click"
+                            <!--<MenuItem Header="Image" Click="MenuItems_ImagePage_click"
                                           Style="{DynamicResource Menu_Template}"
                                           Icon="{DynamicResource imageshow}"
                                           Margin="0 10 0 0">
-                            </MenuItem>
+                            </MenuItem>-->
 
                             <!--<MenuItem Header="Trash bin" Click="TrashPage_click"
                                       Style="{DynamicResource Menu_Template}"

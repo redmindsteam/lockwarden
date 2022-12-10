@@ -42,7 +42,7 @@ namespace LockWarden.Desktop.Components
                 CardWindow info = new CardWindow(int.Parse(Uid));
                 info.Bankname.Text = card.card.Bank;
                 info.cardname.Text=card.card.Name;
-                info.pin.Password = card.card.Pin;
+                info.pin.Text = card.card.Pin;
                 info.cardNumber.Text = card.card.Number;
                 info.Uid = card.card.Id.ToString() ;
                 info.Show();

@@ -7,8 +7,11 @@ using LockWarden.Domain.ViewModels;
 using LockWarden.Service.Commons;
 using LockWarden.Service.Interfaces;
 using LockWarden.Service.Services;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
+using System.Threading.Channels;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace LockWarden.Desktop.Windows.InfoWindows
@@ -44,15 +47,15 @@ namespace LockWarden.Desktop.Windows.InfoWindows
             LoginId = Convert.ToInt32(Uid);
             await loginService.DeleteAsync(Convert.ToInt32(Uid),DB_Constants.UserPassword);
             this.Close();
-            MessageBox.Show("Deleted");
+            MessageBox.Show("Deleted\nTo view the changes refresh this page by clicking \"Login\" button");
             LoginControls.check = false;
         }
 
         private async void Edit(object sender, RoutedEventArgs e)
         {
-            LoginViewModel model=new LoginViewModel(LoginWebSite.Text, LoginUsername.Text, LoginPassword.Password, LoginName.Text);
+            LoginViewModel model=new LoginViewModel(LoginWebSite.Text, LoginUsername.Text, LoginPassword.Text, LoginName.Text);
             var result = await loginService.UpdateAsync(model,DB_Constants.UserPassword, Convert.ToInt32(Uid));
-            MessageBox.Show(result.ToString());
+            MessageBox.Show(result.Message + "\nTo view the changes refresh this page by clicking \"Login\" button");
             LoginControls.check = false;
         }
     }

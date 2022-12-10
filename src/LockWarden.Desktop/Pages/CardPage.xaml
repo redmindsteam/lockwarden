@@ -24,17 +24,36 @@
             </DockPanel>
             <DockPanel  Margin="0 30 0 0">
                 <Label Content="Number: " Style="{StaticResource FullNamePageLabel}"/>
-                <TextBox x:Name="number_card_page_tb"  Style="{StaticResource tbstyle}"/>
+                <TextBox x:Name="number_card_page_tb"  Style="{StaticResource tbstyle}" MaxLength="16"/>
             </DockPanel>
-            <DockPanel Margin="0 30 0 0">
+            <DockPanel Margin="0 30 0 0" x:Name="DockPanelPin">
                 <Label Content="Pin: " Style="{StaticResource FullNamePageLabel}" />
-                <PasswordBox x:Name="pin_card_page_tb" Style="{StaticResource tbstylePassword}" Margin="30 0 0 0"/>
+                <PasswordBox x:Name="pin_card_page_tb" Style="{StaticResource tbstylePassword}" Margin="30 0 0 0" MaxLength="4"/>
+            </DockPanel>
+
+            <DockPanel Margin="0 30 0 0" x:Name="hiddenDockPanel" Visibility="Collapsed">
+                <Label Content="Pin: " Style="{StaticResource FullNamePageLabel}" />
+                <TextBox x:Name="pin_card_page_tbhidden" Style="{StaticResource tbstyle}" Margin="30 0 0 0"/>
             </DockPanel>
 
             <DockPanel  Margin="0 30 0 0">
                 <Label Content="Name: " Style="{StaticResource FullNamePageLabel}"/>
                 <TextBox x:Name="name_card_page_tb"  Style="{StaticResource tbstyle}" Margin="15 0 0 0"/>
             </DockPanel>
+
+            <CheckBox   x:Name="btnCheckbox"
+                        Margin="220 10 0 0"
+                        Checked="CheckBox_Changed" 
+                        Unchecked="CheckBox_Changed"
+                        Content="Show Password"
+                        Foreground="{DynamicResource TertiaryBlueColor}"
+                        FontSize="15"
+                        FontFamily="Arial"
+                        FontWeight="Medium" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left">
+
+            </CheckBox>
 
             <Button  Click="Button_Click" Content="Add" Style="{StaticResource FormPrimaryButton}" Margin="30" IsDefault="True"/>
 

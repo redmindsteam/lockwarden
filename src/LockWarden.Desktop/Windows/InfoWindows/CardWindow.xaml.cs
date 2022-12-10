@@ -52,15 +52,15 @@ namespace LockWarden.Desktop.Windows.InfoWindows
             CardId = Convert.ToInt32(Uid);
             await cardService.DeleteAsync(Convert.ToInt32(Uid), DB_Constants.UserPassword);
             this.Close();
-            MessageBox.Show("Deleted");
+            MessageBox.Show("Deleted\nTo view the changes refresh this page by clicking \"Card\" button");
             CardControls.checkcard = false;
         }
 
         private async void Update(object sender, RoutedEventArgs e)
         {
-            CardViewModel cardViewModel = new CardViewModel(Bankname.Text,cardNumber.Text,pin.Password,cardname.Text);
+            CardViewModel cardViewModel = new CardViewModel(Bankname.Text,cardNumber.Text,pin.Text,cardname.Text);
             var result = await cardService.UpdateAsync(cardViewModel, DB_Constants.UserPassword, CardId);
-            MessageBox.Show(result.ToString());
+            MessageBox.Show(result.Message+ "\nTo view the changes refresh this page by clicking \"Card\" button");
             LoginControls.check = false;
         }
     }

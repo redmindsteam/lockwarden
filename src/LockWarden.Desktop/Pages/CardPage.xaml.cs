@@ -31,19 +31,53 @@ namespace LockWarden.Desktop.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-                CardViewModel cardViewModel = new CardViewModel(bank_card_page_tb.Text, number_card_page_tb.Text, pin_card_page_tb.Password, name_card_page_tb.Text);
-            if (Helper.Validate(Valid.CardPin,pin_card_page_tb.Password) &&
-                Helper.Validate(Valid.CardNumber,number_card_page_tb.Text)&&
-                Helper.Validate(Valid.Text,name_card_page_tb.Text)&&
-                Helper.Validate(Valid.Text,bank_card_page_tb.Text))
+            
+
+
+            CardViewModel cardViewModel;
+           
+            if(btnCheckbox.IsChecked == false)
+            {
+                cardViewModel = new CardViewModel(bank_card_page_tb.Text, number_card_page_tb.Text, pin_card_page_tb.Password, name_card_page_tb.Text);
+            }
+            else
+            {
+                cardViewModel = new CardViewModel(bank_card_page_tb.Text, number_card_page_tb.Text, pin_card_page_tbhidden.Text, name_card_page_tb.Text);
+            }
+            
+            if (Helper.Validate(Valid.CardPin, cardViewModel.Pin) &&
+                Helper.Validate(Valid.CardNumber, cardViewModel.Number)&&
+                Helper.Validate(Valid.Text,cardViewModel.Bank)&&
+                Helper.Validate(Valid.Text,cardViewModel.Name))
                 {
                 var cardService = new CardService();
                 var result = await cardService.CreateAsync(cardViewModel, DB_Constants.UserPassword);
-                MessageBox.Show(result.Message); 
+                MessageBox.Show(result.Message);
             }
             else
             {
                 MessageBox.Show("Noto'g'ri ma'lumot kritildi");
+            }
+            bank_card_page_tb.Text = "";
+            number_card_page_tb.Text = "";
+            pin_card_page_tbhidden.Text = "";
+            pin_card_page_tb.Password = "";
+            name_card_page_tb.Text = "";
+        }
+
+        private void CheckBox_Changed(object sender, RoutedEventArgs e)
+        {
+            if (btnCheckbox.IsChecked == true)
+            {
+                pin_card_page_tbhidden.Text = pin_card_page_tb.Password;
+                hiddenDockPanel.Visibility = Visibility.Visible;
+                DockPanelPin.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                pin_card_page_tb.Password = pin_card_page_tbhidden.Text;
+                DockPanelPin.Visibility = Visibility.Visible;
+                hiddenDockPanel.Visibility = Visibility.Collapsed;
             }
         }
     }

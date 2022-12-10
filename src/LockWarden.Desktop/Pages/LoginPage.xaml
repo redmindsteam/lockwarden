@@ -27,13 +27,24 @@
                 </TextBox>
             </DockPanel>
             
-            <DockPanel  Margin="0 30 0 0">
+            <DockPanel  Margin="0 30 0 0" x:Name="DockPanel">
             <Label Content="Password: " Style="{StaticResource FullNamePageLabel}"/>
             <PasswordBox x:Name="password_Login_page_tb" Style="{StaticResource tbstylePassword}">
                 <PasswordBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/password.png" Stretch="Uniform" AlignmentX="Right"/>
                 </PasswordBox.Background>
             </PasswordBox>
+            </DockPanel>
+            
+            <!-- hidden -->
+
+            <DockPanel x:Name="hiddenDockPanel" Margin="0 30 0 0" Visibility="Collapsed">
+                <Label Content="Password: " Style="{StaticResource FullNamePageLabel}"/>
+                <TextBox x:Name="password_Login_page_tbhidden" Style="{StaticResource tbstyle}">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Assets/Icons/password.png" Stretch="Uniform" AlignmentX="Right"/>
+                    </TextBox.Background>
+                </TextBox>
             </DockPanel>
 
             <DockPanel  Margin="0 30 0 0">
@@ -53,6 +64,19 @@
                     </TextBox.Background>
                 </TextBox>
             </DockPanel>
+            <CheckBox   x:Name="btnCheckbox"
+                        Margin="260 10 0 0"
+                        Checked="CheckBox_Changed" 
+                        Unchecked="CheckBox_Changed"
+                        Content="Show Password"
+                        Foreground="{DynamicResource TertiaryBlueColor}"
+                        FontSize="15"
+                        FontFamily="Arial"
+                        FontWeight="Medium" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left">
+                
+            </CheckBox>
 
             <Button Content="Add" Click="Button_Click" Style="{StaticResource FormPrimaryButton}" Margin="70" IsDefault="True"/>
         </StackPanel>

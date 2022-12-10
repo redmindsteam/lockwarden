@@ -203,7 +203,7 @@ namespace LockWarden.Desktop.Windows
             {
                 try
                 {
-                    if (txtpaswordRegs.Password == txtVerify.Password)
+                    if (txtpaswordRegs.Password == txtVerify.Password&& txtpaswordRegs.Password.Length > 6)
                     {
                         UserViewModel userViewModel = new UserViewModel(txtFullname.Text, txtEmailRegs.Text, txtpaswordRegs.Password);
                         UserService userService = new UserService();
@@ -218,7 +218,7 @@ namespace LockWarden.Desktop.Windows
                         else MessageBox.Show("Bunday foydalanuvchi mavjud");
 
                     }
-                    else MessageBox.Show("Parollar bir-briga mos eman");
+                    else MessageBox.Show("Parolda xatolik mavjud");
                 }
                 catch
                 {
@@ -236,7 +236,7 @@ namespace LockWarden.Desktop.Windows
             {
                 try
                 {
-                    if (txtpaswordRegshidden.Text == txtVerifyhidden.Text)
+                    if (txtpaswordRegshidden.Text == txtVerifyhidden.Text&& txtpaswordRegshidden.Text.Length>6)
                     {
                         UserViewModel userViewModel = new UserViewModel(txtFullname.Text, txtEmailRegs.Text, txtpaswordRegshidden.Text);
                         UserService userService = new UserService();
@@ -251,7 +251,7 @@ namespace LockWarden.Desktop.Windows
                         else MessageBox.Show("Bunday foydalanuvchi mavjud");
 
                     }
-                    else MessageBox.Show("Parollar bir-briga mos eman");
+                    else MessageBox.Show("Parolda xatolik mavjud");
                 }
                 catch
                 {
