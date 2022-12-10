@@ -50,9 +50,9 @@ namespace LockWarden.Desktop.Windows.InfoWindows
 
         private async void Edit(object sender, RoutedEventArgs e)
         {
-            LoginViewModel model=new LoginViewModel(LoginWebSite.Text, LoginUsername.Text, LoginPassword.Password, LoginName.Text);
+            LoginViewModel model=new LoginViewModel(LoginWebSite.Text, LoginUsername.Text, LoginPassword.Text, LoginName.Text);
             var result = await loginService.UpdateAsync(model,DB_Constants.UserPassword, Convert.ToInt32(Uid));
-            MessageBox.Show(result.ToString());
+            MessageBox.Show(result.Message);
             LoginControls.check = false;
         }
     }

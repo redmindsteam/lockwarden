@@ -58,9 +58,9 @@ namespace LockWarden.Desktop.Windows.InfoWindows
 
         private async void Update(object sender, RoutedEventArgs e)
         {
-            CardViewModel cardViewModel = new CardViewModel(Bankname.Text,cardNumber.Text,pin.Password,cardname.Text);
+            CardViewModel cardViewModel = new CardViewModel(Bankname.Text,cardNumber.Text,pin.Text,cardname.Text);
             var result = await cardService.UpdateAsync(cardViewModel, DB_Constants.UserPassword, CardId);
-            MessageBox.Show(result.ToString());
+            MessageBox.Show(result.Message);
             LoginControls.check = false;
         }
     }

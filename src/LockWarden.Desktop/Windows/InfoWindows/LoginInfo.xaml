@@ -44,11 +44,11 @@
                 </TextBox.Background>
             </TextBox>
             <Label Content="password" Style="{StaticResource FullNamePageLabel}"/>
-            <PasswordBox x:Name="LoginPassword" Style="{StaticResource tbstylePassword}" Height="30"  Padding="0">
-                <PasswordBox.Background>
+            <TextBox x:Name="LoginPassword" Style="{StaticResource tbstyle}" Height="30"  Padding="0">
+                <TextBox.Background>
                     <ImageBrush ImageSource="/Assets/Icons/password_re.png" Stretch="Uniform" AlignmentX="Right"/>
-                </PasswordBox.Background>
-            </PasswordBox>
+                </TextBox.Background>
+            </TextBox>
             <Label Content="website" Style="{StaticResource FullNamePageLabel}"/>
             <TextBox x:Name="LoginWebSite" Style="{StaticResource tbstyle}" Height="30"  Padding="0">
                 <TextBox.Background>

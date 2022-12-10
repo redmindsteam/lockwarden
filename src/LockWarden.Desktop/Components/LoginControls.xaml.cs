@@ -41,7 +41,7 @@ namespace LockWarden.Desktop.Components
                 LoginInfo info = new LoginInfo();
                 info.LoginName.Text = login.loginView.Name;
                 info.LoginUsername.Text = login.loginView.Username;
-                info.LoginPassword.Password = login.loginView.Password;
+                info.LoginPassword.Text = login.loginView.Password;
                 info.LoginWebSite.Text = login.loginView.Service;
                 info.Uid = login.loginView.Id.ToString();
                 info.Show();
