@@ -17,7 +17,7 @@ public class Helper
 	public static int ToSeed(string passw)
 	{
 		byte[] bytes = Encoding.UTF8.GetBytes(passw);
-		int result = BitConverter.ToInt32(SHA256.Create().ComputeHash(bytes));
+		int result = BitConverter.ToInt32(MD5.Create().ComputeHash(bytes));
 		return result;
 	}
 	public static string ImageToString(string path)
